@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/entityclass",
+    "value": "fogbeberrybush",
+    "file": "wildcraft:blocktypes/plant/berrybush.json"
+  },
+  {
+    "op": "replace",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": "504",
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  }
+]

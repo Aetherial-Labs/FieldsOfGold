@@ -1,0 +1,19 @@
+[
+  {
+  "ingredientPattern":  "AB",
+  "enabled": true,
+    "ingredients": {
+      "A": { "type": "Item", "code": "game:knife-*", "isTool": true},
+      "B": { "type": "Item", "code": "game:papyrusroot", "quantity": 1}
+    },
+  "name": "splitpapyrusroot",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "Item",
+      "code": "fieldsofgold:halvedpapyrusroot",
+      "quantity": 2
+    }
+  }
+]
+                

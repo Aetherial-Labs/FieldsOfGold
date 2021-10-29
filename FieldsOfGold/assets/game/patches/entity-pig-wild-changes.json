@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/pregnancyDays",
+    "value": 115,
+    "file": "entities/land/pig-wild-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/9/hoursToGrow",
+    "value": 4380,
+    "file": "entities/land/pig-wild-piglet.json"
+  }
+]

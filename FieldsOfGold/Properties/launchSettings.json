@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FieldsOfGold": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Owner\\AppData\\Roaming\\Vintagestory\\Vintagestory.exe",
+      "commandLineArgs": "--addModPath=\"C:\\Users\\Owner\\source\\repos\\FieldsOfGold\\FieldsOfGold\\bin\\Debug\" --addOrigin=\"C:\\Users\\Owner\\source\\repos\\FieldsOfGold\\FieldsOfGold\\assets\""
+    }
+  }
+}

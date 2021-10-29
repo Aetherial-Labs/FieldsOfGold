@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/pregnancyDays",
+    "value": 52,
+    "file": "entities/land/fox-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/hoursToGrow",
+    "value": 8760,
+    "file": "entities/land/fox-pup.json"
+  }
+]

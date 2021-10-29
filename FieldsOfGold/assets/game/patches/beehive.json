@@ -1,0 +1,23 @@
+[
+  {
+    "op": "replace",
+    "path": "/entityClassByType/*-populated-*",
+    "value": "fogbeehive",
+    "file": "blocktypes/wax/skep.json",
+    "dependsOn": [ {"modid": "fromgoldencombs", "invert": true }]
+  },
+  {
+    "op": "replace",
+    "path": "/entityClass",
+    "value": "fogbeehive",
+    "file": "blocktypes/wax/wildbeehive.json",
+    "dependsOn": [ {"modid": "fromgoldencombs", "invert": true }]
+  },
+  {
+    "op": "replace",
+    "path": "/entityClass",
+    "value": "fogbeehive",
+    "file": "blocktypes/wax/wildbeehive-inlog.json",
+    "dependsOn": [ {"modid": "fromgoldencombs", "invert": true }]
+  }
+]

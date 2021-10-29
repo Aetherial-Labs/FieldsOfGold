@@ -1,0 +1,24 @@
+﻿1.15.6-1.1.1
+-Updated recipes for halved cattail root to ensure they function properly, and properly damage the tool
+-Change mushroom growth times
+-Added missing growth update for chick to pullet times
+
+1.15.6-1.1.2/3
+- Added ability to config hive harvest time
+
+1.15.6-1.1.4
+- Added fauna compatibility
+
+1.15.7.-1.1.5
+- Change how long animals are milkable after birth to match RL times. (Sheep -> 90 days, Aurochs -> 300 days)
+- Fixed Bug where crops older than stage 1 and not at their ripe stage (varies, but often 8-9) would drop the crop block. (Note: They should only drop seeds at stage 1, or at full growth)
+
+1.15.7.-1.1.6
+- Corrected bug with cattail growth times. Were growing in just 4 hours.
+
+1.15.7.-1.1.7
+- Corrected bug resulting in growth times not affecting berries.
+
+(Upcoming Changes)
+- Add configuration files for crop growth times
+- Give berry bushes multiple stages of growth.

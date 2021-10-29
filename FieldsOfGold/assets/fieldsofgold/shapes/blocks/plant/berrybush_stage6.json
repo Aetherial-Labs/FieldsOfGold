@@ -1,0 +1,64 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"branches": "C:/Users/Owner/AppData/Roaming/Vintagestory/assets/survival/textures/block/plant/berrybush/branches/default",
+		"blueberry1": "C:/Users/Owner/AppData/Roaming/Vintagestory/assets/survival/textures/block/plant/berrybush/leaves/blueberry1"
+	},
+	"elements": [
+		{
+			"name": "branchesN",
+			"from": [ 1.0, 0.0, 8.2 ], 
+			"to": [ 15.4, 14.4, 8.2 ], 
+			"rotationOrigin": [ 8.2, 7.2, 8.2 ],
+			"rotationY": 45.0,
+			"faces": {
+				"north": { "texture": "#branches", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+				"east": { "texture": "#branches", "uv": [ 0.0, 0.0, 0.5, 14.0 ], "enabled": false },
+				"south": { "texture": "#branches", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false },
+				"west": { "texture": "#branches", "uv": [ 0.0, 0.0, 0.5, 14.0 ], "enabled": false },
+				"up": { "texture": "#branches", "uv": [ 0.0, 0.0, 14.0, 0.5 ], "enabled": false },
+				"down": { "texture": "#branches", "uv": [ 0.0, 0.0, 14.0, 0.5 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "branchesS",
+					"from": [ -0.0025, 0.0, -0.0025 ], 
+					"to": [ 14.3975, 14.4, -0.0025 ], 
+					"rotationOrigin": [ 7.2, 7.2, 0.0 ],
+					"rotationY": -89.9802127184967,
+					"faces": {
+						"north": { "texture": "#branches", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"east": { "texture": "#branches", "uv": [ 0.0, 0.0, 8.0, 16.0 ], "enabled": false },
+						"south": { "texture": "#branches", "uv": [ 16.0, 0.0, 0.0, 16.0 ] },
+						"west": { "texture": "#branches", "uv": [ 0.0, 0.0, 8.0, 16.0 ], "enabled": false },
+						"up": { "texture": "#branches", "uv": [ 0.0, 0.0, 22.6, 8.0 ], "enabled": false },
+						"down": { "texture": "#branches", "uv": [ 0.0, 0.0, 22.6, 8.0 ], "enabled": false }
+					}
+				},
+				{
+					"name": "Leaves",
+					"from": [ 7.29, 0.09, -10.0923 ], 
+					"to": [ 21.42, 14.22, 4.0377 ], 
+					"climateColorMap": "climatePlantTint",
+					"seasonColorMap": "seasonalFoliage",
+					"rotationOrigin": [ 7.2, 0.0, -10.1823 ],
+					"rotationY": -45.00000137831748,
+					"faces": {
+						"north": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"east": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"south": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"west": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"up": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+						"down": { "texture": "#blueberry1", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "enabled": false }
+					}
+				}
+			]
+		}
+	]}

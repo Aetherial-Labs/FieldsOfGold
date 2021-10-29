@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/hoursToGrow",
+    "value": 17520,
+    "file": "entities/land/hyena-pup.json"
+  }
+]

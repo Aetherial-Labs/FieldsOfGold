@@ -1,0 +1,104 @@
+[
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 84,
+    "file": "blocktypes/plant/crop/amaranth.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 84,
+    "file": "blocktypes/plant/crop/bellpepper.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 70,
+    "file": "blocktypes/plant/crop/cabbage.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 70,
+    "file": "blocktypes/plant/crop/carrot.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 540,
+    "file": "blocktypes/plant/crop/cassava.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 110,
+    "file": "blocktypes/plant/crop/flax.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 100,
+    "file": "blocktypes/plant/crop/onion.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "blocktypes/plant/crop/parsnip.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 120,
+    "file": "blocktypes/plant/crop/peanut.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 485,
+    "file": "blocktypes/plant/crop/pineapple.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "blocktypes/plant/pumpkin/motherplant.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 120,
+    "file": "blocktypes/plant/crop/rice.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 120,
+    "file": "blocktypes/plant/crop/rye.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 65,
+    "file": "blocktypes/plant/crop/soybean.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 110,
+    "file": "blocktypes/plant/crop/spelt.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "blocktypes/plant/crop/sunflower.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 40,
+    "file": "blocktypes/plant/crop/turnip.json"
+  }  
+]

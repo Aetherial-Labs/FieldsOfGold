@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/attributes/transientPropsByType/*-harvested-*/inGameHours",
+    "value": 1080,
+    "file": "blocktypes/plant/mushroom.json"
+  }
+]

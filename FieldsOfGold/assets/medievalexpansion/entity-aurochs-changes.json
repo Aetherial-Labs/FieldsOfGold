@@ -1,0 +1,23 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/hoursToGrow",
+    "value": "17520",
+    "file": "medievalexpansion/entities/land/aurochs-lamb.json",
+      "dependsOn": [ {"modid": "medievalexpansion"}]
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/pregnancyDays",
+    "value": "284",
+    "file": "medievalexpansion/entities/land/aurochs-female.json",
+      "dependsOn": [ {"modid": "medievalexpansion"}]
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/milkable",
+    "value": { code: "milkable", lactatingDaysAfterBirth: 300 },
+    "file": "farmlife/entities/land/dog-female.json",
+    "dependsOn": [ { "modid": "farmlife" } ]
+  }
+]

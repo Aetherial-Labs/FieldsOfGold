@@ -1,0 +1,16 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/hoursToGrow",
+    "value": "13140",
+    "file": "farmlife/entities/land/dog-pup.json",
+    "dependsOn": [ { "modid": "farmlife" } ]
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/pregnancyDays",
+    "value": "63",
+    "file": "farmlife/entities/land/dog-female.json",
+    "dependsOn": [ { "modid": "farmlife" } ]
+  }
+]

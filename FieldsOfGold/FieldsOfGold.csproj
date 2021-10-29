@@ -1,0 +1,119 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>9</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <Content Include="assets/**">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="assets\farmlife\livestockcontrol.json" />
+    <None Remove="assets\fauna\entity-deer-changes.json" />
+    <None Remove="assets\fieldsofgold\itemtypes\food\vegetable.json" />
+    <None Remove="assets\fieldsofgold\itemtypes\resource\halvedcattailroot.json" />
+    <None Remove="assets\fieldsofgold\itemtypes\resource\halvedpapyrusroot.json" />
+    <None Remove="assets\fieldsofgold\recipes\halvedcattailroot.json" />
+    <None Remove="assets\fieldsofgold\recipes\halvedpapyrusroot.json" />
+    <None Remove="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing1.png" />
+    <None Remove="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing2.png" />
+    <None Remove="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing1.png" />
+    <None Remove="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing2.png" />
+    <None Remove="assets\game\patches\beehive.json" />
+    <None Remove="assets\game\patches\entity-chicken-changes.json" />
+    <None Remove="assets\game\patches\entity-fox-changes.json" />
+    <None Remove="assets\game\patches\entity-hare-changes.json" />
+    <None Remove="assets\game\patches\entity-hyena-changes.json" />
+    <None Remove="assets\game\patches\entity-pig-wild-changes.json" />
+    <None Remove="assets\game\patches\entity-raccoon-changes.json" />
+    <None Remove="assets\game\patches\entity-sheep-changes.json" />
+    <None Remove="assets\game\patches\entity-wolf-changes.json" />
+    <None Remove="assets\game\patches\graintoseed.json" />
+    <None Remove="assets\game\patches\plant-berry-changes.json" />
+    <None Remove="assets\game\patches\plant-mushroom-changes.json" />
+    <None Remove="assets\medievalexpansion\entity-aurochs-changes.json" />
+    <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="modinfo.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Items\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VintagestoryLib">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\VintagestoryLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSCreativeMod">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSCreativeMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSEssentials">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSEssentials.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSModLauncher">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSModLauncher.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VSSurvivalMod">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSSurvivalMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="assets\fieldsofgold\lang\en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\crop_growth.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\crop_production.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\plant-berry-changes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\wildcraft\patches\plant-berry-changes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="changelog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

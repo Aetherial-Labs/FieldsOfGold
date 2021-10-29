@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/entityclass",
+    "value": "fogbeberrybush",
+    "file": "blocktypes/plant/bigberrybush.json"
+  },
+  {
+    "op": "replace",
+    "path": "/entityclass",
+    "value": "fogbeberrybush",
+    "file": "blocktypes/plant/smallberrybush.json"
+  }
+]

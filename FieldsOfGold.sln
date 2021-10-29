@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{C0B4A784-08CC-46E3-8656-585F6D1396BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9608DBDE-F733-4958-9299-FFEFAEAA43D6} = {9608DBDE-F733-4958-9299-FFEFAEAA43D6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldsOfGold", "FieldsOfGold\FieldsOfGold.csproj", "{9608DBDE-F733-4958-9299-FFEFAEAA43D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0B4A784-08CC-46E3-8656-585F6D1396BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B4A784-08CC-46E3-8656-585F6D1396BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B4A784-08CC-46E3-8656-585F6D1396BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B4A784-08CC-46E3-8656-585F6D1396BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9608DBDE-F733-4958-9299-FFEFAEAA43D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9608DBDE-F733-4958-9299-FFEFAEAA43D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9608DBDE-F733-4958-9299-FFEFAEAA43D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9608DBDE-F733-4958-9299-FFEFAEAA43D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25A1C32F-73DF-415D-9A62-56B52A85ADAB}
+	EndGlobalSection
+EndGlobal

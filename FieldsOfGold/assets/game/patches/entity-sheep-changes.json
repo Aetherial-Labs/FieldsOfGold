@@ -1,0 +1,22 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/pregnancyDays",
+    "value": 180,
+    "file": "entities/land/sheep-bighorn-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/9/hoursToGrow",
+    "value": 4320,
+    "file": "entities/land/sheep-bighorn-lamb.json"
+  },
+  
+  {
+    "op": "replace",
+    "path": "/server/behaviors/milkable",
+    "value": { code: "milkable", lactatingDaysAfterBirth: 90 },
+    "file": "farmlife/entities/land/sheep-bighorn-female.json",
+    "dependsOn": [ { "modid": "farmlife" } ]
+  }
+]

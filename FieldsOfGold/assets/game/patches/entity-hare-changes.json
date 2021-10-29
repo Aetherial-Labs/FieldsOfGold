@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/pregnancyDays",
+    "value": 30,
+    "file": "entities/land/hare-female.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/8/hoursToGrow",
+    "value": 8760,
+    "file": "entities/land/hare-baby.json"
+  }
+]

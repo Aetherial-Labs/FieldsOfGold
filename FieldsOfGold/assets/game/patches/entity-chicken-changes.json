@@ -1,0 +1,32 @@
+[
+  {
+    "op": "replace",
+    "path": "/server/behaviors/10/aitasks/2/incubationDays",
+    "value": 21,
+    "file": "entities/land/chicken-hen.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/10/aitasks/2/layTime",
+    "value": 50,
+    "file": "entities/land/chicken-hen.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/7/hoursToGrow",
+    "value": 2016                                                                                                                                    ,
+    "file": "entities/land/chicken-baby.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/6/hoursToGrow",
+    "value": 6742,
+    "file": "entities/land/chicken-henpoult.json"
+  },
+  {
+    "op": "replace",
+    "path": "/server/behaviors/7/hoursToGrow",
+    "value": 6742,
+    "file": "entities/land/chicken-roosterpoult.json"
+  }
+]

@@ -1,0 +1,70 @@
+{
+	code: "vegetable",
+	maxstacksize: 64,
+	attributesByType: {
+		"fieldsofgold:*-cookedhalvedcattailroot": {},
+		"fieldsofgold:*-cookedhalvedpapyrusroot": {},
+	},
+	variantgroups: [
+		{ code: "type", states: ["cookedhalvedcattailroot","cookedhalvedpapyrusroot"]},
+	],
+	texturebytype: {
+		"*-cookedhalvedcattailroot": {  base: "fieldsofgold:items/resource/cookedhalvedcattailroot" },
+		"*-cookedhalvedpapyrusroot": { base: "fieldsofgold:items/resource/cookedhalvedpapyrusroot" }
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"] },
+	nutritionPropsByType: {
+		"*": { satiety: 50, foodcategory: "Vegetable" },
+	},
+	transitionablePropsByType: {
+		"*-cookedhalvedcattailroot": [{
+			type: "Perish",
+			freshHours: { avg: 48 },
+			transitionHours: { avg: 18 },
+			transitionedStack: { type: "item", code: "game:rot" },
+			transitionRatio: 0.25
+		}],
+		"*-cookedhalvedpapyrusroot": [{
+			type: "Perish",
+			freshHours: { avg: 48 },
+			transitionHours: { avg: 18 },
+			transitionedStack: { type: "item", code: "game:rot" },
+			transitionRatio: 0.25
+		}]
+	},
+	materialDensity: 600,
+	guiTransformByType: {
+		"*-cookedhalvedcattailroot": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: 43, y: 166, z: 98 },
+			origin: { x: 0.53, y: 0.43, z: 0.55 },
+			scale: 1
+		},
+		"*-cookedhalvedpapyrusroot": {
+			translation: { x: 0, y: 0, z: 0 },
+			rotation: { x: -15, y: 27, z: 53 },
+			origin: { x: 0.51, y: 0.56, z: 0.43 },
+			scale: 0.75
+		},
+	fpHandTransformByType: {
+		
+		"*-cookedhalvedcattailroot": {
+			translation: { x: 0.15, y: -0.2, z: 0 },
+			rotation: { x: 155, y: -87, z: -30 },
+			scale: 1
+		},
+		"*-cookedhalvedpapyrusroot": {
+			translation: { x: 0.45, y: 0.6, z: -0.4 },
+			rotation: { x: -25, y: -94, z: 180 },
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.75
+		},
+		groundTransformByType: {
+		"*-cookedhalvedcattailroot": {
+			scale: 1
+		},
+		"*-cookedhalvedpapyrusroot": {
+			scale: 0.75
+	}
+	}
+}

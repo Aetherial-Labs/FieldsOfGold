@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "ItemPlantableSeed",
+    "file": "itemtypes/food/grain.json"
+  }
+]
