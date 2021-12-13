@@ -46,10 +46,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Items\" />
+    <Folder Include="assets\fieldsofgold\patches\" />
+    <Folder Include="BlockBehavior\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Lib\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
@@ -68,10 +72,6 @@
     </Reference>
     <Reference Include="VSEssentials">
       <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSEssentials.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="VSModLauncher">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\Mods\VSModLauncher.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">

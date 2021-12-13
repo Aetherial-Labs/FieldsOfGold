@@ -11,7 +11,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    class FOGBerryBush : BlockEntityBerryBush
+    public class FOGBerryBush : BlockEntity, IAnimalFoodSource
     {
         static Random rand = new();
 
@@ -20,9 +20,7 @@ namespace FieldsOfGold.BlockEntities
         double? totalDaysForNextStageOld = null; // old v1.13 data format, here for backwards compatibility
 
         RoomRegistry roomreg;
-        public new int roomness;
-
-        //Update berry block to break when harvested if Wildcraft is not installed.
+        public int roomness;
 
         public FOGBerryBush() : base()
         {
@@ -70,58 +68,64 @@ namespace FieldsOfGold.BlockEntities
 
             // In case this block was imported from another older world. In that case lastCheckAtTotalDays would be a future date.
             lastCheckAtTotalDays = Math.Min(lastCheckAtTotalDays, Api.World.Calendar.TotalDays);
-            System.Diagnostics.Debug.WriteLine("Last Check At Total Days is " + lastCheckAtTotalDays);
-            System.Diagnostics.Debug.WriteLine("Transition Hours Left at line 74 is " + transitionHoursLeft);
+
 
             // We don't need to check more than one year because it just begins to loop then
             double daysToCheck = GameMath.Mod(Api.World.Calendar.TotalDays - lastCheckAtTotalDays, Api.World.Calendar.DaysPerYear);
 
-            bool changed = false;
+            ClimateCondition baseClimate = Api.World.BlockAccessor.GetClimateAt(Pos, EnumGetClimateMode.WorldGenValues);
+            if (baseClimate == null) return;
+            float baseTemperature = baseClimate.Temperature;
 
-            while (daysToCheck > 1f / Api.World.Calendar.HoursPerDay)
+            bool changed = false;
+            float oneHour = 1f / Api.World.Calendar.HoursPerDay;
+            float resetBelowTemperature = 0, resetAboveTemperature = 0, stopBelowTemperature = 0, stopAboveTemperature = 0, revertBlockBelowTemperature = 0, revertBlockAboveTemperature = 0;
+            if (daysToCheck > oneHour)
             {
-                if (!changed)
+                resetBelowTemperature = Block.Attributes["resetBelowTemperature"].AsFloat(-999);
+                resetAboveTemperature = Block.Attributes["resetAboveTemperature"].AsFloat(999);
+                stopBelowTemperature = Block.Attributes["stopBelowTemperature"].AsFloat(-999);
+                stopAboveTemperature = Block.Attributes["stopAboveTemperature"].AsFloat(999);
+                revertBlockBelowTemperature = Block.Attributes["revertBlockBelowTemperature"].AsFloat(-999);
+                revertBlockAboveTemperature = Block.Attributes["revertBlockAboveTemperature"].AsFloat(999);
+
+                if (Api.World.BlockAccessor.GetRainMapHeightAt(Pos) > Pos.Y) // Fast pre-check
                 {
-                    if (Api.World.BlockAccessor.GetRainMapHeightAt(Pos) > Pos.Y) // Fast pre-check
-                    {
-                        Room room = roomreg?.GetRoomForPosition(Pos);
-                        roomness = (room != null && room.SkylightCount > room.NonSkylightCount && room.ExitCount == 0) ? 1 : 0;
-                    }
-                    else
-                    {
-                        roomness = 0;
-                    }
+                    Room room = roomreg?.GetRoomForPosition(Pos);
+                    roomness = (room != null && room.SkylightCount > room.NonSkylightCount && room.ExitCount == 0) ? 1 : 0;
+                }
+                else
+                {
+                    roomness = 0;
                 }
 
                 changed = true;
+            }
 
-                daysToCheck -= 1f / Api.World.Calendar.HoursPerDay;
-
-                lastCheckAtTotalDays += 1f / Api.World.Calendar.HoursPerDay;
+            while (daysToCheck > oneHour)
+            {
+                daysToCheck -= oneHour;
+                lastCheckAtTotalDays += oneHour;
                 transitionHoursLeft -= 1f;
-                System.Diagnostics.Debug.WriteLine("Transition Hours Left at Line 101 " + transitionHoursLeft);
-                ClimateCondition conds = Api.World.BlockAccessor.GetClimateAt(Pos, EnumGetClimateMode.ForSuppliedDateValues, lastCheckAtTotalDays);
-                if (conds == null) return;
-                System.Diagnostics.Debug.WriteLine("Temperature at time of check (Line 105) " + conds.Temperature);
+
+                baseClimate.Temperature = baseTemperature;
+                ClimateCondition conds = Api.World.BlockAccessor.GetClimateAt(Pos, baseClimate, EnumGetClimateMode.ForSuppliedDate_TemperatureOnly, lastCheckAtTotalDays);
                 if (roomness > 0)
                 {
                     conds.Temperature += 5;
                 }
 
                 bool reset =
-                    conds.Temperature < Block.Attributes["resetBelowTemperature"].AsFloat(-999) ||
-                    conds.Temperature > Block.Attributes["resetAboveTemperature"].AsFloat(999)
-                ;
+                    conds.Temperature < resetBelowTemperature ||
+                    conds.Temperature > resetAboveTemperature;
 
                 bool stop =
-                    conds.Temperature < Block.Attributes["stopBelowTemperature"].AsFloat(-999) ||
-                    conds.Temperature > Block.Attributes["stopAboveTemperature"].AsFloat(999)
-                ;
+                    conds.Temperature < stopBelowTemperature ||
+                    conds.Temperature > stopAboveTemperature;
 
                 bool revert =
-                    conds.Temperature < Block.Attributes["revertBlockBelowTemperature"].AsFloat(-999) ||
-                    conds.Temperature > Block.Attributes["revertBlockAboveTemperature"].AsFloat(999)
-                ;
+                    conds.Temperature < revertBlockBelowTemperature ||
+                    conds.Temperature > revertBlockAboveTemperature;
 
                 if (stop || reset)
                 {
@@ -130,12 +134,12 @@ namespace FieldsOfGold.BlockEntities
                     if (reset)
                     {
                         transitionHoursLeft = GetHoursForNextStage();
-                        if (Block.Variant["state"] != "empty" && revert)
+                        if (revert && Block.Variant["state"] != "empty")
                         {
                             Block nextBlock = Api.World.GetBlock(Block.CodeWithVariant("state", "empty"));
                             Api.World.BlockAccessor.ExchangeBlock(nextBlock.BlockId, Pos);
                         }
-                        System.Diagnostics.Debug.WriteLine("Stop grow is true, transitionHoursLeft is now " + transitionHoursLeft);
+
 
                     }
 
@@ -144,27 +148,24 @@ namespace FieldsOfGold.BlockEntities
 
                 if (transitionHoursLeft <= 0)
                 {
-                    System.Diagnostics.Debug.WriteLine("transitionHoursLeft is <= 0, DoGrow returned");
                     if (!DoGrow()) return;
                     transitionHoursLeft = GetHoursForNextStage();
-                    System.Diagnostics.Debug.WriteLine("DoGrow Run, GetHoursForNextStage() returns " + transitionHoursLeft);
                 }
             }
 
             if (changed) MarkDirty(false);
         }
 
-        public new double GetHoursForNextStage()
+        public double GetHoursForNextStage()
         {
-            System.Diagnostics.Debug.WriteLine("Updating Hours For Next Stage");
-            if (Block.Variant["state"] == "flowering") return ((100*(.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay);
-            System.Diagnostics.Debug.WriteLine("State not flowering, running isRipe()");
+            if (Block.Variant["state"] == "flowering") return ((100 * (.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay);
+
             if (IsRipe()) return (14 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay;
-            System.Diagnostics.Debug.WriteLine("State not flowering or ripe, returning default");
-            return (62 *(.8 + .4*(rand.NextDouble()))) * Api.World.Calendar.HoursPerDay;
+
+            return (62 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay;
         }
 
-        public new bool IsRipe()
+        public bool IsRipe()
         {
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             return block.LastCodePart() == "ripe";
@@ -172,14 +173,10 @@ namespace FieldsOfGold.BlockEntities
 
         bool DoGrow()
         {
-
-            System.Diagnostics.Debug.WriteLine("Do grow fired ");
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             string nowCodePart = block.LastCodePart();
             string nextCodePart = (nowCodePart == "empty") ? "flowering" : ((nowCodePart == "flowering") ? "ripe" : "empty");
 
-            System.Diagnostics.Debug.WriteLine("Do grow fired, nowCodePart is " + nowCodePart);
-            System.Diagnostics.Debug.WriteLine("Do grow fired, nextCodePart is " + nextCodePart);
 
             AssetLocation loc = block.CodeWithParts(nextCodePart);
             if (!loc.Valid)
@@ -261,7 +258,7 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public new bool IsSuitableFor(Entity entity)
+        public bool IsSuitableFor(Entity entity)
         {
             if (!IsRipe()) return false;
 
@@ -271,7 +268,7 @@ namespace FieldsOfGold.BlockEntities
             return diet.Contains("Berry");
         }
 
-        public new float ConsumeOnePortion()
+        public float ConsumeOnePortion()
         {
             AssetLocation loc = Block.CodeWithParts("empty");
             if (!loc.Valid)
@@ -298,8 +295,8 @@ namespace FieldsOfGold.BlockEntities
             return 0.1f;
         }
 
-        public new Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
-        public new string Type => "food";
+        public Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public string Type => "food";
         #endregion
 
 

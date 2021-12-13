@@ -4,5 +4,9 @@
   "item-vegetable-cookedhalvedpapyrus": "Roasted Half Papyrus Root",
   "item-vegetable-cookedhalvedcattail": "Roasted Half Cattail Root",
   "item-halvedpapyrusroot": "Split Papyrus Root",
-  "item-halvedcattailroot": "Split Cattail Root"
+  "item-halvedcattailroot": "Split Cattail Root",
+  "heldhelp-plant": "Plant",
+  "Will grow in less than a day": "Will grow in less than a day",
+  "Will grow in about {0} days": "Will grow in about {0} days",
+  "blockhelp-clippable-clip": "Clip branch"
 }
