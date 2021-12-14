@@ -19,6 +19,9 @@
 1.15.7.-1.1.7
 - Corrected bug resulting in growth times not affecting berries.
 
+1.15.7-1.1.8-pre
+- Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.
+
 (Upcoming Changes)
 - Add configuration files for crop growth times
 - Give berry bushes multiple stages of growth.

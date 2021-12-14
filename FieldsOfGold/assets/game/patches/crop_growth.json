@@ -98,7 +98,7 @@
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
-    "value": 40,
+    "value": 55,
     "file": "blocktypes/plant/crop/turnip.json"
   }  
 ]
