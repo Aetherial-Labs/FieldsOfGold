@@ -19,9 +19,38 @@
 1.15.7.-1.1.7
 - Corrected bug resulting in growth times not affecting berries.
 
-1.15.7-1.1.8-pre
-- Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.
+1.15.7-1.1.8
+- Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.\
+- Massaged harvest numbers on grain downwards to 2-4 drops per harvest.  This number will continue to be dialed down in future changes.
 
 (Upcoming Changes)
 - Add configuration files for crop growth times
 - Give berry bushes multiple stages of growth.
+- Add planters pots, racks, and trays for pre-Spring planting.
+- Add threshing mechanic to separate straw from grain
+- Add wheat/rye/barley sheaves and flax stooks for drying grains
+- Remove dry grass as a feed for animals
+- Add in starvation mechanic for animals
+- Integrate mushroom logs for growing mushrooms 
+  - Logs get placed in barrels with rot to produce 'mushroom log'.
+  - Mushroom logs must be placed in shade, watered, and fertilized.
+  - Mushrooms will gain a new growth stage during which they're sporing
+  - Harvesting (certain) mushrooms during this time gets spores and mushrooms, others only spores.
+  - Plant mushroom spores on log, will grow into mushrooms.
+- Haystacks
+	- Remove haystack recipe
+	- Add haystacks as stackable items.
+	- Hitting a full haystack with rope or cordage(PS) converts it to a haybale
+- Add straw mats
+	- Mats are made from bundles of grain straw or grass.
+	- Mats have different color shades based on their straw type
+	- Mats require Rope (vanilla) or cordage (Primitive Survival)
+- Beds
+	- Remove recipe for beds
+	- Add recipe for beds using straw mats
+	- Allow straw mats to be placed in a manner similar to linen
+	- Add different variant mats by straw type (Flax, Grass, Rye, Spelt)
+- Pitchfork
+	- Farmer weapon
+	- Functionality? (Picking up and moving piles of straw w/o binding first?)
+   

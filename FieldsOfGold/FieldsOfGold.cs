@@ -24,10 +24,12 @@ namespace FieldsOfGold
         {
             base.Start(api);
             api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
-            api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBerryBush));
-            api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBeehive));
+            api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
+            api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
+            api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
             PatchGame();
+
             System.Diagnostics.Debug.WriteLine("Fields of Gold initializing");
             
             try
@@ -55,7 +57,6 @@ namespace FieldsOfGold
                     FieldsOfGoldConfig.Current.hiveHoursToHarvest = 1488;
                 api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
             }
-
         }
 
         public override void Dispose()

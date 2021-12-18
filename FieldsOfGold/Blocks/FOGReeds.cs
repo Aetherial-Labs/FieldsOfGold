@@ -237,7 +237,6 @@ namespace FieldsOfGold.Blocks
 
         protected bool TryPlaceBlockInWaterDuringGen(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            System.Diagnostics.Debug.WriteLine("Cattail Placed In Water For Worldgen Using Your Method.");
             //This ensures a fully grown version of the block is placed, versus a 'growing' block
             Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 2, pos.Z);
             if (belowBlock.Fertility > 0)

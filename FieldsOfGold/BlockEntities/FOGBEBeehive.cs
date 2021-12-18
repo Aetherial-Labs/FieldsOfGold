@@ -13,7 +13,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    class FOGBeehive : BlockEntity, IAnimalFoodSource
+    class FOGBEBeehive : BlockEntity, IAnimalFoodSource
     {
       
             public enum EnumHivePopSize
@@ -46,7 +46,7 @@ namespace FieldsOfGold.BlockEntities
             public static SimpleParticleProperties Bees;
             string orientation;
 
-            static FOGBeehive()
+            static FOGBEBeehive()
             {
                 Bees = new SimpleParticleProperties(
                     1, 1,

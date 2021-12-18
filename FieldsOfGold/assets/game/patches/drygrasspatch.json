@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "fogdrygrass",
+    "file": "itemtypes/resource/drygrass.json"
+  }
+]

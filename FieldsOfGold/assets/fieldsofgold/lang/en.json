@@ -8,5 +8,6 @@
   "heldhelp-plant": "Plant",
   "Will grow in less than a day": "Will grow in less than a day",
   "Will grow in about {0} days": "Will grow in about {0} days",
-  "blockhelp-clippable-clip": "Clip branch"
+  "blockhelp-clippable-clip": "Clip branch",
+  "heldhelp-createhaystack": "Create haystack"
 }

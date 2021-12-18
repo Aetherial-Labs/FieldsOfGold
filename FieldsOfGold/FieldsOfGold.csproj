@@ -14,6 +14,7 @@
   <ItemGroup>
     <None Remove="assets\farmlife\livestockcontrol.json" />
     <None Remove="assets\fauna\entity-deer-changes.json" />
+    <None Remove="assets\fieldsofgold\blocktypes\foghaystack.json" />
     <None Remove="assets\fieldsofgold\itemtypes\food\vegetable.json" />
     <None Remove="assets\fieldsofgold\itemtypes\resource\halvedcattailroot.json" />
     <None Remove="assets\fieldsofgold\itemtypes\resource\halvedpapyrusroot.json" />
@@ -24,6 +25,7 @@
     <None Remove="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing1.png" />
     <None Remove="assets\fieldsofgold\textures\block\plant\flower\stem\coopersreed-growing2.png" />
     <None Remove="assets\game\patches\beehive.json" />
+    <None Remove="assets\game\patches\drygrasspatch.json" />
     <None Remove="assets\game\patches\entity-chicken-changes.json" />
     <None Remove="assets\game\patches\entity-fox-changes.json" />
     <None Remove="assets\game\patches\entity-hare-changes.json" />

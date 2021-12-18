@@ -11,7 +11,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    public class FOGBerryBush : BlockEntity, IAnimalFoodSource
+    public class FOGBEBerryBush : BlockEntity, IAnimalFoodSource
     {
         static Random rand = new();
 
@@ -22,7 +22,7 @@ namespace FieldsOfGold.BlockEntities
         RoomRegistry roomreg;
         public int roomness;
 
-        public FOGBerryBush() : base()
+        public FOGBEBerryBush() : base()
         {
 
         }
