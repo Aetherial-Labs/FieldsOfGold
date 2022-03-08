@@ -1,0 +1,35 @@
+{
+	"code": "strawmat",
+	"class": "fogstrawmat",
+	behaviors: [ {name: "Decor", properties: {sides: ["up"], sidedVariants: true, thickness: 0.0625, removable:true }} ],
+	shape: {
+		base: "fieldsofgold:blocks/utility/strawmat"
+	},
+	variantgroups: [
+		{ code:"side", states: ["down"] }
+	],
+	"creativeinventory": { "general": ["*"], "construction": ["*"], "flora": ["*"], "decorative": ["*"] },
+	"blockmaterial": "Plant",
+	"renderpass": "opaquenocull",
+	"replaceable": 900,
+	"lightAbsorption": 99,
+	"textures": {
+	"normal-top": {"base": "game:block/plant/grassroofing/normal-side"},
+	"straw1": { "base": "game:block/plant/grassroofing/straw1"}
+	},
+	vertexFlags: {
+		zOffset: 1
+	},
+	"resistance": 0.25,
+	sidesolid: { all: false },
+	sideopaque: { all: false },
+	"sounds": {
+		"place": "block/plant",
+		"break": "block/plant",
+		"hit": "block/plant",
+	},
+	"collisionbox": {x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1},
+	"selectionbox": { x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1},
+	"materialDensity": 200,
+	"heldTpIdleAnimation": "holdbothhandslarge", "heldTpUseAnimation": "twohandplaceblock"
+}

@@ -258,10 +258,9 @@ namespace FieldsOfGold.Blocks
             return false;
         }
 
-        public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing)
+        public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing, int index)
         {
             return capi.World.ApplyColorMapOnRgba(ClimateColorMapForMap, SeasonColorMapForMap, capi.BlockTextureAtlas.GetRandomColor(Textures.Last().Value.Baked.TextureSubId), pos.X, pos.Y, pos.Z);
-            //return base.GetRandomColor(capi, pos, facing);
         }
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)

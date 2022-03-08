@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/behaviors",
+    "value": [{ name: "Carryable"}],
+    "file": "blocktypes/plant/hay.json"
+  },
+  {
+    "op": "add",
+    "path": "/class",
+    "value": "foghaybale",
+    "file": "blocktypes/plant/hay.json"
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": "false",
+    "file": "recipes/grid/haybale.json"
+  }
+]

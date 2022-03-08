@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/aitasks/0/entityCodes/-",
+    "value": "strawdummy",
+    "file": "entities/land/hare-male",
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+    "value": "strawdummy",
+    "file": "entities/land/hare-female",
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/aitasks/0/entityCodes/-",
+    "value": "strawdummy",
+    "file": "entities/land/hare-baby"
+  }
+]

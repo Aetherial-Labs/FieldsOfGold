@@ -1,7 +1,7 @@
 ﻿using FieldsOfGold.BlockEntities;
 using FieldsOfGold.Blocks;
+using FieldsOfGold.config;
 using FieldsOfGold.Items;
-using FromGoldenCombs.config;
 using HarmonyLib;
 using System;
 using System.Text;
@@ -26,8 +26,12 @@ namespace FieldsOfGold
             api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
+            api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
+            api.RegisterBlockClass("foghaystack", typeof(FOGHaystack));
+            api.RegisterBlockClass("foghaybale", typeof(FOGHaybale));
+            api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
             PatchGame();
 
             System.Diagnostics.Debug.WriteLine("Fields of Gold initializing");
@@ -112,7 +116,6 @@ namespace FieldsOfGold
             System.Diagnostics.Debug.WriteLine("Harmony Patch 1 Results = " + __result);
             return false;
         }
-
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BlockEntityFarmland), "GetBlockInfo")]

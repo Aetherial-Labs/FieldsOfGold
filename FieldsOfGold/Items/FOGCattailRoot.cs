@@ -12,6 +12,7 @@ namespace FieldsOfGold.Items
     {
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
+
             if (blockSel == null || byEntity?.World == null || !byEntity.Controls.Sneak)
             {
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);

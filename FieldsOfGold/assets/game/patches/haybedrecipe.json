@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/ingredients/H",
+    "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
+    "file": "recipes/grid/haybed.json"
+  }
+]

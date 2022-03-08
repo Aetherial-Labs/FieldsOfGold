@@ -9,5 +9,11 @@
   "Will grow in less than a day": "Will grow in less than a day",
   "Will grow in about {0} days": "Will grow in about {0} days",
   "blockhelp-clippable-clip": "Clip branch",
-  "heldhelp-createhaystack": "Create haystack"
+  "handhelp-createhaystack": "Create haystack",
+  "blockhelp-haystack-removegrass": "Remove 16 grass",
+  "blockhelp-haystack-addgrass": "Add 16 grass",
+  "blockhelp-haystack-64addgrass": "Add 64 grass",
+  "blockhelp-haystack-64removegrass": "Remove 64 grass",
+  "blockhelp-haystack-makehaybale": "Create hay bale",
+  "blockhelp-haystack-makebed": "Create straw bed"
 }

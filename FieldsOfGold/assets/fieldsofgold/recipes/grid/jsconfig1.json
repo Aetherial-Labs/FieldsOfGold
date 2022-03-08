@@ -1,0 +1,17 @@
+[
+  {
+    "ingredientPattern": "AB",
+    "enabled": true,
+    "ingredients": {
+      "A": {
+        "type": "Item", "code": "game:knife-*", "isTool": true},
+      "B": {
+        "type": "Item", "code": "game:cattailroot"}
+    },
+    "name": "splitcattailroot",
+    "width": 1,
+    "height": 2,
+    "output": {
+      "type": "Item", "code": "fieldsofgold:halvedcattailroot", "quantity": 2}
+  }
+]

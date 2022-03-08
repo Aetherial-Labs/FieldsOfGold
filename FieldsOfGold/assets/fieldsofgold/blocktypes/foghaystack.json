@@ -1,35 +1,35 @@
 {
 	"code": "haystack",
-	"shape": { "base": "blocks\utility\haystack.json" },
-	"drawtype": "cube",
-	"attributes": {
-		"handbook": {
-		}
+	"class": "foghaystack",
+	"entityClass": "fogbehaystack",
+	behaviors: [{name: "Unstable"}],
+	shape: {
+		base: "game:block/basic/invisible"
 	},
-	"variantgroups": [
-		{ "code": "type", "states": ["normal"] }
-	],
 	"creativeinventory": { "general": ["*"], "construction": ["*"], "flora": ["*"], "decorative": ["*"] },
 	"blockmaterial": "Plant",
 	"replaceable": 900,
 	"lightAbsorption": 99,
 	"textures": {
-		"horizontals": { "base": "block/hay/{type}-side" },
-		"verticals": { "base": "block/hay/{type}-top" },
+				"normal-top": {"base": "game:block/plant/grassroofing/normal-top"},
+				"normal-side": {"base": "game:block/plant/grassroofing/normal-side"},
+				"straw1": { "base": "game:block/plant/grassroofing/straw1"}
 	},
 	"resistance": 0.25,
+	"renderpass": "opaquenocull",
 	"sideopaque": {
 		"all": true
 	},
+	randomizeRotations: true, 
+	sidesolid: { all: false },
+	sideopaque: { all: false },
 	"sounds": {
 		"place": "block/plant",
 		"break": "block/plant",
 		"hit": "block/plant",
 	},
+	selectionbox: { x1: 0, y1: 0, z1: 0, x2: 1, y2: 1, z2: 1},
 	"materialDensity": 200,
-	"combustibleProps": {
-		"burnTemperature": 600,
-		"burnDuration": 5,
-	},
 	"heldTpIdleAnimation": "holdbothhandslarge", "heldTpUseAnimation": "twohandplaceblock"
 }
+
