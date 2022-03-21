@@ -12,8 +12,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="BlockBehavior\**" />
+    <EmbeddedResource Remove="BlockBehavior\**" />
+    <None Remove="BlockBehavior\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
     <None Remove="assets\farmlife\livestockcontrol.json" />
-    <None Remove="assets\fauna\entity-deer-changes.json" />
     <None Remove="assets\fieldsofgold\blocktypes\foghaystack.json" />
     <None Remove="assets\fieldsofgold\blocktypes\fogstrawmat.json" />
     <None Remove="assets\fieldsofgold\itemtypes\food\vegetable.json" />
@@ -43,6 +49,8 @@
     <None Remove="assets\game\patches\plant-berry-changes.json" />
     <None Remove="assets\game\patches\plant-mushroom-changes.json" />
     <None Remove="assets\medievalexpansion\entity-aurochs-changes.json" />
+    <None Remove="assets\potatoes\crop_growth.json" />
+    <None Remove="assets\potatoes\crop_production.json" />
     <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
   </ItemGroup>
 
@@ -54,7 +62,6 @@
 
   <ItemGroup>
     <Folder Include="assets\fieldsofgold\patches\" />
-    <Folder Include="BlockBehavior\" />
   </ItemGroup>
 
   <ItemGroup>

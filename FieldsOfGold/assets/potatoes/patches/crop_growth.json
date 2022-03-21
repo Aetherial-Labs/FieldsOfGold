@@ -1,0 +1,44 @@
+{
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 56,
+    "file": "potatoes/blocktypes/plant/crop/beets.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "potatoes/blocktypes/plant/crop/cauliflower.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "potatoes/blocktypes/plant/crop/corn.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 120,
+    "file": "potatoes/blocktypes/plant/crop/eggplant.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 80,
+    "file": "potatoes/blocktypes/plant/crop/jalapeno.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 90,
+    "file": "potatoes/blocktypes/plant/crop/potatoes.json"
+  },
+  {
+    "op": "replace",
+    "path": "/cropProps/totalGrowthDays",
+    "value": 98,
+    "file": "potatoes/blocktypes/plant/crop/yam.json"
+  }
+}
