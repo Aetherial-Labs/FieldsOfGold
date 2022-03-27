@@ -18,7 +18,7 @@ namespace FieldsOfGold.Items
         {
 			BlockPos position = blockSel.Position;
 			IPlayer player = null;
-			if (blockSel == null || byEntity?.World == null || (!byEntity.Controls.Sneak && !byEntity.Controls.Sprint))
+			if (blockSel == null || byEntity?.World == null || (!byEntity.Controls.Sneak && !byEntity.Controls.Sprint) || blockSel == null)
                 return;
 
 
@@ -28,13 +28,11 @@ namespace FieldsOfGold.Items
                 Block firepitBlock = world.GetBlock(new AssetLocation("firepit-construct1"));
                 if (firepitBlock == null) return;
 
-                System.Diagnostics.Debug.WriteLine("Alpha Checkpoint");
                 BlockPos onPos = blockSel.DidOffset ? blockSel.Position : blockSel.Position.AddCopy(blockSel.Face);
 
                 IPlayer byPlayer = byEntity.World.PlayerByUid((byEntity as EntityPlayer)?.PlayerUID);
                 if (!byEntity.World.Claims.TryAccess(byPlayer, onPos, EnumBlockAccessFlags.BuildOrBreak))
                 {
-					System.Diagnostics.Debug.WriteLine("Beta Checkpoint");
 					return;
                 }
 
@@ -73,18 +71,15 @@ namespace FieldsOfGold.Items
 				}
 				if (player == null)
 				{
-					System.Diagnostics.Debug.WriteLine("Charlie Checkpoint");
 					return;
 				}
 				if (!byEntity.World.Claims.TryAccess(player, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
 				{
-					System.Diagnostics.Debug.WriteLine("Delta Checkpoint");
 					return;
 				}
 				BlockEntity blockEntity = byEntity.World.BlockAccessor.GetBlockEntity(position);
 				if (blockEntity is BlockEntityLabeledChest || blockEntity is BlockEntitySignPost || blockEntity is BlockEntitySign || blockEntity is BlockEntityBloomery || blockEntity is BlockEntityFirepit || blockEntity is BlockEntityForge)
 				{
-					System.Diagnostics.Debug.WriteLine("Epsilon Checkpoint");
 					return;
 				}
 				if (blockEntity is IBlockEntityItemPile && ((IBlockEntityItemPile)blockEntity).OnPlayerInteract(player))
@@ -94,7 +89,6 @@ namespace FieldsOfGold.Items
 					IClientPlayer clientPlayer = ((entityPlayer != null) ? entityPlayer.Player : null) as IClientPlayer;
 					if (clientPlayer == null)
 					{
-						System.Diagnostics.Debug.WriteLine("FoxTrot Checkpoint");
 						return;
 					}
 					clientPlayer.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
@@ -110,7 +104,6 @@ namespace FieldsOfGold.Items
 						IClientPlayer clientPlayer2 = ((entityPlayer2 != null) ? entityPlayer2.Player : null) as IClientPlayer;
 						if (clientPlayer2 == null)
 						{
-							System.Diagnostics.Debug.WriteLine("Gamma Checkpoint");
 							return;
 						}
 						clientPlayer2.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
@@ -121,7 +114,6 @@ namespace FieldsOfGold.Items
 						Block block = byEntity.World.GetBlock(this.PileBlockCode);
 						if (block == null)
 						{
-							System.Diagnostics.Debug.WriteLine("Helo Checkpoint");
 							return;
 						}
 						BlockPos blockPos = position.Copy();
@@ -138,7 +130,6 @@ namespace FieldsOfGold.Items
 						if (!flag)
 						{
 							base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
-							System.Diagnostics.Debug.WriteLine("Indigo Checkpoint");
 							return;
 						}
 						handHandling = EnumHandHandling.PreventDefaultAction;
@@ -146,11 +137,9 @@ namespace FieldsOfGold.Items
 						IClientPlayer clientPlayer3 = ((entityPlayer3 != null) ? entityPlayer3.Player : null) as IClientPlayer;
 						if (clientPlayer3 == null)
 						{
-							System.Diagnostics.Debug.WriteLine("Jetson Checkpoint");
 							return;
 						}
 						clientPlayer3.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
-						System.Diagnostics.Debug.WriteLine("Kellington Checkpoint");
 						return;
 					}
 				}

@@ -1,0 +1,422 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-basil-harvested": {
+      "convertFrom": "*-basil-harvested", 
+			"convertTo": "*-basil-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-burdock-harvested": {
+      "convertFrom": "*-bearleek-harvested", 
+			"convertTo": "*bearleek-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-saffron-harvested": {
+      "convertFrom": "*-blackpepper-harvested", 
+			"convertTo": "*-blackpepper-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-celery-harvested": {
+      "convertFrom": "*-celery-harvested", 
+			"convertTo": "*-celery-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-chamomile-harvested": {
+      "convertFrom": "*-chamomile-harvested", 
+			"convertTo": "*-chamomile-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-cilantro-harvested": {
+      "convertFrom": "*-cilantro-harvested", 
+			"convertTo": "*-cilantro-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-dill-harvested": {
+      "convertFrom": "*-dill-harvested", 
+			"convertTo": "*-dill-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-dock-harvested": {
+      "convertFrom": "*-dock-harvested", 
+			"convertTo": "*-dock-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-lavendar-harvested": {
+      "convertFrom": "*-lavender-harvested", 
+			"convertTo": "*-lavender-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-marjoram-harvested": {
+      "convertFrom": "*-marjoram-harvested", 
+			"convertTo": "*-marjoram-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-marshmallow-harvested": {
+      "convertFrom": "*-marshmallow-harvested", 
+			"convertTo": "*-marshmallow-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-mint-harvested": {
+      "convertFrom": "*-mint-harvested", 
+			"convertTo": "*-mint-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-mustard-harvested": {
+      "convertFrom": "*-mustard-harvested", 
+			"convertTo": "*-mustard-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-rosemary-harvested": {
+      "convertFrom": "*-rosemary-harvested", 
+			"convertTo": "*-rosemary-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-saffron-harvested": {
+      "convertFrom": "*-saffron-harvested", 
+			"convertTo": "*-saffron-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-sage-harvested": {
+      "convertFrom": "*-sage-harvested", 
+			"convertTo": "*-sage-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-sedge-harvested": {
+      "convertFrom": "*-sedge-harvested", 
+			"convertTo": "*-sedge-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-stingingnettle-harvested": {
+      "convertFrom": "*-stingingnettle-harvested", 
+			"convertTo": "*-stingingnettle-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-stjohnswort-harvested": {
+      "convertFrom": "*-stjohnswort-harvested", 
+			"convertTo": "*-stjohnswort-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-thyme-harvested": {
+      "convertFrom": "*-thyme-harvested", 
+			"convertTo": "*-thyme-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-minerslettuce-harvested": {
+      "convertFrom": "*-minerslettuce-harvested", 
+			"convertTo": "*-minerslettuce-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-mugwort-harvested": {
+      "convertFrom": "*-mugwort-harvested", 
+			"convertTo": "*-mugwort-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-burdock-harvested": {
+      "convertFrom": "*-burdock-harvested", 
+			"convertTo": "*-burdock-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-poisonoak-harvested": {
+      "convertFrom": "*-poisonoak-harvested", 
+			"convertTo": "*-poisonoak-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-thistle-harvested": {
+      "convertFrom": "*-thistle-harvested", 
+			"convertTo": "*-thistle-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-holly-harvested": {
+      "convertFrom": "*-holly-harvested", 
+			"convertTo": "*-holly-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-chicory-harvested": {
+      "convertFrom": "*-chicory-harvested", 
+			"convertTo": "*-chicory-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-marigold-harvested": {
+      "convertFrom": "*-marigold-harvested", 
+			"convertTo": "*-marigold-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-inula-harvested": {
+      "convertFrom": "*-inula-harvested", 
+			"convertTo": "*-inula-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-celandine-harvested": {
+      "convertFrom": "*-celandine-harvested", 
+			"convertTo": "*-celandine-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-leek-harvested": {
+      "convertFrom": "*-leek-harvested", 
+			"convertTo": "*-leek-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-plantain-harvested": {
+      "convertFrom": "*-plantain-harvested", 
+			"convertTo": "*-plantain-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-saltwort-harvested": {
+      "convertFrom": "*-saltwort-harvested", 
+			"convertTo": "*-saltwort-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-yarrow-harvested": {
+      "convertFrom": "*-yarrow-harvested", 
+			"convertTo": "*-yarrow-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "value": {"*-liquorice-harvested": {
+      "convertFrom": "*-liquorice-harvested", 
+			"convertTo": "*-liquorice-normal", 
+		  "inGameHours": 1344,
+			"resetBelowTemperature": -4,
+			"stopBelowTemperature": 2
+    }},
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  }
+]

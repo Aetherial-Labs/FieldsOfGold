@@ -13,7 +13,7 @@ namespace FieldsOfGold
     public class FieldsOfGold : ModSystem
     {
 
-        private Harmony _harmony = new Harmony("harmoniousFOG");
+        private Harmony _harmony = new Harmony("harmoniousfog");
         
         public override bool ShouldLoad(EnumAppSide forSide)
         {
@@ -34,7 +34,6 @@ namespace FieldsOfGold
             api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
             PatchGame();
 
-            System.Diagnostics.Debug.WriteLine("Fields of Gold initializing");
             
             try
             {
@@ -108,12 +107,10 @@ namespace FieldsOfGold
                 __result = 99999999;
                 return false;
             }
-            System.Diagnostics.Debug.WriteLine("Harmony Patch 1 Run");
             __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
                             * (__instance.Api.World.Calendar.DaysPerMonth / 30.0) / block.CropProps.GrowthStages
                             * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
                             * (float)(0.9 + 0.2 * ___rand.NextDouble());
-            System.Diagnostics.Debug.WriteLine("Harmony Patch 1 Results = " + __result);
             return false;
         }
 

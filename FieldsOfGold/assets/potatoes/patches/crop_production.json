@@ -1,4 +1,4 @@
-{
+[
 	{
     "op": "replace",
     "path": "/dropsByType",
@@ -123,4 +123,4 @@
 			},
 			"file": "potatoes:blocktypes/plant/crop/corn.json"
 	}
-}
+]

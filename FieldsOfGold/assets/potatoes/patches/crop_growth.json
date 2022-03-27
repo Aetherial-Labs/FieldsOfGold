@@ -1,4 +1,4 @@
-{
+[
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
@@ -41,4 +41,4 @@
     "value": 98,
     "file": "potatoes/blocktypes/plant/crop/yam.json"
   }
-}
+]

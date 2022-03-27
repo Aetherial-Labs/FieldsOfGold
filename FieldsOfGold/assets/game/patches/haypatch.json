@@ -2,7 +2,7 @@
   {
     "op": "add",
     "path": "/behaviors",
-    "value": [{ name: "Carryable"}],
+    "value": [{ "name": "Carryable"}],
     "file": "blocktypes/plant/hay.json"
   },
   {
@@ -13,8 +13,27 @@
   },
   {
     "op": "add",
+    "path": "/attributes/handbook",
+    "value": {
+      "extraSections": [
+        {
+          "title": "fieldsofgold:block-handbooktitle-hay",
+          "text": "fieldsofgold:block-handbooktext-hay"
+        }
+      ]
+    },
+    "file": "blocktypes/plant/hay.json"
+  },
+  {
+    "op": "add",
     "path": "/enabled",
     "value": "false",
     "file": "recipes/grid/haybale.json"
+  },
+  {
+    "op": "add",
+    "path": "/enabled",
+    "value": "false",
+    "file": "recipes/grid/drygrass.json"
   }
 ]

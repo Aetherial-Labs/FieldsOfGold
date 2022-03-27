@@ -1,10 +1,12 @@
 {
   "my-test-string": "Fields Of Gold Initialized.",
   "blockhelp-growing-reeds-harvest": "Reed Is Growing, Unharvestable",
-  "item-vegetable-cookedhalvedpapyrus": "Roasted Half Papyrus Root",
-  "item-vegetable-cookedhalvedcattail": "Roasted Half Cattail Root",
+  "fieldsofgold:item-vegetable-cookedhalvedpapyrusroot": "Roasted Half Papyrus Root",
+  "item-vegetable-cookedhalvedcattailroot": "Roasted Half Cattail Root",
   "item-halvedpapyrusroot": "Split Papyrus Root",
+  "item-handbooktitle-halvedpapyrusroot": "",
   "item-halvedcattailroot": "Split Cattail Root",
+  "item-handbooktitle-halvedcattailroot": "",
   "heldhelp-plant": "Plant",
   "Will grow in less than a day": "Will grow in less than a day",
   "Will grow in about {0} days": "Will grow in about {0} days",
@@ -15,5 +17,15 @@
   "blockhelp-haystack-64addgrass": "Add 64 grass",
   "blockhelp-haystack-64removegrass": "Remove 64 grass",
   "blockhelp-haystack-makehaybale": "Create hay bale",
-  "blockhelp-haystack-makebed": "Create straw bed"
+  "blockhelp-haystack-makemat": "Create straw mat",
+  "block-fieldsofgold:strawmat-*": "Straw Mat",
+  "blockdesc-strawmat-*": "A straw mat made from reed fibers woven through straw",
+  "fieldsofgold:block-handbooktitle-strawmat": "How To Craft:",
+  "fieldsofgold:block-handbooktext-strawmat": "Straw mats are made by interacting with a Haystack using 4 cooper's reed or papyrus fibers. The Haystack must have at least 8 dry grass in it.",
+  "block-haystack": "Haystack",
+  "fieldsofgold:block-handbooktitle-hay": "How To Craft:",
+  "fieldsofgold:block-handbooktext-hay": "An effective mobile storage method for large batches of grass. Created by using a rope on a haystack with at least 64 hay in it. Can be placed and cut with a knife to turn back into 64 grass. Will not return the rope.",
+  "fieldsofgold:hivewrongseason": "It's the wrong season for swarming",
+  "fromgoldencombs:item-handbooktitle-drygrass": "Create Haystack",
+  "fromgoldencombs:item-handbooktext-drygrass": "Can be stacked to start a haystack with ctrl+shift."
 }

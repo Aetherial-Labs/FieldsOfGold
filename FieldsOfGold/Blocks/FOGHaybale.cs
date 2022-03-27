@@ -12,23 +12,25 @@ namespace FieldsOfGold.Items
     {
         public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
         {
-            System.Diagnostics.Debug.WriteLine("Click");
             ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
-			if (!slot.Empty && slot.Itemstack.Item.FirstCodePart() == "knife")
+			if (!slot.Empty && slot.Itemstack.Collectible.FirstCodePart() == "knife")
 			{
 				api.World.BlockAccessor.SetBlock(0, blockSel.Position);
 
-				int haybaleYield = 64;
+				int haybaleYield = (64/8);
 				for (int i = haybaleYield; i > 0; i--)
 				{
-					api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("drygrass"))), blockSel.Position.ToVec3d() +
-						new Vec3d(0, .1, 0));
+					System.Diagnostics.Debug.WriteLine("Testy Test?");
+					api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("drygrass")),8), blockSel.Position.ToVec3d() +
+						new Vec3d(0, 0.1, 0));
 				}
-
 				if (byPlayer is EntityPlayer player)
 					this.DamageItem(api.World, byPlayer.Entity, player.RightHandItemSlot, 1);
+				return true;
 			}
-            return true;
-        }
+			
+			return base.OnBlockInteractStart(world, byPlayer, blockSel);
+		}
+		
     }
 }

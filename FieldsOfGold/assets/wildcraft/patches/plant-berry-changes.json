@@ -18,7 +18,7 @@
   {
     "op": "replace",
     "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
-    "value": "504",
+    "value": 504,
     "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
   }
 ]

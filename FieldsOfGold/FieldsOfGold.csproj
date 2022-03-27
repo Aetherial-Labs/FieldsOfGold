@@ -12,12 +12,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="assets\fieldsofgold\patches\**" />
     <Compile Remove="BlockBehavior\**" />
+    <Content Remove="assets\fieldsofgold\patches\**" />
+    <EmbeddedResource Remove="assets\fieldsofgold\patches\**" />
     <EmbeddedResource Remove="BlockBehavior\**" />
+    <None Remove="assets\fieldsofgold\patches\**" />
     <None Remove="BlockBehavior\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
+    <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
+    <None Remove="assets\game\patches\roofthatch.json" />
     <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
     <None Remove="assets\farmlife\livestockcontrol.json" />
     <None Remove="assets\fieldsofgold\blocktypes\foghaystack.json" />
@@ -25,7 +32,6 @@
     <None Remove="assets\fieldsofgold\itemtypes\food\vegetable.json" />
     <None Remove="assets\fieldsofgold\itemtypes\resource\halvedcattailroot.json" />
     <None Remove="assets\fieldsofgold\itemtypes\resource\halvedpapyrusroot.json" />
-    <None Remove="assets\fieldsofgold\recipes\grid\jsconfig1.json" />
     <None Remove="assets\fieldsofgold\recipes\halvedcattailroot.json" />
     <None Remove="assets\fieldsofgold\recipes\halvedpapyrusroot.json" />
     <None Remove="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing1.png" />
@@ -42,16 +48,15 @@
     <None Remove="assets\game\patches\entity-raccoon-changes.json" />
     <None Remove="assets\game\patches\entity-sheep-changes.json" />
     <None Remove="assets\game\patches\entity-wolf-changes.json" />
-    <None Remove="assets\game\patches\graintoseed.json" />
     <None Remove="assets\game\patches\harepatch.json" />
     <None Remove="assets\game\patches\haybedrecipe.json" />
     <None Remove="assets\game\patches\haypatch.json" />
     <None Remove="assets\game\patches\plant-berry-changes.json" />
-    <None Remove="assets\game\patches\plant-mushroom-changes.json" />
     <None Remove="assets\medievalexpansion\entity-aurochs-changes.json" />
     <None Remove="assets\potatoes\crop_growth.json" />
     <None Remove="assets\potatoes\crop_production.json" />
     <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
+    <None Remove="assets\wildcraft\patches\plant-leafygroundvegetable.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,40 +66,36 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="assets\fieldsofgold\patches\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\Lib\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\Lib\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryAPI">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryLib">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\VintagestoryLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\VintagestoryLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSBuildLib">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\VSBuildLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\VSBuildLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\Mods\VSCreativeMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\Mods\VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1163\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1164\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
@@ -140,6 +141,9 @@
 
   <ItemGroup>
     <None Update="changelog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="modicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

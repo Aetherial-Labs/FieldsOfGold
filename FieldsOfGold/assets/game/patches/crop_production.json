@@ -4,13 +4,13 @@
     "path": "/dropsByType",
     "value": {
 		"*-1": [
-			{ "type": "item", "code": "grain-amaranth", "quantity":  { "avg": 0.5, "var": 0.5  }  }
+			{ "type": "item", "code": "seeds-amaranth", "quantity":  { "avg": 1}}
 		],
 		"*-8": [
-			{ "type": "item", "code": "grain-amaranth", "quantity":  { "avg": 1, "var": 1 }  }
+			{ "type": "item", "code": "grain-amaranth", "quantity":  { "avg": 0.5, "var": 1 }  }
 		],
 		"*-9": [
-			{ "type": "item", "code": "grain-amaranth", "quantity":  { "avg": 3, "var": 1 } }
+			{ "type": "item", "code": "grain-amaranth", "quantity":  { "avg": 1.5, "var": 0.5 } }
 		],
 		"*": []
 			},
@@ -109,11 +109,11 @@
     "path": "/dropsByType",
     "value": {
 		"*-9": [
- 			{ "type": "item", "code": "grain-flax", "quantity":  { "avg": 3, "var": 0.5 }  },
-			{ "type": "item", "code": "flaxfibers", "quantity":  { "avg": 1, "var": 1 }  },
+ 			{ "type": "item", "code": "grain-flax", "quantity":  { "avg": 1.5, "var": 0.5 }},
+			{ "type": "item", "code": "flaxfibers", "quantity":  { "avg": 1, "var": 1 }},
 		],
 		"*-1": [
-			{ "type": "item", "code": "grain-flax", "quantity":  { "avg": 0.5, "var": 0.5 }  },
+			{ "type": "item", "code": "seeds-flax", "quantity":  { "avg": 1 } }
 		],
 		"*": []
 	},
@@ -163,11 +163,11 @@
     "value": {
 		"*-8": [
 			{ "type": "item", "code": "seeds-peanut", "quantity":  { "avg": 1 }  },
-			{ "type": "item", "code": "legume-peanut", "quantity":  { "avg": 3, "var": 0.5 }  },
+			{ "type": "item", "code": "legume-peanut", "quantity":  { "avg": 3, "var": 0.5 }  }
 		],
 		"*-9": [
 			{ "type": "item", "code": "seeds-peanut", "quantity":  { "avg": 1.05 }  },
-			{ "type": "item", "code": "legume-peanut", "quantity":  { "avg": 6, "var": 1 }  },
+			{ "type": "item", "code": "legume-peanut", "quantity":  { "avg": 6, "var": 1 }}
 		],
 		"*-1": [
 			{ "type": "item", "code": "seeds-peanut", "quantity":  { "avg": 0.7 }  },
@@ -211,10 +211,10 @@
     "path": "/dropsByType",
     "value": {
 		"*-10": [
-			{ "type": "item", "code": "grain-rice", "quantity":  { "avg": 2, "var": 1 }  },
+			{ "type": "item", "code": "grain-rice", "quantity":  { "avg": 1.5, "var": 0.5 }}
 		],
 		"*-1": [
-			{ "type": "item", "code": "grain-rice", "quantity":  { "avg": 0.7 }  },
+			{ "type": "item", "code": "seeds-rice", "quantity":  { "avg": 1 } }
 		],
 		"*": []
 	},
@@ -225,10 +225,10 @@
     "path": "/dropsByType",
     "value": {
 		"*-9": [
-			{ "type": "item", "code": "grain-rye", "quantity":  { "avg": 2.05, "var": 1 }  },
+			{ "type": "item", "code": "grain-rye", "quantity":  { "avg": 1.5, "var": 0.5 }  },
 		],
 		"*-1": [
-			{ "type": "item", "code": "grain-rye", "quantity":  { "avg": 0.7 }  },
+			{ "type": "item", "code": "seeds-rye", "quantity":  { "avg": 1 }  },
 		],
 		"*": []
 	},
@@ -258,10 +258,13 @@
     "path": "/dropsByType",
     "value": {
 		"*-9": [
-			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 3, "var": 1 }  },
+			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 1.5, "var": 0.5 }  },
+		],
+		"*-8": [
+			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 0.5, "var": 1 }  },
 		],
 		"*-1": [
-			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 0.7 }  },
+			{ "type": "item", "code": "seeds-spelt", "quantity":  { "avg": 1 }  },
 		],
 		"*": []
 	},
@@ -272,10 +275,13 @@
     "path": "/dropsByType",
     "value": {
 		"*-12": [
-			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 3, "var": 1 }  },
+			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 1.5, "var": 0.5 }  },
+		],
+		"*-11": [
+			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 0.5, "var": 1 }  },
 		],
 		"*-1": [
-			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 0.7 }  },
+			{ "type": "item", "code": "seeds-sunflower", "quantity":  { "avg": 1 }  },
 		],
 		"*": []
 	},

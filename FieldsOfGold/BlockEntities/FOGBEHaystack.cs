@@ -99,7 +99,6 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 64)
             {
-                System.Diagnostics.Debug.WriteLine("Size Before: " + inventory[0].StackSize);
                 inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 64;
                 byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal"))));
                 byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(1);
@@ -107,7 +106,6 @@ namespace FieldsOfGold.BlockEntities
                 {
                     Api.World.BlockAccessor.SetBlock(0, Pos);
                 }
-                System.Diagnostics.Debug.WriteLine("Size Before: " + inventory[0].StackSize);
                 MarkDirty();
                 return true;
             }

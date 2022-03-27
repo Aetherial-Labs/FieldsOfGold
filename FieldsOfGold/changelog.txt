@@ -23,12 +23,19 @@
 - Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.\
 - Massaged harvest numbers on grain downwards to 2-4 drops per harvest.  This number will continue to be dialed down in future changes.
 
-1.15.7-1.1.9
+1.16.4-1.1.9
 - Removed hay recipe
-- Reduced hay stack size to 1
 - Implemented haystack
 - Added interactions to get haybale and straw mat from haystack
 - made Berrybush growth time reactive to month length
+- Reduced grain drop to 2-3 per drop
+
+1.16.4-1.1.10
+- Fixed drop ratios so grains drop at least one crop.
+
+1.16.4-1.1.11
+- Fixed broken interaction with haybale.
+
 
 (Upcoming Changes)
 - Add configuration files for crop growth times
@@ -36,8 +43,6 @@
 - Add planters pots, racks, and trays for pre-Spring planting.
 - Add threshing mechanic to separate straw from grain
 - Add wheat/rye/barley sheaves and flax stooks for drying grains
-- Remove dry grass as a feed for animals
-- Add in starvation mechanic for animals
 - Integrate mushroom logs for growing mushrooms 
   - Logs get placed in barrels with rot to produce 'mushroom log'.
   - Mushroom logs must be placed in shade, watered, and fertilized.
@@ -45,23 +50,12 @@
   - Harvesting (certain) mushrooms during this time gets spores and mushrooms, others only spores.
   - Plant mushroom spores on log, will grow into mushrooms.
 
-- Haystacks
-	- Remove haystack recipe
-	- Add haystacks as stackable items.
-	- Hitting a full haystack with rope or cordage(PS) converts it to a haybale
-
-- Add straw mats
-	- Mats are made from bundles of grain straw or grass.
+- Straw mats
 	- Mats have different color shades based on their straw type
-	- Mats require Rope (vanilla) or cordage (Primitive Survival)
-	- Mats can be constructed from haystacks with 8 or more straw in them.
-	- Right clicking will remove 8 straw from the stack, and give the player a straw mat.
-	- Placing a straw mat and then clicking it with another straw mat will place a straw-bed with the foot in the direction the player is facing. (This sounds tricky-ish)
-- Beds
-	- Remove recipe for beds
-	- Add recipe for beds using straw mats
-	- Allow straw mats to be placed in a manner similar to linen
 	- Add different variant mats by straw type (Flax, Grass, Rye, Spelt)
+- Beds
+	- Add beds for each variant type
+
 - Pitchfork
 	- Farmer weapon
 	- Functionality? (Picking up and moving piles of straw w/o binding first?)
