@@ -53,6 +53,7 @@
     <None Remove="assets\game\patches\haypatch.json" />
     <None Remove="assets\game\patches\plant-berry-changes.json" />
     <None Remove="assets\medievalexpansion\entity-aurochs-changes.json" />
+    <None Remove="assets\moreclasses\patches\crop_patch_disable.json" />
     <None Remove="assets\potatoes\crop_growth.json" />
     <None Remove="assets\potatoes\crop_production.json" />
     <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />

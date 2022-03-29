@@ -16,11 +16,14 @@ namespace FieldsOfGold.Items
 
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
+
+
+			if (blockSel is null) return;
+			if (byEntity?.World is null) return;
+
 			BlockPos position = blockSel.Position;
 			IPlayer player = null;
-			if (blockSel == null || byEntity?.World == null || (!byEntity.Controls.Sneak && !byEntity.Controls.Sprint) || blockSel == null)
-                return;
-
+		
 
             if (byEntity.Controls.Sneak && !byEntity.Controls.Sprint && !(api.World.BlockAccessor.GetBlock(blockSel.Position) is FOGHaystack))
             {

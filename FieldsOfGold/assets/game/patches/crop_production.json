@@ -258,10 +258,10 @@
     "path": "/dropsByType",
     "value": {
 		"*-9": [
-			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 1.5, "var": 0.5 }  },
+			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 1.5, "var": 0.5 }  }
 		],
 		"*-8": [
-			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 0.5, "var": 1 }  },
+			{ "type": "item", "code": "grain-spelt", "quantity":  { "avg": 0.5, "var": 1 }  }
 		],
 		"*-1": [
 			{ "type": "item", "code": "seeds-spelt", "quantity":  { "avg": 1 }  },

@@ -36,6 +36,10 @@
 1.16.4-1.1.11
 - Fixed broken interaction with haybale.
 
+1.16.4-1.1.12
+- Fixed NPE crash with drygrass on certain interactions
+- Correct More Crops crop drops.
+- Add patch to make FOG compatible with More Classes.
 
 (Upcoming Changes)
 - Add configuration files for crop growth times
@@ -53,10 +57,27 @@
 - Straw mats
 	- Mats have different color shades based on their straw type
 	- Add different variant mats by straw type (Flax, Grass, Rye, Spelt)
+
 - Beds
 	- Add beds for each variant type
 
 - Pitchfork
 	- Farmer weapon
 	- Functionality? (Picking up and moving piles of straw w/o binding first?)
+
+- Grass
+	- Slow grass regrowth
+	- Grass drop based on time of day, temperature, and climate
+		- Wet grass when raining or first thing in the morning
+		- fresh grass at all other times
+	- Grass drying
+		- Grass needs to be dried in a pile (haystack)
+		- Base dry speed depends on
+			-temperature
+			-environment (degree of rainfall)
+			-exposure to natural light
+			-size of haystack
+		- In haystacks with more than 64 hay, turning them occasionally is needed to facilitate drying
+			-Alert will be added on block info that it needs to be turned
+	
    
