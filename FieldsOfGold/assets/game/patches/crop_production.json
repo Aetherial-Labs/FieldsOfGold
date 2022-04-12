@@ -281,7 +281,7 @@
     "path": "/dropsByType",
     "value": {
 		"*-12": [
-			{ "type": "item", "code": "seed-sunflower", "quantity":  { "avg": 0.0}},
+			{ "type": "item", "code": "seeds-sunflower", "quantity":  { "avg": 0.0}},
 			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 1.5, "var": 0.5 }}
 		],
 		"*-11": [

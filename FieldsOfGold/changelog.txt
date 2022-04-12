@@ -3,9 +3,10 @@
 	- (UF) Use Hammer's Ringing Fall cordage if it's present, or Primitive Survival if it's present.
 - (UF) Begin implementation of new grass paradigm
 
-1.16.4-1.2.0
+1.16.4-1.2.1
 - Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
 - Crop Compatibility with MoreClasses added
+- Ensured drygrass compatibility with Ancient Tools pitchmaking
 
 1.16.4-1.1.14
  - Fixed Wildcraft error PROPERLY.
