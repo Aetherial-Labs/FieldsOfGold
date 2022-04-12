@@ -77,21 +77,15 @@ namespace FieldsOfGold.BlockEntities
 
         public override bool OnPlayerInteract(IPlayer byPlayer)
         {
-            //BlockPos abovePos = Pos.UpCopy();
-
-            //BlockEntity be = Api.World.BlockAccessor.GetBlockEntity(abovePos);
-            //if (be is BlockEntityItemPile)
-            //{
-            //    return ((BlockEntityItemPile)be).OnPlayerInteract(byPlayer);
-            //}
-
+            
             bool sneaking = byPlayer.Entity.Controls.Sneak;
-
             ItemSlot hotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            ItemStack hotbarStack = byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack;
 
-                        bool equalStack = hotbarSlot.Itemstack != null && hotbarSlot.Itemstack.Equals(Api.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes);
-                        bool ropeStack = hotbarSlot.Itemstack != null && hotbarSlot.Itemstack.Item.FirstCodePart() == "rope";
-                        bool fiberStack = hotbarSlot.Itemstack != null && (hotbarSlot.Itemstack.Item.FirstCodePart() == "cattailtops"|| hotbarSlot.Itemstack.Item.FirstCodePart() == "papyrustops");
+                        bool equalStack = hotbarStack != null && hotbarStack.Equals(Api.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes);
+                        bool ropeStack = hotbarStack != null && hotbarStack.Collectible.FirstCodePart() == "rope";
+                        bool fiberStack = hotbarStack != null && (hotbarStack.Collectible.FirstCodePart() == "cattailtops"|| hotbarStack.Collectible.FirstCodePart() == "papyrustops");
+            
             if (sneaking && !equalStack)
             {
                 return false;
@@ -99,8 +93,13 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 64)
             {
+                ItemStack haystack = new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
                 inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 64;
-                byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal"))));
+                if (!byPlayer.InventoryManager.TryGiveItemstack(haystack))
+                {
+                    byPlayer.Entity.World.SpawnItemEntity(haystack, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
+                }
+
                 byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(1);
                 if (inventory[0].StackSize <= 0)
                 {
@@ -112,8 +111,20 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= 8)
             {
+                ItemStack strawmat = new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
+
+                if (hotbarStack.StackSize < 4)
+                {
+                    (byPlayer.Entity.World.Api as ICoreClientAPI)?.TriggerIngameError(this, "notenoughfiber", Lang.Get("fieldsofgold:haystacktoofewfibers"));
+                    return false;
+                }
+
                 inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 8;
-                byPlayer.InventoryManager.TryGiveItemstack(new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down"))));
+                if (!byPlayer.InventoryManager.TryGiveItemstack(strawmat))
+                {
+                   byPlayer.Entity.World.SpawnItemEntity(strawmat, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
+                }
+
                 byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(4);
                 if (inventory[0].StackSize <= 0)
                 {

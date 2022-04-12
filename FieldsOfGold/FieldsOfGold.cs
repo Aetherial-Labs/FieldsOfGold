@@ -102,7 +102,7 @@ namespace FieldsOfGold
             Random ___rand)
         {
             var block = __instance.CallMethod<Block>("GetCrop");
-            if (block == null)
+            if (block == null || block.CropProps == null)
             {
                 __result = 99999999;
                 return false;

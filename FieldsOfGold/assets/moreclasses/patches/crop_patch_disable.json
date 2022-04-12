@@ -1,51 +1,58 @@
 [
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-8/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-amaranth.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "game:patches/survival-blocktypes-plant-crop-amaranth.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-9/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-amaranth.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "game:patches/survival-blocktypes-plant-crop-amaranth.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-9/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-flax.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-flax.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-10/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-rice.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-flax.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-9/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-rye.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:patches/survival-blocktypes-plant-crop-rice.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-9/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-spelt.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:patches/survival-blocktypes-plant-crop-rye.json"
+    
   },
   {
-    "op": "replace",
-    "path": "/path",
-    "value": "/dropsByType/*-12/0/dropModbyStat",
-    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-sunflower.json",
-    "dependsOn": [ {"modid": "moreclasses"}]
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-spelt.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-sunflower.json"
+    
   }
 ]

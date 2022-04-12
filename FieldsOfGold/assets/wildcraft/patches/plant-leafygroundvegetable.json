@@ -1,7 +1,13 @@
 [
   {
+  "op": "remove",
+    "path": "/attributes/transientPropsByType",
+    "value": "*-harvested",
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+  },
+  {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-basil-harvested": {
       "convertFrom": "*-basil-harvested", 
 			"convertTo": "*-basil-normal", 
@@ -13,7 +19,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-burdock-harvested": {
       "convertFrom": "*-bearleek-harvested", 
 			"convertTo": "*bearleek-normal", 
@@ -25,7 +31,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-saffron-harvested": {
       "convertFrom": "*-blackpepper-harvested", 
 			"convertTo": "*-blackpepper-normal", 
@@ -37,7 +43,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-celery-harvested": {
       "convertFrom": "*-celery-harvested", 
 			"convertTo": "*-celery-normal", 
@@ -49,7 +55,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-chamomile-harvested": {
       "convertFrom": "*-chamomile-harvested", 
 			"convertTo": "*-chamomile-normal", 
@@ -61,7 +67,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-cilantro-harvested": {
       "convertFrom": "*-cilantro-harvested", 
 			"convertTo": "*-cilantro-normal", 
@@ -73,7 +79,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-dill-harvested": {
       "convertFrom": "*-dill-harvested", 
 			"convertTo": "*-dill-normal", 
@@ -85,7 +91,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-dock-harvested": {
       "convertFrom": "*-dock-harvested", 
 			"convertTo": "*-dock-normal", 
@@ -97,7 +103,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-lavendar-harvested": {
       "convertFrom": "*-lavender-harvested", 
 			"convertTo": "*-lavender-normal", 
@@ -109,7 +115,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-marjoram-harvested": {
       "convertFrom": "*-marjoram-harvested", 
 			"convertTo": "*-marjoram-normal", 
@@ -121,7 +127,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-marshmallow-harvested": {
       "convertFrom": "*-marshmallow-harvested", 
 			"convertTo": "*-marshmallow-normal", 
@@ -133,7 +139,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-mint-harvested": {
       "convertFrom": "*-mint-harvested", 
 			"convertTo": "*-mint-normal", 
@@ -145,7 +151,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-mustard-harvested": {
       "convertFrom": "*-mustard-harvested", 
 			"convertTo": "*-mustard-normal", 
@@ -157,7 +163,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-rosemary-harvested": {
       "convertFrom": "*-rosemary-harvested", 
 			"convertTo": "*-rosemary-normal", 
@@ -169,7 +175,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-saffron-harvested": {
       "convertFrom": "*-saffron-harvested", 
 			"convertTo": "*-saffron-normal", 
@@ -181,7 +187,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-sage-harvested": {
       "convertFrom": "*-sage-harvested", 
 			"convertTo": "*-sage-normal", 
@@ -193,7 +199,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-sedge-harvested": {
       "convertFrom": "*-sedge-harvested", 
 			"convertTo": "*-sedge-normal", 
@@ -205,7 +211,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-stingingnettle-harvested": {
       "convertFrom": "*-stingingnettle-harvested", 
 			"convertTo": "*-stingingnettle-normal", 
@@ -217,7 +223,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-stjohnswort-harvested": {
       "convertFrom": "*-stjohnswort-harvested", 
 			"convertTo": "*-stjohnswort-normal", 
@@ -229,7 +235,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-thyme-harvested": {
       "convertFrom": "*-thyme-harvested", 
 			"convertTo": "*-thyme-normal", 
@@ -241,7 +247,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-minerslettuce-harvested": {
       "convertFrom": "*-minerslettuce-harvested", 
 			"convertTo": "*-minerslettuce-normal", 
@@ -253,7 +259,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-mugwort-harvested": {
       "convertFrom": "*-mugwort-harvested", 
 			"convertTo": "*-mugwort-normal", 
@@ -265,7 +271,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-burdock-harvested": {
       "convertFrom": "*-burdock-harvested", 
 			"convertTo": "*-burdock-normal", 
@@ -277,7 +283,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-poisonoak-harvested": {
       "convertFrom": "*-poisonoak-harvested", 
 			"convertTo": "*-poisonoak-normal", 
@@ -289,7 +295,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-thistle-harvested": {
       "convertFrom": "*-thistle-harvested", 
 			"convertTo": "*-thistle-normal", 
@@ -301,7 +307,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-holly-harvested": {
       "convertFrom": "*-holly-harvested", 
 			"convertTo": "*-holly-normal", 
@@ -313,7 +319,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-chicory-harvested": {
       "convertFrom": "*-chicory-harvested", 
 			"convertTo": "*-chicory-normal", 
@@ -325,7 +331,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-marigold-harvested": {
       "convertFrom": "*-marigold-harvested", 
 			"convertTo": "*-marigold-normal", 
@@ -337,7 +343,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-inula-harvested": {
       "convertFrom": "*-inula-harvested", 
 			"convertTo": "*-inula-normal", 
@@ -349,7 +355,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-celandine-harvested": {
       "convertFrom": "*-celandine-harvested", 
 			"convertTo": "*-celandine-normal", 
@@ -361,7 +367,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-leek-harvested": {
       "convertFrom": "*-leek-harvested", 
 			"convertTo": "*-leek-normal", 
@@ -373,7 +379,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-plantain-harvested": {
       "convertFrom": "*-plantain-harvested", 
 			"convertTo": "*-plantain-normal", 
@@ -385,7 +391,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-saltwort-harvested": {
       "convertFrom": "*-saltwort-harvested", 
 			"convertTo": "*-saltwort-normal", 
@@ -397,7 +403,7 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-yarrow-harvested": {
       "convertFrom": "*-yarrow-harvested", 
 			"convertTo": "*-yarrow-normal", 
@@ -409,10 +415,10 @@
   },
   {
     "op": "add",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
+    "path": "/attributes/transientPropsByType",
     "value": {"*-liquorice-harvested": {
-      "convertFrom": "*-liquorice-harvested", 
-			"convertTo": "*-liquorice-normal", 
+      "convertFrom": "*-yarrow-harvested", 
+			"convertTo": "*-yarrow-normal", 
 		  "inGameHours": 1344,
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2

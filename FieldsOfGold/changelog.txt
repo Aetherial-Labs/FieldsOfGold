@@ -1,27 +1,31 @@
-﻿1.15.6-1.1.1
--Updated recipes for halved cattail root to ensure they function properly, and properly damage the tool
--Change mushroom growth times
--Added missing growth update for chick to pullet times
+﻿(UF) 1.16.4-1.2.2-dev.1
+- (UF) Add cordage recipe for use in making straw mats.
+	- (UF) Use Hammer's Ringing Fall cordage if it's present, or Primitive Survival if it's present.
+- (UF) Begin implementation of new grass paradigm
 
-1.15.6-1.1.2/3
-- Added ability to config hive harvest time
+1.16.4-1.2.0
+- Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
+- Crop Compatibility with MoreClasses added
 
-1.15.6-1.1.4
-- Added fauna compatibility
+1.16.4-1.1.14
+ - Fixed Wildcraft error PROPERLY.
 
-1.15.7.-1.1.5
-- Change how long animals are milkable after birth to match RL times. (Sheep -> 90 days, Aurochs -> 300 days)
-- Fixed Bug where crops older than stage 1 and not at their ripe stage (varies, but often 8-9) would drop the crop block. (Note: They should only drop seeds at stage 1, or at full growth)
+1.16.4-1.1.13
+- Fixed NPE with block interaction on haystack
+- Created error message and blocked creating strawmats with less than 4 fibers
+- Fixed error appearing involving Wildcraft related to Liquorice (An herb apparently not in game yet) Strangely only affects a few, seemingly random, users.
+  Mod conflict ruled out.
 
-1.15.7.-1.1.6
-- Corrected bug with cattail growth times. Were growing in just 4 hours.
+1.16.4-1.1.12
+- Fixed NPE crash with drygrass on certain interactions
+- Correct More Crops crop drops.
+- Add patch to make FOG compatible with More Classes.
 
-1.15.7.-1.1.7
-- Corrected bug resulting in growth times not affecting berries.
+1.16.4-1.1.11
+- Fixed broken interaction with haybale.
 
-1.15.7-1.1.8
-- Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.\
-- Massaged harvest numbers on grain downwards to 2-4 drops per harvest.  This number will continue to be dialed down in future changes.
+1.16.4-1.1.10
+- Fixed drop ratios so grains drop at least one crop.
 
 1.16.4-1.1.9
 - Removed hay recipe
@@ -30,20 +34,32 @@
 - made Berrybush growth time reactive to month length
 - Reduced grain drop to 2-3 per drop
 
-1.16.4-1.1.10
-- Fixed drop ratios so grains drop at least one crop.
+1.15.7-1.1.8
+- Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.\
+- Massaged harvest numbers on grain downwards to 2-4 drops per harvest.  This number will continue to be dialed down in future changes.
 
-1.16.4-1.1.11
-- Fixed broken interaction with haybale.
+1.15.7.-1.1.7
+- Corrected bug resulting in growth times not affecting berries.	
 
-1.16.4-1.1.12
-- Fixed NPE crash with drygrass on certain interactions
-- Correct More Crops crop drops.
-- Add patch to make FOG compatible with More Classes.
+1.15.7.-1.1.6
+- Corrected bug with cattail growth times. Were growing in just 4 hours.
+
+1.15.7.-1.1.5
+- Change how long animals are milkable after birth to match RL times. (Sheep -> 90 days, Aurochs -> 300 days)
+- Fixed Bug where crops older than stage 1 and not at their ripe stage (varies, but often 8-9) would drop the crop block. (Note: They should only drop seeds at stage 1, or at full growth)
+
+1.15.6-1.1.4
+- Added fauna compatibility
+
+1.15.6-1.1.2/3
+- Added ability to config hive harvest time
+   
+1.15.6-1.1.1
+-Updated recipes for halved cattail root to ensure they function properly, and properly damage the tool
+-Change mushroom growth times
+-Added missing growth update for chick to pullet times
 
 (Upcoming Changes)
-- Add configuration files for crop growth times
-- Give berry bushes multiple stages of growth.
 - Add planters pots, racks, and trays for pre-Spring planting.
 - Add threshing mechanic to separate straw from grain
 - Add wheat/rye/barley sheaves and flax stooks for drying grains
@@ -79,5 +95,8 @@
 			-size of haystack
 		- In haystacks with more than 64 hay, turning them occasionally is needed to facilitate drying
 			-Alert will be added on block info that it needs to be turned
-	
-   
+
+
+
+
+
