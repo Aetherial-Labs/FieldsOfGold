@@ -214,7 +214,7 @@
     "path": "/dropsByType",
     "value": {
 		"*-10": [
-			{ "type": "item", "code": "grain-flax", "quantity":  { "avg": 0}},
+			{ "type": "item", "code": "seeds-rice", "quantity":  { "avg": 0}},
 			{ "type": "item", "code": "grain-rice", "quantity":  { "avg": 1.5, "var": 0.5 }}
 		],
 		"*-1": [
@@ -281,6 +281,7 @@
     "path": "/dropsByType",
     "value": {
 		"*-12": [
+			{ "type": "item", "code": "seed-sunflower", "quantity":  { "avg": 0.0}},
 			{ "type": "item", "code": "grain-sunflower", "quantity":  { "avg": 1.5, "var": 0.5 }}
 		],
 		"*-11": [

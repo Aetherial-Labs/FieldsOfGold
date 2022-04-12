@@ -20,8 +20,6 @@ namespace FieldsOfGold.Items
 			IPlayer byPlayer = byEntity.World.PlayerByUid((asPlayer)?.PlayerUID);
 			BlockPos onPos = blockSel.DidOffset ? blockSel.Position : blockSel.Position.AddCopy(blockSel.Face);
 			BlockPos position = blockSel.Position;
-			System.Diagnostics.Debug.WriteLine("Yo!");
-			api.World.Logger.Chat("hitting here 1.");
 			if (blockSel == null || ((byEntity != null) ? byEntity.World : null) == null)
             {
                 return;
