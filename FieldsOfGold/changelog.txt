@@ -1,12 +1,19 @@
-﻿(UF) 1.16.4-1.2.2-dev.1
-- (UF) Add cordage recipe for use in making straw mats.
-	- (UF) Use Hammer's Ringing Fall cordage if it's present, or Primitive Survival if it's present.
-- (UF) Begin implementation of new grass paradigm
-
-1.16.4-1.2.1
+﻿1.16.4-1.2.2-dev.1
 - Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
 - Crop Compatibility with MoreClasses added
 - Ensured drygrass compatibility with Ancient Tools pitchmaking
+- Updated Pumpkins to grow properly on 30 day months.
+- Fix bug where you will not get a hay-bale back, but your rope will be consumed, if you don't have room for a hay-bale.
+- Haybales now require the haystack to hold 256 hay, and will remove the haystack on creation.
+
+1.16.4-1.2.2-dev.0
+- Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
+- Crop Compatibility with MoreClasses added
+- Ensured drygrass compatibility with Ancient Tools pitchmaking
+- Updated Pumpkins to grow properly on 30 day months.
+		- A weird issue involving an NPE appearing when trying to access the API in BlockEntityPumpkinVine
+		is preventing the same daysPerMonth compatibility experienced with previous version of FoG.  Will 
+		update as soon as a fix is found.
 
 1.16.4-1.1.14
  - Fixed Wildcraft error PROPERLY.

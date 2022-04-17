@@ -62,7 +62,7 @@
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
-    "value": 90,
+    "value": 50,
     "file": "blocktypes/plant/pumpkin/motherplant.json"
   },
   {

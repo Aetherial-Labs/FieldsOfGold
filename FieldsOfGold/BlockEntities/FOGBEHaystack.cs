@@ -12,7 +12,7 @@ namespace FieldsOfGold.BlockEntities
 {
     class FOGBEHaystack : BlockEntityItemPile, IBlockEntityItemPile
     {
-        internal AssetLocation soundLocation = new AssetLocation("tradeomat:sounds/coin");
+        internal AssetLocation soundLocation = new AssetLocation("game:sounds/blocks/plant.ogg");
 
         public override AssetLocation SoundLocation { get { return soundLocation; } }
 
@@ -91,16 +91,19 @@ namespace FieldsOfGold.BlockEntities
                 return false;
             }
 
-            if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 64)
+            if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 256)
             {
                 ItemStack haystack = new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
-                inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 64;
-                if (!byPlayer.InventoryManager.TryGiveItemstack(haystack))
+                
+                
+                if (byPlayer.InventoryManager.TryGiveItemstack(haystack))
                 {
+                    inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 256;
+                    byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(1);
                     byPlayer.Entity.World.SpawnItemEntity(haystack, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
 
-                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(1);
+                
                 if (inventory[0].StackSize <= 0)
                 {
                     Api.World.BlockAccessor.SetBlock(0, Pos);
@@ -150,6 +153,7 @@ namespace FieldsOfGold.BlockEntities
                     return TryTakeItem(byPlayer);
                 }
             }
+           
         }
     }
 }

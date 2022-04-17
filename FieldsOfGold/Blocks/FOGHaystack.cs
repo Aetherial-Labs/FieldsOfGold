@@ -168,6 +168,7 @@ namespace FieldsOfGold.Blocks
                     HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right,Itemstacks = new ItemStack[]
                     {
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 256),
                         new ItemStack(world.GetItem(new AssetLocation("rope")), 1)
                     }
                 },
@@ -177,6 +178,7 @@ namespace FieldsOfGold.Blocks
                     HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right,Itemstacks = new ItemStack[]
                     {
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 8),
                         new ItemStack(world.GetItem(new AssetLocation("cattailtops")), 4)
                     }
                 }

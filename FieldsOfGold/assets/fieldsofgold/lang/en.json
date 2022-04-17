@@ -24,9 +24,10 @@
   "fieldsofgold:block-handbooktext-strawmat": "Straw mats are made by interacting with a Haystack using 4 cooper's reed or papyrus fibers. The Haystack must have at least 8 dry grass in it.",
   "block-haystack": "Haystack",
   "fieldsofgold:block-handbooktitle-hay": "How To Craft:",
-  "fieldsofgold:block-handbooktext-hay": "An effective mobile storage method for large batches of grass. Created by using a rope on a haystack with at least 64 hay in it. Can be placed and cut with a knife to turn back into 64 grass. Will not return the rope.",
+  "fieldsofgold:block-handbooktext-hay": "An effective mobile storage method for large batches of grass. Created by using a rope on a haystack with 256 grass in it. Can be placed and cut with a knife to turn back into 256 grass. Will not return the rope.",
   "fieldsofgold:hivewrongseason": "It's the wrong season for swarming",
   "fieldsofgold:item-handbooktitle-drygrass": "Create Haystack",
   "fieldsofgold:item-handbooktext-drygrass": "Can be stacked to start a haystack with ctrl+shift.",
-  "fieldsofgold:haystacktoofewfibers": "You need at least four cattail or papyrus fibers"
+  "fieldsofgold:haystacktoofewfibers": "You need more cattail or papyrus fibers to make a straw mat",
+  "fieldsofgold:blockhelp-haybale": "Breaks haybale and returns 256 dry grass"
 }

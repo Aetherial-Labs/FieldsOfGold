@@ -115,6 +115,17 @@ namespace FieldsOfGold
         }
 
         [HarmonyPostfix]
+        [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
+        static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
+            ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
+        {
+                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
+                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
+                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * 150f;
+        }
+
+
+        [HarmonyPostfix]
         [HarmonyPatch(typeof(BlockEntityFarmland), "GetBlockInfo")]
         static void Patch_BlockEntityFarmland_GetHoursForNextStage_Postfix(BlockEntityFarmland __instance, StringBuilder dsc)
         {
@@ -130,6 +141,7 @@ namespace FieldsOfGold
                 dsc.AppendLine("Crop will reach next stage in less than a day.");
             }
         }
+
     }
 
     public static class HarmonyReflectionExtensions

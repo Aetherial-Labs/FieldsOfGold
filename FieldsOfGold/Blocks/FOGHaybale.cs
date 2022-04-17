@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
-using Vintagestory.GameContent;
+using Vintagestory.API.Util;
 
 namespace FieldsOfGold.Items
 {
@@ -17,20 +15,44 @@ namespace FieldsOfGold.Items
 			{
 				api.World.BlockAccessor.SetBlock(0, blockSel.Position);
 
-				int haybaleYield = (64/8);
+				int haybaleYield = (256/8);
 				for (int i = haybaleYield; i > 0; i--)
 				{
-					System.Diagnostics.Debug.WriteLine("Testy Test?");
 					api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("drygrass")),8), blockSel.Position.ToVec3d() +
 						new Vec3d(0, 0.1, 0));
-				}
-				if (byPlayer is EntityPlayer player)
-					this.DamageItem(api.World, byPlayer.Entity, player.RightHandItemSlot, 1);
-				return true;
+				}              
+                slot.Itemstack.Item.DamageItem(world, byPlayer.Entity, slot);
+                return true;
 			}
 			
 			return base.OnBlockInteractStart(world, byPlayer, blockSel);
 		}
-		
+
+        public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
+        {
+            List<ItemStack> canAddKnifeStacks = new List<ItemStack>();
+            foreach (CollectibleObject obj in api.World.Collectibles)
+            {         
+                ICoreClientAPI capi = api as ICoreClientAPI;
+
+                if (obj is Item && obj.FirstCodePart() == "knife")
+                {
+                    List<ItemStack> stacks = obj.GetHandBookStacks(capi);
+                    if (stacks != null) canAddKnifeStacks.AddRange(stacks);
+                }
+            }
+
+            return new WorldInteraction[]
+            {
+             
+
+                new WorldInteraction
+                {
+                  ActionLangCode = "fieldsofgold:blockhelp-haybale",
+                  MouseButton = EnumMouseButton.Right,
+                  Itemstacks = canAddKnifeStacks.ToArray()
+                }
+            }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
+        }
     }
 }

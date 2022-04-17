@@ -1,11 +1,7 @@
 ﻿using FieldsOfGold.Blocks;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
-using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace FieldsOfGold.Items
@@ -16,6 +12,7 @@ namespace FieldsOfGold.Items
 
 		public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
 		{
+			
 			EntityPlayer asPlayer = byEntity as EntityPlayer;
 			IPlayer byPlayer = byEntity.World.PlayerByUid((asPlayer)?.PlayerUID);
 			BlockPos onPos = blockSel.DidOffset ? blockSel.Position : blockSel.Position.AddCopy(blockSel.Face);
@@ -30,9 +27,9 @@ namespace FieldsOfGold.Items
                 return;
             }
 
-            if (byEntity.Controls.Sneak && byEntity.Controls.Sprint)
+            System.Diagnostics.Debug.WriteLine("OnPos is " + api.World.BlockAccessor.GetBlock(onPos).Code + "Pos is " + api.World.BlockAccessor.GetBlock(position).Code);
+            if (byEntity.Controls.Sneak && byEntity.Controls.Sprint && !(api.World.BlockAccessor.GetBlock(position) is FOGHaystack))
 			{
-				System.Diagnostics.Debug.WriteLine("Yo!");
 				if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
 				{
 					return;
@@ -99,6 +96,13 @@ namespace FieldsOfGold.Items
 					}
 				}
 			}
+
+            if (byEntity.Controls.Sneak && api.World.BlockAccessor.GetBlock(position) is FOGHaystack)
+            {
+                //If targeting a haystack while crouching, do not place fireplace
+                return;
+            }
+
 			base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
 		}
 	}

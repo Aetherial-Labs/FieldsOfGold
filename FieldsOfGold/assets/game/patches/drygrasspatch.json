@@ -7,13 +7,11 @@
   },
   {
     "op": "add",
-    "path": "/attributes",
+    "path": "/attributes/handbook",
     "value": {
-		"handbook": {
-		"extraSections": [ 
+				"extraSections": [ 
       { "title": "fromgoldencombs:item-handbooktitle-drygrass", 
 												 "text": "fromgoldencombs:item-handbooktext-drygrass" } ]
-		}
 	},
     "file": "itemtypes/resource/drygrass.json"
   }
