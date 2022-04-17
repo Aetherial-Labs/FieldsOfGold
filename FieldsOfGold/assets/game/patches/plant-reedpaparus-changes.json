@@ -87,8 +87,8 @@
 			"op": "add",
 			"path": "/texturesByType/*-ice-growing-*",
 			"value": {
-				"tinted": { "base": "fieldsofgold:block/plant/flower/stem/{type}-harvested*" },
-       	"untinted": { "base": "game:block/plant/flower/petal/{type}-harvested*" },
+				"tinted": { "base": "block/plant/flower/stem/{type}-harvested*" },
+       	"untinted": { "base": "block/plant/flower/petal/{type}-harvested*" },
 				"north": { "base": "block/liquid/ice/lake*" },
 				"east": { "base": "block/liquid/ice/lake*" },
 				"south": { "base": "block/liquid/ice/lake*" },
@@ -102,8 +102,8 @@
 			"op": "add",
 			"path": "/texturesByType/*-water-growing-*",
 			"value": {
-				"tinted": { "base": "game:block/plant/flower/stem/{type}-harvested*" },
-       	"untinted": { "base": "game:block/plant/flower/petal/{type}-harvested*" },
+				"tinted": { "base": "block/plant/flower/stem/{type}-harvested*" },
+       	"untinted": { "base": "block/plant/flower/petal/{type}-harvested*" },
 				"north": { "base": "block/liquid/water" },
 				"east": { "base": "block/liquid/water" },
 				"south": { "base": "block/liquid/water" },
