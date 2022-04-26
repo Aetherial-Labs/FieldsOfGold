@@ -1,0 +1,58 @@
+[
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "game:patches/survival-blocktypes-plant-crop-amaranth.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "game:patches/survival-blocktypes-plant-crop-amaranth.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-flax.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/1/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-flax.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:patches/survival-blocktypes-plant-crop-rice.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:patches/survival-blocktypes-plant-crop-rye.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-spelt.json"
+    
+  },
+  {
+    "op": "add",
+    "path": "/0/enabled",
+    "value": false,
+    "file": "moreclasses:game/patches/survival-blocktypes-plant-crop-sunflower.json"
+    
+  }
+]

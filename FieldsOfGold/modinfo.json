@@ -2,9 +2,9 @@
   "type": "code",
   "modid": "fieldsofgold",
   "name": "Fields of Gold",
-  "author": "Unknown",
-  "description": "A Simple Expansion on Apiculture in VS",
-  "version": "1.1.8",
+  "author": "Vinter Nacht",
+  "description": "Come harvest on the breath of Autumn's breeze, from abundant pasture grown.",
+  "version": "1.2.2-rc.1",
   "dependency": {
     "game": ""
   }

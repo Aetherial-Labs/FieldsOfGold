@@ -4,5 +4,15 @@
     "path": "/class",
     "value": "fogdrygrass",
     "file": "itemtypes/resource/drygrass.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/handbook",
+    "value": {
+				"extraSections": [ 
+      { "title": "fromgoldencombs:item-handbooktitle-drygrass", 
+												 "text": "fromgoldencombs:item-handbooktext-drygrass" } ]
+	},
+    "file": "itemtypes/resource/drygrass.json"
   }
 ]

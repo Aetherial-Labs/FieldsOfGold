@@ -1,7 +1,7 @@
 ﻿using FieldsOfGold.BlockEntities;
 using FieldsOfGold.Blocks;
+using FieldsOfGold.config;
 using FieldsOfGold.Items;
-using FromGoldenCombs.config;
 using HarmonyLib;
 using System;
 using System.Text;
@@ -13,7 +13,7 @@ namespace FieldsOfGold
     public class FieldsOfGold : ModSystem
     {
 
-        private Harmony _harmony = new Harmony("harmoniousFOG");
+        private Harmony _harmony = new Harmony("harmoniousfog");
         
         public override bool ShouldLoad(EnumAppSide forSide)
         {
@@ -26,11 +26,14 @@ namespace FieldsOfGold
             api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
+            api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
+            api.RegisterBlockClass("foghaystack", typeof(FOGHaystack));
+            api.RegisterBlockClass("foghaybale", typeof(FOGHaybale));
+            api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
             PatchGame();
 
-            System.Diagnostics.Debug.WriteLine("Fields of Gold initializing");
             
             try
             {
@@ -99,18 +102,26 @@ namespace FieldsOfGold
             Random ___rand)
         {
             var block = __instance.CallMethod<Block>("GetCrop");
-            if (block == null)
+            if (block == null || block.CropProps == null)
             {
                 __result = 99999999;
                 return false;
             }
-            System.Diagnostics.Debug.WriteLine("Harmony Patch 1 Run");
             __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
                             * (__instance.Api.World.Calendar.DaysPerMonth / 30.0) / block.CropProps.GrowthStages
                             * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
                             * (float)(0.9 + 0.2 * ___rand.NextDouble());
-            System.Diagnostics.Debug.WriteLine("Harmony Patch 1 Results = " + __result);
             return false;
+        }
+
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
+        static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
+            ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
+        {
+                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
+                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
+                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * 150f;
         }
 
 
@@ -130,6 +141,7 @@ namespace FieldsOfGold
                 dsc.AppendLine("Crop will reach next stage in less than a day.");
             }
         }
+
     }
 
     public static class HarmonyReflectionExtensions

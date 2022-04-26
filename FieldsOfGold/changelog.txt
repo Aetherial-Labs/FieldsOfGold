@@ -1,56 +1,110 @@
-﻿1.15.6-1.1.1
--Updated recipes for halved cattail root to ensure they function properly, and properly damage the tool
--Change mushroom growth times
--Added missing growth update for chick to pullet times
+﻿1.16.4-1.2.2-dev.1
+- Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
+- Crop Compatibility with MoreClasses added
+- Ensured drygrass compatibility with Ancient Tools pitchmaking
+- Updated Pumpkins to grow properly on 30 day months.
+- Fix bug where you will not get a hay-bale back, but your rope will be consumed, if you don't have room for a hay-bale.
+- Haybales now require the haystack to hold 256 hay, and will remove the haystack on creation.
 
-1.15.6-1.1.2/3
-- Added ability to config hive harvest time
+1.16.4-1.2.2-dev.0
+- Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
+- Crop Compatibility with MoreClasses added
+- Ensured drygrass compatibility with Ancient Tools pitchmaking
+- Updated Pumpkins to grow properly on 30 day months.
+		- A weird issue involving an NPE appearing when trying to access the API in BlockEntityPumpkinVine
+		is preventing the same daysPerMonth compatibility experienced with previous version of FoG.  Will 
+		update as soon as a fix is found.
 
-1.15.6-1.1.4
-- Added fauna compatibility
+1.16.4-1.1.14
+ - Fixed Wildcraft error PROPERLY.
 
-1.15.7.-1.1.5
-- Change how long animals are milkable after birth to match RL times. (Sheep -> 90 days, Aurochs -> 300 days)
-- Fixed Bug where crops older than stage 1 and not at their ripe stage (varies, but often 8-9) would drop the crop block. (Note: They should only drop seeds at stage 1, or at full growth)
+1.16.4-1.1.13
+- Fixed NPE with block interaction on haystack
+- Created error message and blocked creating strawmats with less than 4 fibers
+- Fixed error appearing involving Wildcraft related to Liquorice (An herb apparently not in game yet) Strangely only affects a few, seemingly random, users.
+  Mod conflict ruled out.
 
-1.15.7.-1.1.6
-- Corrected bug with cattail growth times. Were growing in just 4 hours.
+1.16.4-1.1.12
+- Fixed NPE crash with drygrass on certain interactions
+- Correct More Crops crop drops.
+- Add patch to make FOG compatible with More Classes.
 
-1.15.7.-1.1.7
-- Corrected bug resulting in growth times not affecting berries.
+1.16.4-1.1.11
+- Fixed broken interaction with haybale.
+
+1.16.4-1.1.10
+- Fixed drop ratios so grains drop at least one crop.
+
+1.16.4-1.1.9
+- Removed hay recipe
+- Implemented haystack
+- Added interactions to get haybale and straw mat from haystack
+- made Berrybush growth time reactive to month length
+- Reduced grain drop to 2-3 per drop
 
 1.15.7-1.1.8
 - Crops now give time until next stage, and adjust growth time based on server days per month and hours per day.\
 - Massaged harvest numbers on grain downwards to 2-4 drops per harvest.  This number will continue to be dialed down in future changes.
 
+1.15.7.-1.1.7
+- Corrected bug resulting in growth times not affecting berries.	
+
+1.15.7.-1.1.6
+- Corrected bug with cattail growth times. Were growing in just 4 hours.
+
+1.15.7.-1.1.5
+- Change how long animals are milkable after birth to match RL times. (Sheep -> 90 days, Aurochs -> 300 days)
+- Fixed Bug where crops older than stage 1 and not at their ripe stage (varies, but often 8-9) would drop the crop block. (Note: They should only drop seeds at stage 1, or at full growth)
+
+1.15.6-1.1.4
+- Added fauna compatibility
+
+1.15.6-1.1.2/3
+- Added ability to config hive harvest time
+   
+1.15.6-1.1.1
+-Updated recipes for halved cattail root to ensure they function properly, and properly damage the tool
+-Change mushroom growth times
+-Added missing growth update for chick to pullet times
+
 (Upcoming Changes)
-- Add configuration files for crop growth times
-- Give berry bushes multiple stages of growth.
 - Add planters pots, racks, and trays for pre-Spring planting.
 - Add threshing mechanic to separate straw from grain
 - Add wheat/rye/barley sheaves and flax stooks for drying grains
-- Remove dry grass as a feed for animals
-- Add in starvation mechanic for animals
 - Integrate mushroom logs for growing mushrooms 
   - Logs get placed in barrels with rot to produce 'mushroom log'.
   - Mushroom logs must be placed in shade, watered, and fertilized.
   - Mushrooms will gain a new growth stage during which they're sporing
   - Harvesting (certain) mushrooms during this time gets spores and mushrooms, others only spores.
   - Plant mushroom spores on log, will grow into mushrooms.
-- Haystacks
-	- Remove haystack recipe
-	- Add haystacks as stackable items.
-	- Hitting a full haystack with rope or cordage(PS) converts it to a haybale
-- Add straw mats
-	- Mats are made from bundles of grain straw or grass.
+
+- Straw mats
 	- Mats have different color shades based on their straw type
-	- Mats require Rope (vanilla) or cordage (Primitive Survival)
-- Beds
-	- Remove recipe for beds
-	- Add recipe for beds using straw mats
-	- Allow straw mats to be placed in a manner similar to linen
 	- Add different variant mats by straw type (Flax, Grass, Rye, Spelt)
+
+- Beds
+	- Add beds for each variant type
+
 - Pitchfork
 	- Farmer weapon
 	- Functionality? (Picking up and moving piles of straw w/o binding first?)
-   
+
+- Grass
+	- Slow grass regrowth
+	- Grass drop based on time of day, temperature, and climate
+		- Wet grass when raining or first thing in the morning
+		- fresh grass at all other times
+	- Grass drying
+		- Grass needs to be dried in a pile (haystack)
+		- Base dry speed depends on
+			-temperature
+			-environment (degree of rainfall)
+			-exposure to natural light
+			-size of haystack
+		- In haystacks with more than 64 hay, turning them occasionally is needed to facilitate drying
+			-Alert will be added on block info that it needs to be turned
+
+
+
+
+

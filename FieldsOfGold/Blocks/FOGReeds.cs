@@ -84,7 +84,7 @@ namespace FieldsOfGold.Blocks
             if (inWater)
             {
                 blockToPlace = world.GetBlock(CodeWithVariant("state","growing"));
-                api.Logger.Debug("Block to Place is now: " + blockToPlace.Code.ToString());
+                //api.Logger.Debug("Block to Place is now: " + blockToPlace.Code.ToString());
                 if (blockToPlace == null) blockToPlace = this;
             }
             else
@@ -124,8 +124,7 @@ namespace FieldsOfGold.Blocks
             }
             else
             {
-                float mul;
-                if (itemslot.Itemstack.Collectible.MiningSpeed.TryGetValue(EnumBlockMaterial.Plant, out mul)) dt *= mul;
+                if (itemslot.Itemstack.Collectible.MiningSpeed.TryGetValue(EnumBlockMaterial.Plant, out float mul)) dt *= mul;
             }
 
             float resistance = RequiredMiningTier == 0 ? remainingResistance - dt : remainingResistance;
@@ -258,10 +257,9 @@ namespace FieldsOfGold.Blocks
             return false;
         }
 
-        public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing)
+        public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing, int index)
         {
             return capi.World.ApplyColorMapOnRgba(ClimateColorMapForMap, SeasonColorMapForMap, capi.BlockTextureAtlas.GetRandomColor(Textures.Last().Value.Baked.TextureSubId), pos.X, pos.Y, pos.Z);
-            //return base.GetRandomColor(capi, pos, facing);
         }
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)

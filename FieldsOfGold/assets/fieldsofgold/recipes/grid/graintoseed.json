@@ -1,0 +1,28 @@
+[
+  {
+    "ingredientPattern": "A",
+    "enabled": true,
+    "ingredients": {
+      "A": {
+        "type": "Item", "code": "game:grain-*", "name": "type"}
+    },
+    "name": "grainseedrecipe",
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "Item", "code": "game:seeds-{type}", "quantity": 3}
+  },
+  {
+    "ingredientPattern": "A",
+    "enabled": true,
+    "ingredients": {
+      "A": {
+        "type": "Item", "code": "game:seeds-*", "name": "type", "allowedvariants": ["spelt", "rice", "flax", "rye", "amaranth", "sunflower"], "quantity": "3"}
+    },
+    "name": "grainseedrecipe",
+    "width": 1,
+    "height": 1,
+    "output": {
+      "type": "Item", "code": "game:grain-{type}"}
+  }
+]

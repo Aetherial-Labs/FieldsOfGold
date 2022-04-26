@@ -158,11 +158,15 @@ namespace FieldsOfGold.BlockEntities
 
         public double GetHoursForNextStage()
         {
-            if (Block.Variant["state"] == "flowering") return ((100 * (.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay);
+            //Determine modifier for adjusted month times
+            Double monthlengthmod = Api.World.Calendar.DaysPerMonth/30;  
 
-            if (IsRipe()) return (14 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay;
+            //Calculate duration to next stage and modify by monthlengthmod
+            if (Block.Variant["state"] == "flowering") return ((100 * (.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
 
-            return (62 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay;
+            if (IsRipe()) return ((14 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
+
+            return ((62 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
         }
 
         public bool IsRipe()

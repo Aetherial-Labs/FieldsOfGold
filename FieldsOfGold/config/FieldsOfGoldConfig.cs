@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Vintagestory.API.Common;
 
-namespace FromGoldenCombs.config
+namespace FieldsOfGold.config
 {
     class FieldsOfGoldConfig
     {
