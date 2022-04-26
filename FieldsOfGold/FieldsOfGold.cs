@@ -13,7 +13,7 @@ namespace FieldsOfGold
     public class FieldsOfGold : ModSystem
     {
 
-        private Harmony _harmony = new Harmony("harmoniousfog");
+        private readonly Harmony _harmony = new("harmoniousfog");
         
         public override bool ShouldLoad(EnumAppSide forSide)
         {
@@ -27,6 +27,7 @@ namespace FieldsOfGold
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
+            api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
             api.RegisterBlockClass("foghaystack", typeof(FOGHaystack));
@@ -108,9 +109,10 @@ namespace FieldsOfGold
                 return false;
             }
             __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
-                            * (__instance.Api.World.Calendar.DaysPerMonth / 30.0) / block.CropProps.GrowthStages
+                            * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
                             * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
                             * (float)(0.9 + 0.2 * ___rand.NextDouble());
+
             return false;
         }
 

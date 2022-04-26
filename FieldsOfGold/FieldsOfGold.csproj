@@ -12,19 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="assets\fieldsofgold\patches\**" />
     <Compile Remove="BlockBehavior\**" />
-    <Content Remove="assets\fieldsofgold\patches\**" />
-    <EmbeddedResource Remove="assets\fieldsofgold\patches\**" />
     <EmbeddedResource Remove="BlockBehavior\**" />
-    <None Remove="assets\fieldsofgold\patches\**" />
     <None Remove="BlockBehavior\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
+    <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
+    <None Remove="assets\game\patches\plant-reedpaparus-changes.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
+    <None Remove="assets\hideandfabric\patches\cotton.json" />
     <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
     <None Remove="assets\farmlife\livestockcontrol.json" />
     <None Remove="assets\fieldsofgold\blocktypes\foghaystack.json" />
@@ -54,8 +53,10 @@
     <None Remove="assets\game\patches\plant-berry-changes.json" />
     <None Remove="assets\medievalexpansion\entity-aurochs-changes.json" />
     <None Remove="assets\moreclasses\patches\crop_patch_disable.json" />
+    <None Remove="assets\moreclasses\patches\seed_recipe_patch.json" />
     <None Remove="assets\potatoes\crop_growth.json" />
     <None Remove="assets\potatoes\crop_production.json" />
+    <None Remove="assets\potatoes\patches\crop_growth.json" />
     <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
     <None Remove="assets\wildcraft\patches\plant-leafygroundvegetable.json" />
   </ItemGroup>
@@ -168,25 +169,16 @@
     <Content Update="assets\game\patches\plant-berry-changes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\game\patches\plant-reedpaparus-changes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="assets\game\patches\roofthatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\moreclasses\patches\crop_patch_disable.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\potatoes\patches\crop_growth.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="assets\potatoes\patches\crop_production.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\wildcraft\patches\plant-berry-changes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="assets\wildcraft\patches\plant-leafygroundvegetable.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

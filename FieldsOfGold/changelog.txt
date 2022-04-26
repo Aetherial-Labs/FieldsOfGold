@@ -1,4 +1,18 @@
-﻿1.16.4-1.2.2-dev.1
+﻿1.16.4-1.2.2.-rc.4
+- Fix typo in morecrops, because I'm kinda dumb apparently.
+
+1.16.4-1.2.2-rc.3
+- Added compatibility with Hide And Fabric cotton.
+- Fix Strawmat name in lang file
+- Fixed berry bushes not having appropriate growth times in settings under (or over) 30 days
+- Corrected typo interfering with MoreCrops compatibility.
+- Made Wildcraft herbs transient in the right periods based on month length
+
+1.16.4-1.2.2-rc.2
+- Corrected NPE error that occurs with dry grass (again... I'm good at these)
+- Further polished compatibility with MoreClasses (Added non-farmer recipe for grain seeds, and updated the farmer recipe)
+
+1.16.4-1.2.2-rc.1
 - Ensured FOGDryGrass compatibility with Boiler (By extending ItemDryGrass)
 - Crop Compatibility with MoreClasses added
 - Ensured drygrass compatibility with Ancient Tools pitchmaking

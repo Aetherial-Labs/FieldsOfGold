@@ -1,121 +1,100 @@
 [
-	{
-	    "op": "add",
-	    "path": "/variantgroups/2/states/-",
-	    "value": "growing",
-	    "file": "blocktypes/plant/reedpapyrus.json"
+  {
+    "op": "replace",
+    "path": "/class",
+    "value": "fogreeds",
+    "file": "blocktypes/plant/reedpapyrus.json"
   },
-	{
-	    "op": "replace",
-	    "path": "/class",
-	    "value": "fogreeds",
-	    "file": "blocktypes/plant/reedpapyrus.json"
+  {
+    "op": "add",
+    "path": "/variantgroups/2/states/-",
+    "value": "growing",
+    "file": "blocktypes/plant/reedpapyrus.json"
   },
-	{
-	    "op": "add",
-	    "path": "/entityClassByType/*-growing-*",
-	    "value": "Transient",
-	    "file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-		"op": "add",
-		"path": "/allowedVariants/0",
-		"value": "*-water-growing-free",
-		"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-		"op": "add",
-		"path": "/allowedVariants/0",
-		"value": "*-ice-growing-free",
-		"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-		"op": "add",
-		"path": "/shapeByType/tallplant-papyrus-*-growing-*",
-		"value": {"base": "block/plant/reedpapyrus/papyrus-harvested" },
-		"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-		"op": "add",
-		"path": "/shapeByType/tallplant-coopersreed-*-growing-*",
-		"value": {"base": "game:block/plant/reedpapyrus/papyrus-harvested" },
-		"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-		"op": "replace",
-		"path": "/attributes/transientPropsByType",
-		"value": {
-			"tallplant-coopersreed-ice-growing-free": {
+  {
+    "op": "add",
+    "path": "/entityClassByType",
+    "value": {
+      "*-growing": "Transient"
+        },
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/tallplant-coopersreed-ice-growing-free",
+    "value": {
 				"convertFrom": "tallplant-coopersreed-ice-growing-free", 
 				"convertTo": "tallplant-coopersreed-ice-harvested-free", 
 				"inGameHours": "200",
 				"resetBelowTemperature": -8,
 				"stopBelowTemperature": 2
 			},
-			"tallplant-coopersreed-water-*": {
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/tallplant-coopersreed-water-growing-*",
+    "value": {
 				"convertFrom": "*-growing-{cover}", 
 				"convertTo": "*-harvested-{cover}", 
-				"inGameHours": "800",
+				"inGameHours": "168",
 				"resetBelowTemperature": -8,
 				"stopBelowTemperature": 2
 			},
-			"tallplant-papyrus-water-*": {
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/tallplant-papyrus-water-growing-*",
+    "value": {
 				"convertFrom": "*-growing-{cover}", 
 				"convertTo": "*-harvested-{cover}", 
-				"inGameHours": "536",
-				"resetBelowTemperature": 4,
-				"stopBelowTemperature": 6
-			},		
-			"tallplant-coopersreed-*": {
-				"convertFrom": "*-growing-{cover}", 
-				"convertTo": "*-harvested-{cover}", 
-				"inGameHours": "800",
-				"resetBelowTemperature": -4,
+				"inGameHours": "168",
+				"resetBelowTemperature": -8,
 				"stopBelowTemperature": 2
 			},
-			"tallplant-papyrus-*": {
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/tallplant-coopersreed-*-growing-*",
+    "value": {
 				"convertFrom": "*-growing-{cover}", 
 				"convertTo": "*-harvested-{cover}", 
-				"inGameHours": "536",
-				"resetBelowTemperature": 4,
-				"stopBelowTemperature": 6
-			}
-		},
-		"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-			"op": "add",
-			"path": "/texturesByType/*-ice-growing-*",
-			"value": {
-				"tinted": { "base": "block/plant/flower/stem/{type}-harvested*" },
-       	"untinted": { "base": "block/plant/flower/petal/{type}-harvested*" },
-				"north": { "base": "block/liquid/ice/lake*" },
-				"east": { "base": "block/liquid/ice/lake*" },
-				"south": { "base": "block/liquid/ice/lake*" },
-				"west": { "base": "block/liquid/ice/lake*" },
-				"up": { "base": "block/liquid/ice/lake*" },
-				"down": { "base": "block/liquid/ice/lake*" }
-		    },
-			"file": "blocktypes/plant/reedpapyrus.json"
-	},
-	{
-			"op": "add",
-			"path": "/texturesByType/*-water-growing-*",
-			"value": {
-				"tinted": { "base": "block/plant/flower/stem/{type}-harvested*" },
-       	"untinted": { "base": "block/plant/flower/petal/{type}-harvested*" },
-				"north": { "base": "block/liquid/water" },
-				"east": { "base": "block/liquid/water" },
-				"south": { "base": "block/liquid/water" },
-				"west": { "base": "block/liquid/water" },
-				"up": { "base": "block/liquid/water" },
-				"down": { "base": "block/liquid/water" },
-				"specialSecondTexture": { "base": "block/liquid/water2" },
-				"northCross": { "base": "block/plant/flower/petal/{type}-harvested*" },
-				"southCross": { "base": "block/plant/flower/petal/{type}-harvested*" },
-				"northTintedCross": { "base": "block/plant/flower/stem/{type}-harvested*" },
-				"southTintedCross": { "base": "block/plant/flower/stem/{type}-harvested*" }
-		    },
-			"file": "blocktypes/plant/reedpapyrus.json"
-	}
+				"inGameHours": "168",
+				"resetBelowTemperature": -8,
+				"stopBelowTemperature": 2
+			},
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/attributes/transientPropsByType/tallplant-papyrus-*-growing-*",
+    "value": {
+				"convertFrom": "*-growing-{cover}", 
+				"convertTo": "*-harvested-{cover}", 
+				"inGameHours": "168",
+				"resetBelowTemperature": -8,
+				"stopBelowTemperature": 2
+			},
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/allowedVariants/-",
+    "value": "*-water-growing-free",
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/allowedVariants/-",
+    "value": "*-ice-growing-free",
+    "file": "blocktypes/plant/reedpapyrus.json"
+  },
+  {
+    "op": "add",
+    "path": "/shapeByType/tallplant-papyrus-*-growing-*",
+    "value": { "base": "block/plant/reedpapyrus/papyrus-harvested" },
+    "file": "blocktypes/plant/reedpapyrus.json"
+  }
 ]

@@ -14,11 +14,5 @@
     "path": "/6/value", 
     "value": "fogbeberrybush",
     "file": "wildcraft:patches/vanilla_berry_patches.json"
-  },
-  {
-    "op": "replace",
-    "path": "/attributes/transientPropsByType/*-harvested/inGameHours",
-    "value": 504,
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
   }
 ]

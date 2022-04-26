@@ -1,0 +1,9 @@
+[
+{
+  "op": "replace",
+  "path": "/0/enabled",
+  "value": false,
+  "file": "fieldsofgold:recipes/grid/graintoseed.json",
+  "dependson": [{"modid": "moreclasses"}]
+}
+]
