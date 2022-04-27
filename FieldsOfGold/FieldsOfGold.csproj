@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-	  <LangVersion>9</LangVersion>
+	<LangVersion>9</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -130,10 +130,31 @@
     <Content Update="assets\fieldsofgold\recipes\grid\halvedpapyrusroot.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage3.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage4.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage5.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\plant\berrybush_stage6.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="assets\fieldsofgold\shapes\blocks\utility\haystack.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\fieldsofgold\shapes\blocks\utility\largehaystack.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\shapes\blocks\utility\strawmat.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\fieldsofgold\textures\block\plant\flower\petal\coopersreed-growing1.png">
@@ -167,6 +188,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\plant-berry-changes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\plant-reedpaparus-changes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\roofthatch.json">
