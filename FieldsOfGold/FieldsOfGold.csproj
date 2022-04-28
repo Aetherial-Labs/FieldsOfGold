@@ -23,6 +23,7 @@
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
     <None Remove="assets\game\patches\plant-reedpaparus-changes.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
+    <None Remove="assets\game\patches\survival-blocktypes-plant-reedpapyrus.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
     <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
     <None Remove="assets\farmlife\livestockcontrol.json" />
