@@ -110,70 +110,61 @@
     "op": "replace",
     "path": "/texturesByType",
     "value": {
-				"*-ice-growing-*": {
-					tinted: { base: "block/plant/flower/stem/{type}-harvested*"  },
-					untinted: { base: "block/plant/flower/petal/{type}-harvested*" },
-					north: { base: "block/liquid/ice/lake*" },
-					east: { base: "block/liquid/ice/lake*" },
-					south: { base: "block/liquid/ice/lake*" },
-					west: { base: "block/liquid/ice/lake*" },
-					up: { base: "block/liquid/ice/lake*" },
-					down: { base: "block/liquid/ice/lake*" }
+				"*-coopersreed-land-growing-*": {
+					"northCross": {
+						"base": "fieldsofgold:block/plant/flower/petal/{type}-growing*"
+					},
+					"southCross": {
+						"base": "fieldsofgold:block/plant/flower/petal/{type}-growing*"
+					},
+					"northTintedCross": {
+						"base": "fieldsofgold:block/plant/flower/stem/{type}-growing*"
+					},
+					"southTintedCross": {
+						"base": "fieldsofgold:block/plant/flower/stem/{type}-growing*"
+					}
 				},
-				"*-water-growing-*": {
-					north: { base: "block/liquid/water" },
-					east: { base: "block/liquid/water" },
-					south: { base: "block/liquid/water" },
-					west: { base: "block/liquid/water" },
-					up: { base: "block/liquid/water" },
-					down: { base: "block/liquid/water" },
-					specialSecondTexture: { base: "block/liquid/water2" },
-					northCross: { base: "block/plant/flower/petal/{type}-harvested*" },
-					southCross: { base: "block/plant/flower/petal/{type}-harvested*" },
-					northTintedCross: { base: "block/plant/flower/stem/{type}-harvested*" },
-					southTintedCross: { base: "block/plant/flower/stem/{type}-harvested*" }
+				"*-coopersreed-ice-growing-*": {
+					tinted: { "base": "fieldsofgold:block/plant/flower/petal/{type}-growing*"  },
+					untinted: {"base": "fieldsofgold:block/plant/flower/petal/{type}-growing*" },
+					north: { "base": "block/liquid/ice/lake*" },
+					east: { "base": "block/liquid/ice/lake*" },
+					south: { "base": "block/liquid/ice/lake*" },
+					west: { "base": "block/liquid/ice/lake*" },
+					up: { "base": "block/liquid/ice/lake*" },
+					down: { "base": "block/liquid/ice/lake*" }
 				},
-				"*-growing-*": {
-					north: { base: "block/liquid/water" },
-					east: { base: "block/liquid/water" },
-					south: { base: "block/liquid/water" },
-					west: { base: "block/liquid/water" },
-					up: { base: "block/liquid/water" },
-					down: { base: "block/liquid/water" },
-					specialSecondTexture: { base: "block/liquid/water2" },
-					northCross: { base: "block/plant/flower/petal/{type}-harvested*" },
-					southCross: { base: "block/plant/flower/petal/{type}-harvested*" },
-					northTintedCross: { base: "block/plant/flower/stem/{type}-harvested*" },
-					southTintedCross: { base: "block/plant/flower/stem/{type}-harvested*" }
-				},
-				"*-ice-*": {
-					tinted: { base: "block/plant/flower/stem/{type}-state*"  },
-					untinted: { base: "block/plant/flower/petal/{type}-state*" },
-					north: { base: "block/liquid/ice/lake*" },
-					east: { base: "block/liquid/ice/lake*" },
-					south: { base: "block/liquid/ice/lake*" },
-					west: { base: "block/liquid/ice/lake*" },
-					up: { base: "block/liquid/ice/lake*" },
-					down: { base: "block/liquid/ice/lake*" }
+				}"*-coopersreed-water-growing-*": {
+					north: { "base": "block/liquid/water" },
+					east: { "base": "block/liquid/water" },
+					south: { "base": "block/liquid/water" },
+					west: { "base": "block/liquid/water" },
+					up: { "base": "block/liquid/water" },
+					down: { "base": "block/liquid/water" },
+					specialSecondTexture: { "base": "block/liquid/water2" },
+					"northCross": {	"base": "fieldsofgold:block/plant/flower/petal/{type}-growing*"},
+					"southCross": {	"base": "fieldsofgold:block/plant/flower/petal/{type}-growing*"},
+					"northTintedCross": {	"base": "fieldsofgold:block/plant/flower/stem/{type}-growing*"},
+					"southTintedCross": {	"base": "fieldsofgold:block/plant/flower/stem/{type}-growing*"}
 				},
 				"*-water-*": {
-					north: { base: "block/liquid/water" },
-					east: { base: "block/liquid/water" },
-					south: { base: "block/liquid/water" },
-					west: { base: "block/liquid/water" },
-					up: { base: "block/liquid/water" },
-					down: { base: "block/liquid/water" },
-					specialSecondTexture: { base: "block/liquid/water2" },
-					northCross: { base: "block/plant/flower/petal/{type}-{state}*" },
-					southCross: { base: "block/plant/flower/petal/{type}-{state}*" },
-					northTintedCross: { base: "block/plant/flower/stem/{type}-{state}*" },
-					southTintedCross: { base: "block/plant/flower/stem/{type}-{state}*" }
+					north: { "base": "block/liquid/water" },
+					east: { "base": "block/liquid/water" },
+					south: { "base": "block/liquid/water" },
+					west: { "base": "block/liquid/water" },
+					up: { "base": "block/liquid/water" },
+					down: { "base": "block/liquid/water" },
+					specialSecondTexture: { "base": "block/liquid/water2" },
+					northCross: { "base": "block/plant/flower/petal/{type}-{state}*" },
+					southCross: { "base": "block/plant/flower/petal/{type}-{state}*" },
+					northTintedCross: { "base": "block/plant/flower/stem/{type}-{state}*" },
+					southTintedCross: { "base": "block/plant/flower/stem/{type}-{state}*" }
 				},
 				"*": {
-					northCross: { base: "block/plant/flower/petal/{type}-{state}*" },
-					southCross: { base: "block/plant/flower/petal/{type}-{state}*" },
-					northTintedCross: { base: "block/plant/flower/stem/{type}-{state}*" },
-					southTintedCross: { base: "block/plant/flower/stem/{type}-{state}*" }
+					northCross: { "base": "block/plant/flower/petal/{type}-{state}*" },
+					southCross: { "base": "block/plant/flower/petal/{type}-{state}*" },
+					northTintedCross: { "base": "block/plant/flower/stem/{type}-{state}*" },
+					southTintedCross: { "base": "block/plant/flower/stem/{type}-{state}*" }
 				},
 				"file": "blocktypes/plant/reedpapyrus.json"
 		}
