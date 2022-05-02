@@ -19,11 +19,11 @@
 
   <ItemGroup>
     <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
+    <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
-    <None Remove="assets\game\patches\plant-reedpaparus-changes.json" />
+    <None Remove="assets\game\patches\oven.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
-    <None Remove="assets\game\patches\survival-blocktypes-plant-reedpapyrus.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
     <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
     <None Remove="assets\farmlife\livestockcontrol.json" />
@@ -188,10 +188,10 @@
     <Content Update="assets\game\patches\haypatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\game\patches\plant-berry-changes.json">
+    <Content Update="assets\game\patches\oven.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\game\patches\plant-reedpaparus-changes.json">
+    <Content Update="assets\game\patches\plant-berry-changes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\roofthatch.json">

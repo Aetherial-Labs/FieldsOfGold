@@ -25,9 +25,9 @@ namespace FieldsOfGold.Items
 
            
             if (itemslot.Itemstack.Collectible.FirstCodePart() == "halvedcattailroot" && waterBlock) {
-                block = api.World.GetBlock(new AssetLocation("tallplant-coopersreed-water-growing-free"));
+                block = api.World.GetBlock(new AssetLocation("fieldsofgold", "tallplant-coopersreed-water-growing-free"));
             } else if (itemslot.Itemstack.Collectible.FirstCodePart() == "halvedpapyrusroot" && waterBlock) {
-                block = api.World.GetBlock(new AssetLocation("tallplant-papyrus-water-growing-free"));
+                block = api.World.GetBlock(new AssetLocation("fieldsofgold", "tallplant-papyrus-water-growing-free"));
             }
 
             if (block == null)
