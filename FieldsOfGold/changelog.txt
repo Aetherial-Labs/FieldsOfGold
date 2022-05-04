@@ -1,4 +1,16 @@
-﻿1.16.4-1.2.2.-rc.4
+﻿1.16.4-1.2.2.-rc.6
+
+1.16.4-1.2.2.-rc.5
+- Finally fixed Reed behavior
+- Reeds now have a 3694 hour growth time when planted using a split cattail/papyrus root.
+- First growth period is 2771 hours, during which it is a 'sprouting <reed>'
+- It then becomes a 'harvested <reed>' for the next 923 hours, during this period it can be harvested for a full root.
+- After the aforementioned 923 hours it becomes a full reed, which can be harvested for fibers.  It will then return to the harvested state.
+- This means that you can harvest for reed tops multiple times per year if you do not harvest the root. 
+- Growing a cattail root crop would require nearly a full growing season.
+- Added Decay timer to papyrus root and cattail root
+
+1.16.4-1.2.2.-rc.4
 - Fix typo in morecrops, because I'm kinda dumb apparently.
 
 1.16.4-1.2.2-rc.3
@@ -117,8 +129,3 @@
 			-size of haystack
 		- In haystacks with more than 64 hay, turning them occasionally is needed to facilitate drying
 			-Alert will be added on block info that it needs to be turned
-
-
-
-
-

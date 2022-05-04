@@ -22,7 +22,7 @@
     <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
-    <None Remove="assets\game\patches\oven.json" />
+    <None Remove="assets\game\patches\reedspatch.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
     <None Remove="assets\moreanimals\patches\farmlifelivestock.json" />
@@ -186,9 +186,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\haypatch.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="assets\game\patches\oven.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\plant-berry-changes.json">

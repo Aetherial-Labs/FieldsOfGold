@@ -24,10 +24,8 @@ namespace FieldsOfGold
         {
             base.Start(api);
             api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
-            api.RegisterBlockClass("fogoven", typeof(FOGBlockClayOven));
 
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
-            api.RegisterBlockEntityClass("fogbeoven", typeof(FOGBlockEntityOven));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
             api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));

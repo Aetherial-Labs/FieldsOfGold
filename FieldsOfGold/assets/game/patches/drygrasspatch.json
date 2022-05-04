@@ -3,7 +3,8 @@
     "op": "replace",
     "path": "/class",
     "value": "fogdrygrass",
-    "file": "itemtypes/resource/drygrass.json"
+    "file": "itemtypes/resource/drygrass.json",
+    "side": "server"
   },
   {
     "op": "add",
@@ -13,6 +14,7 @@
       { "title": "fromgoldencombs:item-handbooktitle-drygrass", 
 												 "text": "fromgoldencombs:item-handbooktext-drygrass" } ]
 	},
-    "file": "itemtypes/resource/drygrass.json"
+    "file": "itemtypes/resource/drygrass.json",
+    "side": "server"
   }
 ]

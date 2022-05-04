@@ -3,90 +3,105 @@
     "op": "replace",
     "path": "/0/ingredientPattern",
     "value": "_H,HS",
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/0/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
 {
     "op": "add",
     "path": "/0/ingredients/S",
     "value": { "type": "item", "code": "game:stick", "quantity": 4},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/1/ingredientPattern",
     "value": "_H_,HSH",
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/1/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "add",
     "path": "/1/ingredients/S",
     "value": { "type": "item", "code": "game:stick", "quantity": 4},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/2/ingredientPattern",
     "value": "SHS,HHH",
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/2/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "add",
     "path": "/2/ingredients/S",
     "value": { "type": "item", "code": "game:stick", "quantity": 2},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/3/ingredientPattern",
     "value": "_H,HS,_H",
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/3/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "add",
     "path": "/3/ingredients/S",
     "value": { "type": "item", "code": "game:stick", "quantity": 4},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/4/ingredientPattern",
     "value": "SH,HH",
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/4/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   },
   {
     "op": "add",
     "path": "/4/ingredients/S",
     "value": { "type": "item", "code": "game:stick", "quantity": 4},
-    "file": "recipes/grid/roofing.json"
+    "file": "recipes/grid/roofing.json",
+    "side": "server"
   }
 ]

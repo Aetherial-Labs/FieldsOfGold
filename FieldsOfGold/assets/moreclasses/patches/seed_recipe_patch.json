@@ -3,36 +3,42 @@
     "op": "replace",
     "path": "/1/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   },
   {
     "op": "replace",
     "path": "/3/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   },
   {
     "op": "replace",
     "path": "/6/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   },
   {
     "op": "replace",
     "path": "/7/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   },
   {
     "op": "replace",
     "path": "/12/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   },
   {
     "op": "replace",
     "path": "/14/output/quantity",
     "value": 3,
-    "file": "moreclasses:recipes/grid/seeds.json"
+    "file": "moreclasses:recipes/grid/seeds.json",
+    "dependsOn": [{"modid": "moreclasses"}]
   }
 ]

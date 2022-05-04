@@ -3,42 +3,56 @@
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 56,
-    "file": "potatoes:blocktypes/plant/crop/beet.json"
+    "file": "potatoes:blocktypes/plant/crop/beet.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 90,
-    "file": "potatoes:blocktypes/plant/crop/cauliflower.json"
+    "file": "potatoes:blocktypes/plant/crop/cauliflower.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 90,
-    "file": "potatoes:blocktypes/plant/crop/corn.json"
+    "file": "potatoes:blocktypes/plant/crop/corn.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 120,
-    "file": "potatoes:blocktypes/plant/crop/eggplant.json"
+    "file": "potatoes:blocktypes/plant/crop/eggplant.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 80,
-    "file": "potatoes:blocktypes/plant/crop/jalapeno.json"
+    "file": "potatoes:blocktypes/plant/crop/jalapeno.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 90,
-    "file": "potatoes:blocktypes/plant/crop/potato.json"
+    "file": "potatoes:blocktypes/plant/crop/potato.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/cropProps/totalGrowthDays",
     "value": 98,
-    "file": "potatoes:blocktypes/plant/crop/yam.json"
+    "file": "potatoes:blocktypes/plant/crop/yam.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
   }
 ]

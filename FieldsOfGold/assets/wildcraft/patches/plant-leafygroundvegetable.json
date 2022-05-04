@@ -2,12 +2,16 @@
     "op": "replace",
     "path": "/entityClassByType/*-harvested",
     "value": "fogbetransient",
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "remove",
     "path": "/attributes/transientPropsByType/*-harvested",
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -19,7 +23,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -31,7 +37,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -43,7 +51,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -55,7 +65,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -67,7 +79,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -79,7 +93,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -91,7 +107,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -103,7 +121,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -115,7 +135,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -127,7 +149,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -139,7 +163,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -151,7 +177,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -163,7 +191,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -175,7 +205,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -187,7 +219,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -199,7 +233,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -211,7 +247,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -223,7 +261,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -235,7 +275,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -247,7 +289,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -259,7 +303,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -271,7 +317,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -283,7 +331,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -295,7 +345,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -307,7 +359,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -319,7 +373,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -331,7 +387,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -343,7 +401,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -355,7 +415,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -367,7 +429,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -379,7 +443,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -391,7 +457,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -403,7 +471,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -415,7 +485,9 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   },
   {
     "op": "add",
@@ -427,6 +499,8 @@
 			"resetBelowTemperature": -4,
 			"stopBelowTemperature": 2
     },
-    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json"
+    "file": "wildcraft:blocktypes/plant/leafygroundvegetable.json",
+    "dependsOn": [{"modid": "wildcraft"}],
+    "side": "server"
   }
 ]

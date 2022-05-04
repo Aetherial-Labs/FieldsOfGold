@@ -29,5 +29,7 @@
   "fieldsofgold:item-handbooktext-drygrass": "Can be stacked to start a haystack with ctrl+shift.",
   "fieldsofgold:haystacktoofewfibers": "You need more cattail or papyrus fibers to make a straw mat",
   "fieldsofgold:blockhelp-haybale": "Breaks haybale and returns 256 dry grass",
-  "fieldsofgold:block-strawmat-*": "Straw Mat"
+  "fieldsofgold:block-strawmat-*": "Straw Mat",
+  "block-tallplant-coopersreed-*-growing-*": "Sprouting Cooper's Reed",
+  "block-tallplant-papyrus-*": "Sprouting Papyrus"
 }
