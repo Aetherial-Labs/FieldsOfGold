@@ -12,7 +12,7 @@ namespace FieldsOfGold.BlockEntities
 {
     class FOGBEHaystack : BlockEntityItemPile, IBlockEntityItemPile
     {
-        internal AssetLocation soundLocation = new AssetLocation("game:sounds/blocks/plant.ogg");
+        internal AssetLocation soundLocation = new("game:sounds/blocks/plant.ogg");
 
         public override AssetLocation SoundLocation { get { return soundLocation; } }
 
@@ -34,7 +34,7 @@ namespace FieldsOfGold.BlockEntities
         public override int MaxStackSize { get { return 256; } }
 
 
-        MeshData[] meshes
+        MeshData[] Meshes
         {
             get
             {
@@ -69,7 +69,7 @@ namespace FieldsOfGold.BlockEntities
             lock (inventoryLock)
             {
                 int index = Math.Min(256, (int)Math.Ceiling(inventory[0].StackSize / 16.0));
-                meshdata.AddMeshData(meshes[index]);
+                meshdata.AddMeshData(Meshes[index]);
             }
 
             return true;
@@ -79,7 +79,6 @@ namespace FieldsOfGold.BlockEntities
         {
             
             bool sneaking = byPlayer.Entity.Controls.Sneak;
-            ItemSlot hotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
             ItemStack hotbarStack = byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack;
 
                         bool equalStack = hotbarStack != null && hotbarStack.Equals(Api.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes);
@@ -93,7 +92,7 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 256)
             {
-                ItemStack haystack = new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
+                ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
                 
                 
                 if (byPlayer.InventoryManager.TryGiveItemstack(haystack))
@@ -114,7 +113,7 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= 8)
             {
-                ItemStack strawmat = new ItemStack(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
+                ItemStack strawmat = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
 
                 if (hotbarStack.StackSize < 4)
                 {

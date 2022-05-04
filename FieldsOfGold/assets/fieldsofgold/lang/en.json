@@ -18,7 +18,6 @@
   "blockhelp-haystack-64removegrass": "Remove 64 grass",
   "blockhelp-haystack-makehaybale": "Create hay bale",
   "blockhelp-haystack-makemat": "Create straw mat",
-  "block-fieldsofgold:strawmat-*": "Straw Mat",
   "blockdesc-strawmat-*": "A straw mat made from reed fibers woven through straw",
   "fieldsofgold:block-handbooktitle-strawmat": "How To Craft:",
   "fieldsofgold:block-handbooktext-strawmat": "Straw mats are made by interacting with a Haystack using 4 cooper's reed or papyrus fibers. The Haystack must have at least 8 dry grass in it.",
@@ -29,5 +28,8 @@
   "fieldsofgold:item-handbooktitle-drygrass": "Create Haystack",
   "fieldsofgold:item-handbooktext-drygrass": "Can be stacked to start a haystack with ctrl+shift.",
   "fieldsofgold:haystacktoofewfibers": "You need more cattail or papyrus fibers to make a straw mat",
-  "fieldsofgold:blockhelp-haybale": "Breaks haybale and returns 256 dry grass"
+  "fieldsofgold:blockhelp-haybale": "Breaks haybale and returns 256 dry grass",
+  "fieldsofgold:block-strawmat-*": "Straw Mat",
+  "block-tallplant-coopersreed-*-growing-*": "Sprouting Cooper's Reed",
+  "block-tallplant-papyrus-*": "Sprouting Papyrus"
 }

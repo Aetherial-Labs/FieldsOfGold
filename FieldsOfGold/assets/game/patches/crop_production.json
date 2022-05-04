@@ -16,7 +16,8 @@
 		],
 		"*": []
 			},
-			"file": "blocktypes/plant/crop/amaranth.json"
+		"file": "blocktypes/plant/crop/amaranth.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -46,7 +47,8 @@
 		],
 		"*": []
 	},
-		"file": "blocktypes/plant/crop/bellpepper.json"
+	"file": "blocktypes/plant/crop/bellpepper.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -65,7 +67,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/cabbage.json"
+		"file": "blocktypes/plant/crop/cabbage.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -85,7 +88,8 @@
 						],
 			"*": []
 		},
-			"file": "blocktypes/plant/crop/carrot.json"
+		"file": "blocktypes/plant/crop/carrot.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -104,7 +108,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/cassava.json"
+		"file": "blocktypes/plant/crop/cassava.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -120,7 +125,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/flax.json"
+		"file": "blocktypes/plant/crop/flax.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -139,7 +145,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/onion.json"
+		"file": "blocktypes/plant/crop/onion.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -158,7 +165,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/parsnip.json"
+		"file": "blocktypes/plant/crop/parsnip.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -177,7 +185,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/peanut.json"
+		"file": "blocktypes/plant/crop/peanut.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -207,7 +216,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/pineapple.json"
+		"file": "blocktypes/plant/crop/pineapple.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -222,7 +232,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/rice.json"
+		"file": "blocktypes/plant/crop/rice.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -237,7 +248,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/rye.json"
+		"file": "blocktypes/plant/crop/rye.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -256,7 +268,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/soybean.json"
+		"file": "blocktypes/plant/crop/soybean.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -274,7 +287,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/spelt.json"
+		"file": "blocktypes/plant/crop/spelt.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -292,7 +306,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/sunflower.json"
+		"file": "blocktypes/plant/crop/sunflower.json",
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -311,7 +326,8 @@
 		],
 		"*": []
 	},
-			"file": "blocktypes/plant/crop/turnip.json"
+	"file": "blocktypes/plant/crop/turnip.json",
+    "side": "server"
 	}
 ]
 	

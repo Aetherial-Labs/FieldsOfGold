@@ -8,26 +8,27 @@ namespace FieldsOfGold.Items
 {
 	class FOGDryGrass : ItemDryGrass
 	{
-		AssetLocation PileBlockCode => new AssetLocation("fieldsofgold", "haystack");
+		AssetLocation PileBlockCode => new("fieldsofgold", "haystack");
 
 		public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
 		{
-			
+			if (blockSel == null || (byEntity?.World) == null)
+			{
+				return;
+			}
+
 			EntityPlayer asPlayer = byEntity as EntityPlayer;
 			IPlayer byPlayer = byEntity.World.PlayerByUid((asPlayer)?.PlayerUID);
 			BlockPos onPos = blockSel.DidOffset ? blockSel.Position : blockSel.Position.AddCopy(blockSel.Face);
 			BlockPos position = blockSel.Position;
-			if (blockSel == null || ((byEntity != null) ? byEntity.World : null) == null)
-            {
-                return;
-            }
+			
 
             if (!byEntity.World.Claims.TryAccess(byPlayer, onPos, EnumBlockAccessFlags.BuildOrBreak))
             {
                 return;
             }
 
-            System.Diagnostics.Debug.WriteLine("OnPos is " + api.World.BlockAccessor.GetBlock(onPos).Code + "Pos is " + api.World.BlockAccessor.GetBlock(position).Code);
+            
             if (byEntity.Controls.Sneak && byEntity.Controls.Sprint && !(api.World.BlockAccessor.GetBlock(position) is FOGHaystack))
 			{
 				if (!byEntity.World.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
@@ -39,7 +40,7 @@ namespace FieldsOfGold.Items
 				{
 					return;
 				}
-				if (blockEntity is IBlockEntityItemPile && ((IBlockEntityItemPile)blockEntity).OnPlayerInteract(byPlayer))
+				if (blockEntity is IBlockEntityItemPile pile && pile.OnPlayerInteract(byPlayer))
 				{
 					handHandling = EnumHandHandling.PreventDefaultAction;
 					IClientPlayer clientPlayer = ((byPlayer != null) ? (byEntity as EntityPlayer).Player : null) as IClientPlayer;
@@ -49,16 +50,14 @@ namespace FieldsOfGold.Items
 				else
 				{
 					blockEntity = byEntity.World.BlockAccessor.GetBlockEntity(onPos.AddCopy(blockSel.Face));
-					if (blockEntity is IBlockEntityItemPile && ((IBlockEntityItemPile)blockEntity).OnPlayerInteract(byPlayer))
+					if (blockEntity is IBlockEntityItemPile apile && apile.OnPlayerInteract(byPlayer))
 					{
 						handHandling = EnumHandHandling.PreventDefaultAction;
-						EntityPlayer entityPlayer2 = byEntity as EntityPlayer;
-						IClientPlayer clientPlayer2 = ((entityPlayer2 != null) ? entityPlayer2.Player : null) as IClientPlayer;
-						if (clientPlayer2 == null)
-						{
-							return;
-						}
-						clientPlayer2.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+                        if (((byEntity is EntityPlayer entityPlayer2) ? entityPlayer2.Player : null) is not IClientPlayer clientPlayer2)
+                        {
+                            return;
+                        }
+                        clientPlayer2.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
 						return;
 					}
 					else
@@ -85,13 +84,11 @@ namespace FieldsOfGold.Items
 							return;
 						}
 						handHandling = EnumHandHandling.PreventDefaultAction;
-						EntityPlayer entityPlayer3 = byEntity as EntityPlayer;
-						IClientPlayer clientPlayer3 = ((entityPlayer3 != null) ? entityPlayer3.Player : null) as IClientPlayer;
-						if (clientPlayer3 == null)
-						{
-							return;
-						}
-						clientPlayer3.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+                        if (((byEntity is EntityPlayer entityPlayer3) ? entityPlayer3.Player : null) is not IClientPlayer clientPlayer3)
+                        {
+                            return;
+                        }
+                        clientPlayer3.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
 						return;
 					}
 				}

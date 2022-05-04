@@ -8,6 +8,13 @@
 	},
 	"maxstacksize": 64,
 	"materialDensity": 100,
+	"transitionableProps": [{
+			type: "Perish",
+			freshHours: { avg: 168 },
+			transitionHours: { avg: 72 },
+			transitionedStack: { type: "item", code: "rot" },
+			transitionRatio: 0.55
+		}],
 	"guiTransform": {
 		"rotation": {
 			"x": -3,

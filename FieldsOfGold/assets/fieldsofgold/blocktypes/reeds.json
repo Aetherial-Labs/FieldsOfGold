@@ -1,0 +1,206 @@
+{
+		"code": "tallplant",
+		"class": "fogreeds",
+		"entityClass": "fogbetransient",
+		"attributes": {
+			climateColorMapForMap: "climatePlantTint", 
+			seasonColorMapForMap: "seasonalFoliage",
+			transientPropsByType: {
+			"*-coopersreed-water-growing-*": {
+      "convertFrom": "*-coopersreed-water-growing-{cover}",
+      "convertTo": "game:tallplant-coopersreed-water-harvested-{cover}",
+      "inGameHours": "2771",
+      "resetBelowTemperature": -8,
+      "stopBelowTemperature": 2
+    },
+			"*-papyrus-water-growing-*": {
+      "convertFrom": "*-papyrus-water-growing-{cover}",
+      "convertTo": "game:tallplant-papyrus-water-harvested-{cover}",
+      "inGameHours": "2771",
+      "resetBelowTemperature": -8,
+      "stopBelowTemperature": 2
+    }
+	}
+	},
+	"variantgroups": [
+		{ "code": "type", "states": ["coopersreed", "papyrus"] },
+		{ "code": "habitat", "states": ["land", "water", "ice"] },
+		{ "code": "state", "states": ["growing"]},
+		{ "code": "cover", "states": ["free", "snow"] },
+	],
+	"allowedVariants": [ 
+		"*-land-*", 
+		"*-water-growing-free",
+		"*-ice-growing-free"
+	],
+	"shapeByType": {
+		"*-papyrus-ice-growing-free": { "base": "game:block/plant/reedpapyrus/papyrus-harvested-ice" },		
+		"*-papyrus-*-growing-*": { "base": "game:block/plant/reedpapyrus/papyrus-harvested" },		
+		
+		"*-coopersreed-ice-growing-*": { "base": "game:block/plant/reedpapyrus/reeds-ice" },
+		"*-coopersreed-*-growing-*": { "base": "game:block/plant/reedpapyrus/reeds" }
+	},
+	drawtypeByType: {
+		"*-water-*": "JSONAndWater",
+		"*-snow": "JSONAndSnowLayer",
+		"*": "JSON"
+	},
+	liquidCodeByType: {
+		"*-water-*": "water"
+	},
+	renderpassByType: {
+		"*-water-*": "liquid",
+		"*": "OpaqueNoCull",
+	},
+	matterstateByType: {
+		"*-water-*": "liquid",
+		"*": "solid",
+	},
+	blockmaterialByType: {
+		"*-ice-*": "ice",
+		"*-water-*": "liquid",
+		"*": "plant"
+	},
+	faceCullModeByType: {
+		"*-ice-*": "callback",
+		"*-water-*": "liquid",
+		"*": "default"
+	},
+	liquidLevelByType: {
+		"*-water-*": 7
+	},
+	randomDrawOffset: true,
+	randomizeRotations: true,
+	texturesByType: {
+		"*-coopersreed-ice-growing-*":{
+				"tinted": { "base": "game:block/plant/flower/stem/coopersreed-harvested*" },
+       	"untinted": { "base": "game:block/plant/flower/petal/coopersreed-harvested*" },
+				"north": { "base": "game:block/liquid/ice/lake*" },
+				"east": { "base": "game:block/liquid/ice/lake*" },
+				"south": { "base": "game:block/liquid/ice/lake*" },
+				"west": { "base": "game:block/liquid/ice/lake*" },
+				"up": { "base": "game:block/liquid/ice/lake*" },
+				"down": { "base": "game:block/liquid/ice/lake*" }
+		    },
+		"*-coopersreed-water-growing-*": {
+				"north": { "base": "game:block/liquid/water" },
+				"east": { "base": "game:block/liquid/water" },
+				"south": { "base": "game:block/liquid/water" },
+				"west": { "base": "game:block/liquid/water" },
+				"up": { "base": "game:block/liquid/water" },
+				"down": { "base": "game:block/liquid/water" },
+				"specialSecondTexture": { "base": "game:block/liquid/water2" },
+				"northCross": { "base": "game:block/plant/flower/petal/coopersreed-harvested*" },
+				"southCross": { "base": "game:block/plant/flower/petal/coopersreed-harvested*" },
+				"northTintedCross": { "base": "game:block/plant/flower/stem/coopersreed-harvested*" },
+				"southTintedCross": { "base": "game:block/plant/flower/stem/coopersreed-harvested*" }
+		    },
+		"*-coopersreed-*-growing-*": {
+			"northCross": { "base": "game:block/plant/flower/petal/coopersreed-harvested*" },
+			"southCross": { "base": "game:block/plant/flower/petal/coopersreed-harvested*" },
+			"northTintedCross": { "base": "game:block/plant/flower/stem/coopersreed-harvested*" },
+			"southTintedCross": { "base": "game:block/plant/flower/stem/coopersreed-harvested*" }
+		},
+		"*papyrus-ice-growing-*":{
+				"tinted": { "base": "block/plant/flower/stem/papyrus-harvested*" },
+       	"untinted": { "base": "block/plant/flower/petal/papyrus-harvested*" },
+				"north": { "base": "game:block/liquid/ice/lake*" },
+				"east": { "base": "game:block/liquid/ice/lake*" },
+				"south": { "base": "game:block/liquid/ice/lake*" },
+				"west": { "base": "game:block/liquid/ice/lake*" },
+				"up": { "base": "game:block/liquid/ice/lake*" },
+				"down": { "base": "game:block/liquid/ice/lake*" }
+		    },
+		"*-papyrus-water-growing-*": {
+				"north": { "base": "game:block/liquid/water" },
+				"east": { "base": "game:block/liquid/water" },
+				"south": { "base": "game:block/liquid/water" },
+				"west": { "base": "game:block/liquid/water" },
+				"up": { "base": "game:block/liquid/water" },
+				"down": { "base": "game:block/liquid/water" },
+				"specialSecondTexture": { "base": "game:block/liquid/water2" },
+				"northCross": { "base": "block/plant/flower/petal/papyrus-harvested*" },
+				"southCross": { "base": "block/plant/flower/petal/papyrus-harvested*" },
+				"northTintedCross": { "base": "block/plant/flower/stem/papyrus-harvested*" },
+				"southTintedCross": { "base": "block/plant/flower/stem/papyrus-harvested*" }
+		    },
+		"*papyrus-*-growing-*": {
+			"northCross": { "base": "block/plant/flower/petal/papyrus-harvested*" },
+			"southCross": { "base": "block/plant/flower/petal/papyrus-harvested*" },
+			"northTintedCross": { "base": "block/plant/flower/stem/papyrus-harvested*" },
+			"southTintedCross": { "base": "block/plant/flower/stem/papyrus-harvested*" }
+		}
+	},
+	sideopaqueByType: {
+		"*-snow": { all: false, down: true },
+		"*": { all: false }
+	},
+	sidesolidByType: {
+		"*-ice-*": { all: true },
+		"*": { all : false }
+	},
+	emitsideaoByType: {
+		"*-water-*": { all: true },
+		"*": { all: false },
+	},
+	sideao: { all: true },
+	replaceable: 3000,
+	lightAbsorptionByType: {
+		"*-water-*": 2,
+		"*": 0
+	},
+	resistance: 1,
+	collisionboxByType: {
+		"*-land-*": null,
+		"*-water-*": null,
+	},
+	selectionbox: {
+		x1: 0, y1: 0, z1: 0,
+		x2: 1, y2: 1, z2: 1
+	},
+	guitransform: {
+		rotation: { x: 0, y: 0, z: 0 }
+	},
+	soundsByType: {
+		"*-ice-*": {
+			break: "game:block/plant",
+			hit: "game:block/plant",
+			walk: "game:walk/ice"
+		},
+		"*-water": {
+			place: "game:block/plant",
+			break: "game:block/plant",
+			hit: "game:block/plant",
+			inside: "game:walk/water"
+		},
+		"*": {
+			place: "game:block/plant",
+			break: "game:block/plant",
+			hit: "game:block/plant"
+		},
+	},
+	rainPermeableByType: {
+		"*-land-*": true
+	},
+	materialDensity: 200,
+	vertexFlagsByType: {
+		"*-ice-*": { zOffset: 1 }
+	},
+	dragMultiplierByType: {
+		"*-ice": 0.02,
+	},
+	frostable: true,
+	combustibleProps: {
+		burnTemperature: 600,
+		burnDuration: 10,
+	},
+	guiTransform: {
+		translation: { x: 0, y: -1.5, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 1.2, z: 0.5 },
+		scale: 0.65
+	},
+	dropsByType: {
+		"*": [ { type: "item", code: "game:cattailtops", "quantity": {"avg": 0}} ]
+	}
+}

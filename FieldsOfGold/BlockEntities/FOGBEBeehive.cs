@@ -38,7 +38,7 @@ namespace FieldsOfGold.BlockEntities
         // Current scan values
         int scanQuantityNearbyFlowers;
         int scanQuantityNearbyHives;
-        List<BlockPos> scanEmptySkeps = new();
+        readonly List<BlockPos> scanEmptySkeps = new();
 
         // Temporary values
         EnumHivePopSize hivePopSize;
@@ -89,11 +89,10 @@ namespace FieldsOfGold.BlockEntities
                 ICoreClientAPI capi = api as ICoreClientAPI;
                 Block fullSkep = api.World.GetBlock(new AssetLocation("skep-populated-east"));
 
-                MeshData mesh;
                 capi.Tesselator.TesselateShape(
                     fullSkep,
                     api.Assets.TryGet("shapes/block/beehive/skep-harvestable.json").ToObject<Shape>(),
-                    out mesh,
+                    out MeshData mesh,
                     new Vec3f(0, BlockFacing.FromCode(orientation).HorizontalAngleIndex * 90 - 90, 0)
                 );
                 api.ObjectCache["beehive-harvestablemesh-" + orientation] = mesh;
@@ -106,8 +105,8 @@ namespace FieldsOfGold.BlockEntities
 
         }
 
-        Vec3d startPos = new();
-        Vec3d endPos = new();
+        readonly Vec3d startPos = new();
+        readonly Vec3d endPos = new();
         Vec3f minVelo = new();
         private void SpawnBeeParticles(float dt)
         {

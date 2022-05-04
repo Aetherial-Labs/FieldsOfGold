@@ -15,7 +15,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/yam.json"
+			"file": "potatoes:blocktypes/plant/crop/yam.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -34,7 +36,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/beet.json"
+			"file": "potatoes:blocktypes/plant/crop/beet.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -53,7 +57,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/cauliflower.json"
+			"file": "potatoes:blocktypes/plant/crop/cauliflower.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -68,7 +74,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/corn.json"
+			"file": "potatoes:blocktypes/plant/crop/corn.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -87,7 +95,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/eggplant.json"
+			"file": "potatoes:blocktypes/plant/crop/eggplant.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -102,7 +112,9 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/jalapeno.json"
+			"file": "potatoes:blocktypes/plant/crop/jalapeno.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	},
 	{
     "op": "replace",
@@ -121,6 +133,8 @@
 		],
 		"*": []
 			},
-			"file": "potatoes:blocktypes/plant/crop/potato.json"
+			"file": "potatoes:blocktypes/plant/crop/potato.json",
+    "dependsOn": [{"modid": "potatoes"}],
+    "side": "server"
 	}
 ]

@@ -13,7 +13,7 @@ namespace FieldsOfGold.BlockEntities
 {
     public class FOGBEBerryBush : BlockEntity, IAnimalFoodSource
     {
-        static Random rand = new();
+        static readonly Random rand = new();
 
         double lastCheckAtTotalDays = 0;
         double transitionHoursLeft = -1;
@@ -159,8 +159,7 @@ namespace FieldsOfGold.BlockEntities
         public double GetHoursForNextStage()
         {
             //Determine modifier for adjusted month times
-            Double monthlengthmod = Api.World.Calendar.DaysPerMonth/30;  
-
+            float monthlengthmod = Api.World.Calendar.DaysPerMonth/30f;
             //Calculate duration to next stage and modify by monthlengthmod
             if (Block.Variant["state"] == "flowering") return ((100 * (.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
 

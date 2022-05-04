@@ -3,12 +3,14 @@
     "op": "replace",
     "path": "/0/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/bed.json"
+    "file": "recipes/grid/bed.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/1/ingredients/H",
     "value": { "type": "block", "code": "fieldsofgold:strawmat-down"},
-    "file": "recipes/grid/bed.json"
+    "file": "recipes/grid/bed.json",
+    "side": "server"
   }
 ]

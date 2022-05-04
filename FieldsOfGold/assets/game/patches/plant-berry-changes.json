@@ -3,12 +3,14 @@
     "op": "replace",
     "path": "/entityclass",
     "value": "fogbeberrybush",
-    "file": "blocktypes/plant/bigberrybush.json"
+    "file": "blocktypes/plant/bigberrybush.json",
+    "side": "server"
   },
   {
     "op": "replace",
     "path": "/entityclass",
     "value": "fogbeberrybush",
-    "file": "blocktypes/plant/smallberrybush.json"
+    "file": "blocktypes/plant/smallberrybush.json",
+    "side": "server"
   }
 ]

@@ -12,7 +12,6 @@ namespace FieldsOfGold.Items
     {
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
         {
-            System.Diagnostics.Debug.WriteLine("Is this shit on?");
             if (blockSel == null || byEntity?.World == null || !byEntity.Controls.Sneak)
             {
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
@@ -26,14 +25,13 @@ namespace FieldsOfGold.Items
 
            
             if (itemslot.Itemstack.Collectible.FirstCodePart() == "halvedcattailroot" && waterBlock) {
-                block = api.World.GetBlock(new AssetLocation("tallplant-coopersreed-water-growing-free"));
+                block = api.World.GetBlock(new AssetLocation("fieldsofgold", "tallplant-coopersreed-water-growing-free"));
             } else if (itemslot.Itemstack.Collectible.FirstCodePart() == "halvedpapyrusroot" && waterBlock) {
-                block = api.World.GetBlock(new AssetLocation("tallplant-papyrus-water-growing-free"));
+                block = api.World.GetBlock(new AssetLocation("fieldsofgold", "tallplant-papyrus-water-growing-free"));
             }
 
             if (block == null)
             {
-                System.Diagnostics.Debug.WriteLine("Is this shit on3?");
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
                 return;
             }
@@ -46,7 +44,6 @@ namespace FieldsOfGold.Items
 
             string useless = "";
 
-            System.Diagnostics.Debug.WriteLine("Is this shit on2?");
             bool ok = block.TryPlaceBlock(byEntity.World, byPlayer, itemslot.Itemstack, blockSel, ref useless);
 
             if (ok)

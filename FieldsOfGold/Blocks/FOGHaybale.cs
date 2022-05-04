@@ -30,7 +30,7 @@ namespace FieldsOfGold.Items
 
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
         {
-            List<ItemStack> canAddKnifeStacks = new List<ItemStack>();
+            List<ItemStack> canAddKnifeStacks = new();
             foreach (CollectibleObject obj in api.World.Collectibles)
             {         
                 ICoreClientAPI capi = api as ICoreClientAPI;
