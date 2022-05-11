@@ -1,4 +1,8 @@
-﻿1.16.4-1.2.2.-rc.6
+﻿1.16-4-1.2.2
+- Added compatibiltiy with vanvar pans
+
+1.16.4-1.2.2.-rc.6
+- Fixed seed recipe with pan to ensure it doesn't consume the pan (Recipe only appears with Moreclasses in)
 
 1.16.4-1.2.2.-rc.5
 - Finally fixed Reed behavior
