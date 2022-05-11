@@ -12,6 +12,7 @@
     "width": 1,
     "height": 2,
     "output": {
-      "type": "Item", "code": "fieldsofgold:halvedcattailroot", "quantity": 2}
+    "type": "Item", "code": "fieldsofgold:halvedcattailroot", "quantity": 2},
+    "side": "server"
   }
 ]

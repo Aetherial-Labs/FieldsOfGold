@@ -1,9 +1,23 @@
 [
-{
-  "op": "replace",
-  "path": "/0/enabled",
-  "value": false,
-  "file": "fieldsofgold:recipes/grid/graintoseed.json",
-  "dependson": [{"modid": "moreclasses"}]
-}
+  {
+    "op": "replace",
+    "path": "/0/enabled",
+    "value": "false",
+    "file": "fieldsofgold:recipes/grid/graintoseed.json",
+    "dependsOn": [{"modid": "moreclasses"}]
+  },
+  {
+    "op": "replace",
+    "path": "/1/enabled",
+    "value": "true",
+    "file": "fieldsofgold:recipes/grid/graintoseed.json",
+    "dependsOn": [{"modid": "moreclasses"}]
+  },
+  {
+    "op": "replace",
+    "path": "/2/enabled",
+    "value": "true",
+    "file": "fieldsofgold:recipes/grid/graintoseed.json",
+    "dependsOn": [{"modid": "moreclasses"}]
+  }
 ]

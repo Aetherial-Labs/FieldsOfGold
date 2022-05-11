@@ -9,35 +9,48 @@
     "name": "grainseedrecipe",
     "width": 1,
     "height": 1,
-    "output": {
-      "type": "Item", "code": "game:seeds-{type}", "quantity": 3}
+    "output": {"type": "Item", "code": "game:seeds-{type}", "quantity": 4},
+    "side": "server"
   },
   {
-    
     "ingredientPattern": "A,P",
-    "enabled": true,
+    "enabled": false,
     "ingredients": {
       "A": { "type": "Item", "code": "game:grain-*", "name": "type", "quantity": 2},
-      "P": { "type": "Block", "code": "game:pan-*"}
+      "P": { "type": "Block", "code": "game:pan-*", "name": "wood", "returnedStack": { "type": "block", "code": "game:pan-{wood}" }}
     },
-    "name": "grainseedrecipe",
+    "name": "grainseedrecipe2",
     "width": 1,
     "height": 2,
     "output": {
-      "type": "Item", "code": "game:seeds-{type}", "quantity": 3},
-    "dependsOn": [{"modid": "moreclasses"}]
+    "type": "Item", "code": "game:seeds-{type}", "quantity": 3},
+    "side": "server"
   },
   {
-    "ingredientPattern": "A",
+    "ingredientPattern": "A,P",
+    "enabled": false,
+    "ingredients": {
+      "A": { "type": "Item", "code": "game:grain-*", "name": "type", "quantity": 2},
+      "P": {type: "Block", "code": "moreclasses:metalpan-copper", "returnedStack": {type: "Block", "code": "moreclasses:metalpan-copper" }}
+    },
+    "name": "grainseedrecipe3",
+    "width": 1,
+    "height": 2,
+    "output": {"type": "Item", "code": "game:seeds-{type}", "quantity": 3},
+    "side": "server"
+  },
+  {
+    "ingredientPattern": "A,P",
     "enabled": true,
     "ingredients": {
-      "A": {
-        "type": "Item", "code": "game:seeds-*", "name": "type", "allowedvariants": ["spelt", "rice", "flax", "rye", "amaranth", "sunflower"], "quantity": "4"}
+      "A": { "type": "Item", "code": "game:seeds-*", "name": "type", "allowedvariants": ["spelt", "rice", "flax", "rye", "amaranth", "sunflower"], "quantity": "4"},
+      "P": { "type": "Block", "code": "game:pan-*", "name": "wood", "returnedStack": { "type": "block", "code": "game:pan-{wood}" }}
     },
     "name": "seedgrainrecipe",
     "width": 1,
-    "height": 1,
+    "height": 2,
     "output": {
-      "type": "Item", "code": "game:grain-{type}", "quantity": 3}
+    "type": "Item", "code": "game:grain-{type}"},
+    "side": "server"
   }
 ]
