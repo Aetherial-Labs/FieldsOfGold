@@ -19,7 +19,7 @@ namespace FieldsOfGold
         {
             return true;
         }
-
+        //Test
         public override void Start(ICoreAPI api)
         {
             base.Start(api);

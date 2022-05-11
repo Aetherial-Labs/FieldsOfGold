@@ -64,7 +64,7 @@
 			transitionedStack: { type: "item", code: "rot" },
 			transitionRatio: 0.55
 		}],
-    "file": "game:itemtypes/resource/papyrus.json",
+    "file": "game:itemtypes/resource/papyrusroot.json",
     "side": "server"
   }
 ]
