@@ -1,5 +1,6 @@
 ﻿1.16-4-1.2.2
 - Added compatibiltiy with vanvar pans
+- Corrected compatibility issues with seed to grain/grain to seed recipes
 
 1.16.4-1.2.2.-rc.6
 - Fixed seed recipe with pan to ensure it doesn't consume the pan (Recipe only appears with Moreclasses in)
