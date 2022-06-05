@@ -1,4 +1,5 @@
 ﻿using FieldsOfGold.BlockEntities;
+using FieldsOfGold.config;
 using System;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -10,42 +11,43 @@ namespace FieldsOfGold.Blocks
 {
     class FOGHaystack : Block, IBlockItemPile
     {
+        Cuboidf[][] CollisionBoxesByFillLevel;
         //TODO: Analyze this code to figure out how to give haystacks a dynamic collision box size.
-        //public BlockFirewoodPile()
-        //{
-        //    this.CollisionBoxesByFillLevel = new Cuboidf[5][];
-        //    for (int i = 0; i <= 4; i++)
-        //    {
-        //        this.CollisionBoxesByFillLevel[i] = new Cuboidf[]
-        //        {
-        //            new Cuboidf(0f, 0f, 0f, 1f, (float)i * 0.25f, 1f)
-        //        };
-        //    }
-        //}
+        public FOGHaystack()
+        {
+            this.CollisionBoxesByFillLevel = new Cuboidf[17][];
+            for (int i = 0; i <= 16; i++)
+            {
+                this.CollisionBoxesByFillLevel[i] = new Cuboidf[]
+                {
+                    new Cuboidf(0f, 0f, 0f, 1f, (float)i * 0.0625f, 1f)
+                };
+            }
+        }
 
         //// Token: 0x06000FCC RID: 4044 RVA: 0x000898E0 File Offset: 0x00087AE0
-        //public int FillLevel(IBlockAccessor blockAccessor, BlockPos pos)
-        //{
-        //    BlockEntity blockEntity = blockAccessor.GetBlockEntity(pos);
-        //    if (blockEntity is BlockEntityFirewoodPile)
-        //    {
-        //        return (int)Math.Ceiling((double)((BlockEntityFirewoodPile)blockEntity).OwnStackSize / 8.0);
-        //    }
-        //    return 1;
-        //}
+        public int FillLevel(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            BlockEntity blockEntity = blockAccessor.GetBlockEntity(pos);
+            if (blockEntity is FOGBEHaystack)
+            {
+                return (int)Math.Ceiling((double)((FOGBEHaystack)blockEntity).OwnStackSize / (((FOGBEHaystack)blockEntity).MaxStackSize/16));
+            }
+            return 1;
+        }
 
         //// Token: 0x06000FCD RID: 4045 RVA: 0x0000AD94 File Offset: 0x00008F94
-        //public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
-        //{
-        //    return this.CollisionBoxesByFillLevel[this.FillLevel(blockAccessor, pos)];
-        //}
+        public override Cuboidf[] GetCollisionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            return this.CollisionBoxesByFillLevel[this.FillLevel(blockAccessor, pos)];
+        }
 
         //// Token: 0x06000FCE RID: 4046 RVA: 0x0000AD94 File Offset: 0x00008F94
-        //public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
-        //{
-        //    return this.CollisionBoxesByFillLevel[this.FillLevel(blockAccessor, pos)];
-        //}
-        //
+        public override Cuboidf[] GetSelectionBoxes(IBlockAccessor blockAccessor, BlockPos pos)
+        {
+            return this.CollisionBoxesByFillLevel[this.FillLevel(blockAccessor, pos)];
+        }
+
         //private Cuboidf[][] CollisionBoxesByFillLevel;
 
         public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
@@ -133,7 +135,7 @@ namespace FieldsOfGold.Blocks
                     HotKeyCode = "sneak",
                     Itemstacks = new ItemStack[]
                     {
-                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 16)
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), FieldsOfGoldConfig.Current.dryGrassAddedPerInteract)
                     }
                 },
                 new WorldInteraction
@@ -153,7 +155,7 @@ namespace FieldsOfGold.Blocks
                     },
                     Itemstacks = new ItemStack[]
                     {
-                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 64)
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), FieldsOfGoldConfig.Current.dryGrassAddedPerInteractWithShiftSneak)
                     }
                 },
                 new WorldInteraction
@@ -168,7 +170,7 @@ namespace FieldsOfGold.Blocks
                     HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right,Itemstacks = new ItemStack[]
                     {
-                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 256),
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock),
                         new ItemStack(world.GetItem(new AssetLocation("rope")), 1)
                     }
                 },
@@ -178,8 +180,8 @@ namespace FieldsOfGold.Blocks
                     HotKeyCode = "sprint",
                     MouseButton = EnumMouseButton.Right,Itemstacks = new ItemStack[]
                     {
-                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), 8),
-                        new ItemStack(world.GetItem(new AssetLocation("cattailtops")), 4)
+                        new ItemStack(world.GetItem(new AssetLocation("drygrass")), FieldsOfGoldConfig.Current.dryGrassPerMat),
+                        new ItemStack(world.GetItem(new AssetLocation("cattailtops")), FieldsOfGoldConfig.Current.cattailPerMat)
                     }
                 }
             }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
