@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using FieldsOfGold.config;
+using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 
@@ -15,7 +17,7 @@ namespace FieldsOfGold.Items
 			{
 				api.World.BlockAccessor.SetBlock(0, blockSel.Position);
 
-				int haybaleYield = (256/8);
+				int haybaleYield = (FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock / 8);
 				for (int i = haybaleYield; i > 0; i--)
 				{
 					api.World.SpawnItemEntity(new ItemStack(api.World.GetItem(new AssetLocation("drygrass")),8), blockSel.Position.ToVec3d() +
@@ -48,7 +50,7 @@ namespace FieldsOfGold.Items
 
                 new WorldInteraction
                 {
-                  ActionLangCode = "fieldsofgold:blockhelp-haybale",
+                  ActionLangCode = Lang.Get("fieldsofgold:blockhelp-haybale", FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock),
                   MouseButton = EnumMouseButton.Right,
                   Itemstacks = canAddKnifeStacks.ToArray()
                 }
