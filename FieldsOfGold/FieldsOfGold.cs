@@ -5,7 +5,10 @@ using FieldsOfGold.Items;
 using HarmonyLib;
 using System;
 using System.Text;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Server;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace FieldsOfGold
@@ -14,7 +17,9 @@ namespace FieldsOfGold
     {
 
         private readonly Harmony _harmony = new("harmoniousfog");
-        
+        internal static IServerNetworkChannel serverChannel;
+        internal static IClientNetworkChannel clientChannel;
+
         public override bool ShouldLoad(EnumAppSide forSide)
         {
             return true;
@@ -65,6 +70,34 @@ namespace FieldsOfGold
             }
         }
 
+        public override void StartClientSide(ICoreClientAPI api)
+        {
+            base.StartClientSide(api);
+            clientChannel = api.Network.RegisterChannel("fieldsofgold");
+            clientChannel.RegisterMessageType(typeof(FOGConfigSyncPacket));
+            clientChannel.SetMessageHandler<FOGConfigSyncPacket>((packet) =>
+            {
+                FieldsOfGoldConfig.Current = SerializerUtil.Deserialize<FieldsOfGoldConfig>(packet.configData);
+            });
+        }
+        public override void StartServerSide(ICoreServerAPI api)
+        {
+            base.StartServerSide(api);
+            serverChannel = api.Network.RegisterChannel("fieldsofgold");
+            serverChannel.RegisterMessageType(typeof(FOGConfigSyncPacket));
+            api.Event.PlayerNowPlaying += (byPlayer) =>
+            {
+                {
+                    serverChannel.SendPacket(new FOGConfigSyncPacket()
+                    {
+                        
+                        configData = SerializerUtil.Serialize(FieldsOfGoldConfig.Current)
+
+                    }, byPlayer); ; ;
+                };
+            };
+            
+        }
         public override void Dispose()
         {
             var harmony = new Harmony("harmoniousfog");
@@ -135,6 +168,10 @@ namespace FieldsOfGold
         {
             double daysTillNextStage;
             daysTillNextStage = Math.Round((__instance.TotalHoursForNextStage-__instance.Api.World.Calendar.TotalHours) / __instance.Api.World.Calendar.HoursPerDay);
+            if(daysTillNextStage > FieldsOfGoldConfig.Current.maxShownStageLengthDays)
+            {
+                return;
+            }
             if (daysTillNextStage > 1)
             {
                 dsc.AppendLine("Crop will reach next stage in " + daysTillNextStage + " days.");
