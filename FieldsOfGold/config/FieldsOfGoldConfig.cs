@@ -9,6 +9,9 @@ namespace FieldsOfGold.config
     class FieldsOfGoldConfig
     {
         public int hiveHoursToHarvest = 1488;
+        public int DaysBerryEmptyToFlower = 60;
+        public int DaysBerryFlowerToRipe = 28;
+        public int DaysBerryRipeToEmpty = 14;
 
         public FieldsOfGoldConfig()
         {}
@@ -20,6 +23,10 @@ namespace FieldsOfGold.config
             FieldsOfGoldConfig defaultConfig = new();
 
             defaultConfig.hiveHoursToHarvest = 1488;
+            defaultConfig.DaysBerryEmptyToFlower = 60;
+            defaultConfig.DaysBerryFlowerToRipe = 28;
+            defaultConfig.DaysBerryRipeToEmpty = 14;
+
             //defaultConfig.HiveSeasons = 
             return defaultConfig;
         }

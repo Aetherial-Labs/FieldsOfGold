@@ -1,4 +1,7 @@
-﻿1.16-1.2.2-Stable
+﻿1.16-1.2.3
+- Adjustment made to ensure pumpkins grow properly in any variable month/hoursperday setting.
+
+1.16-1.2.2-Stable
 - Added compatibiltiy with vanvar pans
 - Corrected compatibility issues with seed to grain/grain to seed recipes
 - Fixed yampocalypse (At full growth would drop 63 yams... but no seeds. Now drops 5-7 yams and 1-2 seeds)
