@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FieldsOfGold.config;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Vintagestory.API.Client;
@@ -90,14 +91,14 @@ namespace FieldsOfGold.BlockEntities
                 return false;
             }
 
-            if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= 256)
+            if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock)
             {
                 ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
                 
                 
                 if (byPlayer.InventoryManager.TryGiveItemstack(haystack))
                 {
-                    inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 256;
+                    inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock;
                     byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(1);
                     byPlayer.Entity.World.SpawnItemEntity(haystack, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
@@ -111,23 +112,23 @@ namespace FieldsOfGold.BlockEntities
                 return true;
             }
 
-            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= 8)
+            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= FieldsOfGoldConfig.Current.dryGrassPerMat)
             {
                 ItemStack strawmat = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
 
-                if (hotbarStack.StackSize < 4)
+                if (hotbarStack.StackSize < FieldsOfGoldConfig.Current.cattailPerMat)
                 {
                     (byPlayer.Entity.World.Api as ICoreClientAPI)?.TriggerIngameError(this, "notenoughfiber", Lang.Get("fieldsofgold:haystacktoofewfibers"));
                     return false;
                 }
 
-                inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - 8;
+                inventory[0].Itemstack.StackSize = inventory[0].Itemstack.StackSize - FieldsOfGoldConfig.Current.dryGrassPerMat;
                 if (!byPlayer.InventoryManager.TryGiveItemstack(strawmat))
                 {
                    byPlayer.Entity.World.SpawnItemEntity(strawmat, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
 
-                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(4);
+                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(FieldsOfGoldConfig.Current.dryGrassPerMat);
                 if (inventory[0].StackSize <= 0)
                 {
                     Api.World.BlockAccessor.SetBlock(0, Pos);

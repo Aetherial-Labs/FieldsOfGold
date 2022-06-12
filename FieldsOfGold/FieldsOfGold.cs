@@ -89,6 +89,17 @@ namespace FieldsOfGold
                 FieldsOfGoldConfig.Current = SerializerUtil.Deserialize<FieldsOfGoldConfig>(packet.configData);
             });
         }
+
+        public override void StartClientSide(ICoreClientAPI api)
+        {
+            base.StartClientSide(api);
+            clientChannel = api.Network.RegisterChannel("fieldsofgold");
+            clientChannel.RegisterMessageType(typeof(FOGConfigSyncPacket));
+            clientChannel.SetMessageHandler<FOGConfigSyncPacket>((packet) =>
+            {
+                FieldsOfGoldConfig.Current = SerializerUtil.Deserialize<FieldsOfGoldConfig>(packet.configData);
+            });
+        }
         public override void StartServerSide(ICoreServerAPI api)
         {
             base.StartServerSide(api);
