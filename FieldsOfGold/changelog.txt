@@ -1,5 +1,16 @@
-﻿1.16-1.2.3
+﻿1.16-1.2.4
+- Russian Translation Added
+- Corrected issue where haystack read drygrassPerMat instead of cattailPerMat from config
+
+1.16-1.2.3
 - Adjustment made to ensure pumpkins grow properly in any variable month/hoursperday setting.
+- New configuration options for haybale and straw mat (TY KeninVonag)
+- Farmland will no longer show 4xxxxxxxxxxxxxx days when no crop is present. (TY KeninVonag)
+- Farmland will now not show the crop growth times when crop is at max growth stage
+- Haystack now changes hitbox size as it gains/loses grass (TY KeninVonag)
+- Berrybush Growth cycle reduced from 176 days to 100.
+- Berrybush Growth Cycle per step is now configurable
+
 
 1.16-1.2.2-Stable
 - Added compatibiltiy with vanvar pans

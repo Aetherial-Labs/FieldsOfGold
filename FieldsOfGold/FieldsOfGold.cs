@@ -30,17 +30,22 @@ namespace FieldsOfGold
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
-
+            
+            //Block Entities
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
+            api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));
 
+            //Items
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
+
+            //Blocks
             api.RegisterBlockClass("foghaystack", typeof(FOGHaystack));
             api.RegisterBlockClass("foghaybale", typeof(FOGHaybale));
             api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
+            api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
             PatchGame();
 
 
@@ -65,14 +70,6 @@ namespace FieldsOfGold
             }
             finally
             {
-                if (FieldsOfGoldConfig.Current.hiveHoursToHarvest <= 0)
-                    FieldsOfGoldConfig.Current.hiveHoursToHarvest = 1488;
-                if (FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower = 60;
-                if (FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe = 28;
-                if (FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty = 14;
       
             api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
         
@@ -182,16 +179,18 @@ namespace FieldsOfGold
         {
             double daysTillNextStage;
             daysTillNextStage = Math.Round((__instance.TotalHoursForNextStage-__instance.Api.World.Calendar.TotalHours) / __instance.Api.World.Calendar.HoursPerDay);
-            if(daysTillNextStage > FieldsOfGoldConfig.Current.maxShownStageLengthDays)
+            var block = (__instance.CallMethod<Block>("GetCrop"));
+
+            if (!(block is BlockCrop) || (__instance.CallMethod<int>("GetCropStage", block)) >= block.CropProps.GrowthStages)
             {
                 return;
             }
-            if (daysTillNextStage > 1)
+            if (block is BlockCrop & daysTillNextStage > 1)
             {
-                dsc.AppendLine("Crop will reach next stage in " + daysTillNextStage + " days.");
+                dsc.AppendLine("Crop will reach next stage in " + daysTillNextStage + " day.");
                 
             }
-            else
+            else if (block is BlockCrop)
             {
                 dsc.AppendLine("Crop will reach next stage in less than a day.");
             }
