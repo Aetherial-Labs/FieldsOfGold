@@ -138,39 +138,39 @@ namespace FieldsOfGold
     //internal sealed class BlockEntityFarmlandPatches
     class BlockEntityFarmlandPatches
     {
-        [HarmonyPrefix]
-        static bool Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(
-            BlockEntityFarmland __instance,
-            ref double __result,
-            Random ___rand)
-        {
-            var block = __instance.CallMethod<Block>("GetCrop");
-            if (block == null || block.CropProps == null)
-            {
-                __result = 99999999;
-                return false;
-            }
-            __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
-                            * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
-                            * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
-                            * (float)(0.9 + 0.2 * ___rand.NextDouble());
+    //    [HarmonyPrefix]
+    //    static bool Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(
+    //        BlockEntityFarmland __instance,
+    //        ref double __result,
+    //        Random ___rand)
+    //    {
+    //        var block = __instance.CallMethod<Block>("GetCrop");
+    //        if (block == null || block.CropProps == null)
+    //        {
+    //            __result = 99999999;
+    //            return false;
+    //        }
+    //        __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
+    //                        * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
+    //                        * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
+    //                        * (float)(0.9 + 0.2 * ___rand.NextDouble());
 
-            return false;
-        }
+    //        return false;
+    //    }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
-        static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
-            ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
-        {
-                /*
-                 * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
-                  Then modify growth rate from base to account for in-game hours per day.
-                 */
-                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  ((300f/24)* __instance.Api.World.Calendar.HoursPerDay);
-                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-        }
+    //    [HarmonyPostfix]
+    //    [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
+    //    static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
+    //        ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
+    //    {
+    //            /*
+    //             * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
+    //              Then modify growth rate from base to account for in-game hours per day.
+    //             */
+    //            ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  ((300f/24)* __instance.Api.World.Calendar.HoursPerDay);
+    //            ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
+    //            ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
+    //    }
 
 
         [HarmonyPostfix]

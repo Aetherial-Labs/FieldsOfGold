@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="assets\game\patches\plant-berry-changes.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
     <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
@@ -112,6 +116,7 @@
     <Reference Include="VSSurvivalMod">
       <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
+      <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
 
@@ -203,9 +208,6 @@
     <Content Update="assets\game\patches\haypatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\game\patches\plant-berry-changes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="assets\game\patches\roofthatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -216,7 +218,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\wildcraft\patches\plant-berry-changes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
