@@ -1,4 +1,6 @@
-﻿1.16-1.2.4
+﻿1.17-2.0.0
+
+1.16-1.2.4
 - Russian Translation Added
 - Corrected issue where haystack read drygrassPerMat instead of cattailPerMat from config
 
