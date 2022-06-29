@@ -228,7 +228,7 @@ namespace FieldsOfGold.BlockEntities
             Block wildhive2 = Api.World.GetBlock(new AssetLocation("wildbeehive-large"));
 
 
-            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(minX, -5, minZ), Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, pos) =>
+            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(minX, -5, minZ), Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, posx, posy, posz) =>
             {
                 if (block.Id == 0) return;
 
@@ -236,7 +236,7 @@ namespace FieldsOfGold.BlockEntities
 
                 if (block == emptySkepN || block == emptySkepE || block == emptySkepS || block == emptySkepW)
                 {
-                    scanEmptySkeps.Add(pos.Copy());
+                    scanEmptySkeps.Add(Pos.Copy());
                 }
                 if (block == fullSkepN || block == fullSkepE || block == fullSkepS || block == fullSkepW || block == wildhive1 || block == wildhive2)
                 {
@@ -524,11 +524,10 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity)
+        public bool IsSuitableFor(Entity entity, String[] diet)
         {
             if (isWildHive || !Harvestable) return false;
 
-            string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
             if (diet == null) return false;
 
             return diet.Contains("Honey");

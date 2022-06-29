@@ -34,14 +34,13 @@ namespace FieldsOfGold.config
             defaultConfig.DaysBerryEmptyToFlower = 60;
             defaultConfig.DaysBerryFlowerToRipe = 28;
             defaultConfig.DaysBerryRipeToEmpty = 14;
-            defaultConfig.dryGrassPerHaystackBlock = 32;
+            defaultConfig.dryGrassPerHaystackBlock = 256;
             defaultConfig.dryGrassPerMat = 8;
             defaultConfig.dryGrassAddedPerInteract = 16;
             defaultConfig.dryGrassAddedPerInteractWithShiftSneak = 64;
             defaultConfig.cattailPerMat = 4;
             defaultConfig.maxShownStageLengthDays = 1500;
 
-            //defaultConfig.HiveSeasons = 
             return defaultConfig;
         }
 

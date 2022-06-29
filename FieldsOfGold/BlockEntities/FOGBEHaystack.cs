@@ -112,7 +112,7 @@ namespace FieldsOfGold.BlockEntities
                 return true;
             }
 
-            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= FieldsOfGoldConfig.Current.dryGrassPerMat)
+            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= FieldsOfGoldConfig.Current.cattailPerMat)
             {
                 ItemStack strawmat = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
 
@@ -128,7 +128,7 @@ namespace FieldsOfGold.BlockEntities
                    byPlayer.Entity.World.SpawnItemEntity(strawmat, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
 
-                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(FieldsOfGoldConfig.Current.dryGrassPerMat);
+                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(FieldsOfGoldConfig.Current.cattailPerMat);
                 if (inventory[0].StackSize <= 0)
                 {
                     Api.World.BlockAccessor.SetBlock(0, Pos);

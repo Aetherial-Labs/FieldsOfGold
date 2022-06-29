@@ -30,17 +30,22 @@ namespace FieldsOfGold
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
-
+            
+            //Block Entities
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
+            api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));
 
+            //Items
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
+
+            //Blocks
             api.RegisterBlockClass("foghaystack", typeof(FOGHaystack));
             api.RegisterBlockClass("foghaybale", typeof(FOGHaybale));
             api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
+            api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
             PatchGame();
 
 
@@ -65,14 +70,6 @@ namespace FieldsOfGold
             }
             finally
             {
-                if (FieldsOfGoldConfig.Current.hiveHoursToHarvest <= 0)
-                    FieldsOfGoldConfig.Current.hiveHoursToHarvest = 1488;
-                if (FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower = 60;
-                if (FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe = 28;
-                if (FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty <= 0)
-                    FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty = 14;
       
             api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
         
@@ -141,39 +138,39 @@ namespace FieldsOfGold
     //internal sealed class BlockEntityFarmlandPatches
     class BlockEntityFarmlandPatches
     {
-        [HarmonyPrefix]
-        static bool Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(
-            BlockEntityFarmland __instance,
-            ref double __result,
-            Random ___rand)
-        {
-            var block = __instance.CallMethod<Block>("GetCrop");
-            if (block == null || block.CropProps == null)
-            {
-                __result = 99999999;
-                return false;
-            }
-            __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
-                            * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
-                            * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
-                            * (float)(0.9 + 0.2 * ___rand.NextDouble());
+    //    [HarmonyPrefix]
+    //    static bool Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(
+    //        BlockEntityFarmland __instance,
+    //        ref double __result,
+    //        Random ___rand)
+    //    {
+    //        var block = __instance.CallMethod<Block>("GetCrop");
+    //        if (block == null || block.CropProps == null)
+    //        {
+    //            __result = 99999999;
+    //            return false;
+    //        }
+    //        __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
+    //                        * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
+    //                        * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
+    //                        * (float)(0.9 + 0.2 * ___rand.NextDouble());
 
-            return false;
-        }
+    //        return false;
+    //    }
 
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
-        static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
-            ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
-        {
-                /*
-                 * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
-                  Then modify growth rate from base to account for in-game hours per day.
-                 */
-                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  ((300f/24)* __instance.Api.World.Calendar.HoursPerDay);
-                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-        }
+    //    [HarmonyPostfix]
+    //    [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
+    //    static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
+    //        ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
+    //    {
+    //            /*
+    //             * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
+    //              Then modify growth rate from base to account for in-game hours per day.
+    //             */
+    //            ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  ((300f/24)* __instance.Api.World.Calendar.HoursPerDay);
+    //            ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
+    //            ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
+    //    }
 
 
         [HarmonyPostfix]
@@ -182,16 +179,18 @@ namespace FieldsOfGold
         {
             double daysTillNextStage;
             daysTillNextStage = Math.Round((__instance.TotalHoursForNextStage-__instance.Api.World.Calendar.TotalHours) / __instance.Api.World.Calendar.HoursPerDay);
-            if(daysTillNextStage > FieldsOfGoldConfig.Current.maxShownStageLengthDays)
+            var block = (__instance.CallMethod<Block>("GetCrop"));
+
+            if (!(block is BlockCrop) || (__instance.CallMethod<int>("GetCropStage", block)) >= block.CropProps.GrowthStages)
             {
                 return;
             }
-            if (daysTillNextStage > 1)
+            if (block is BlockCrop & daysTillNextStage > 1)
             {
-                dsc.AppendLine("Crop will reach next stage in " + daysTillNextStage + " days.");
+                dsc.AppendLine("Crop will reach next stage in " + daysTillNextStage + " day.");
                 
             }
-            else
+            else if (block is BlockCrop)
             {
                 dsc.AppendLine("Crop will reach next stage in less than a day.");
             }

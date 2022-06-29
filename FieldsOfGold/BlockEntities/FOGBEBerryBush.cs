@@ -20,6 +20,9 @@ namespace FieldsOfGold.BlockEntities
         double transitionHoursLeft = -1;
         double? totalDaysForNextStageOld = null; // old v1.13 data format, here for backwards compatibility
 
+        public bool Pruned;
+        public double LastPrunedTotalDays;
+
         RoomRegistry roomreg;
         public int roomness;
 
@@ -175,8 +178,20 @@ namespace FieldsOfGold.BlockEntities
             return block.LastCodePart() == "ripe";
         }
 
+        internal void Prune()
+        {
+            Pruned = true;
+            LastPrunedTotalDays = Api.World.Calendar.TotalDays;
+            MarkDirty(true);
+        }
+
         bool DoGrow()
         {
+            if (Api.World.Calendar.TotalDays - LastPrunedTotalDays > Api.World.Calendar.DaysPerYear)
+            {
+                Pruned = false;
+            }
+
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             string nowCodePart = block.LastCodePart();
             string nextCodePart = (nowCodePart == "empty") ? "flowering" : ((nowCodePart == "flowering") ? "ripe" : "empty");
@@ -215,6 +230,8 @@ namespace FieldsOfGold.BlockEntities
             lastCheckAtTotalDays = tree.GetDouble("lastCheckAtTotalDays");
 
             roomness = tree.GetInt("roomness");
+            Pruned = tree.GetBool("pruned");
+            LastPrunedTotalDays = tree.GetDecimal("lastPrunedTotalDays");
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -225,6 +242,7 @@ namespace FieldsOfGold.BlockEntities
             tree.SetDouble("lastCheckAtTotalDays", lastCheckAtTotalDays);
 
             tree.SetInt("roomness", roomness);
+            tree.SetDouble("lastPrunedTotalDays", LastPrunedTotalDays);
         }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
@@ -262,11 +280,11 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity)
+        public bool IsSuitableFor(Entity entity, String[] diet)
         {
             if (!IsRipe()) return false;
 
-            string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
+            //string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
             if (diet == null) return false;
 
             return diet.Contains("Berry");
