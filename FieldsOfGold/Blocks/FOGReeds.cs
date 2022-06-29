@@ -246,6 +246,17 @@ namespace FieldsOfGold.Blocks
             return false;
         }
 
+        //protected override bool TryPlaceBlockInWater(IBlockAccessor blockAccessor, BlockPos pos)
+        //{
+        //    Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 2, pos.Z);
+        //    if (belowBlock.Fertility > 0)
+        //    {
+        //        blockAccessor.SetBlock(blockAccessor.GetBlock(CodeWithVariants(new string[] { "habitat", "state" }, new string[] { "water", "growing" })).BlockId, pos.AddCopy(0, -1, 0));
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
         public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing, int index)
         {
             return capi.World.ApplyColorMapOnRgba(ClimateColorMapForMap, SeasonColorMapForMap, capi.BlockTextureAtlas.GetRandomColor(Textures.Last().Value.Baked.TextureSubId), pos.X, pos.Y, pos.Z);
