@@ -11,7 +11,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    public class FOGBEBerryBush : BlockEntity, IAnimalFoodSource
+    public class FOGBEBerryBush : BlockEntityBerryBush, IAnimalFoodSource
     {
         static readonly Random rand = new();
 
@@ -20,7 +20,7 @@ namespace FieldsOfGold.BlockEntities
         double? totalDaysForNextStageOld = null; // old v1.13 data format, here for backwards compatibility
 
         RoomRegistry roomreg;
-        public int roomness;
+        public new int roomness;
 
         public FOGBEBerryBush() : base()
         {
@@ -156,7 +156,7 @@ namespace FieldsOfGold.BlockEntities
             if (changed) MarkDirty(false);
         }
 
-        public double GetHoursForNextStage()
+        public new double GetHoursForNextStage()
         {
             //Determine modifier for adjusted month times
             float monthlengthmod = Api.World.Calendar.DaysPerMonth/30f;
@@ -168,11 +168,6 @@ namespace FieldsOfGold.BlockEntities
             return ((62 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
         }
 
-        public bool IsRipe()
-        {
-            Block block = Api.World.BlockAccessor.GetBlock(Pos);
-            return block.LastCodePart() == "ripe";
-        }
 
         bool DoGrow()
         {
@@ -196,9 +191,6 @@ namespace FieldsOfGold.BlockEntities
             MarkDirty(true);
             return true;
         }
-
-
-
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
@@ -230,11 +222,6 @@ namespace FieldsOfGold.BlockEntities
         {
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             double daysleft = transitionHoursLeft / Api.World.Calendar.HoursPerDay;
-
-            /*if (forPlayer.WorldData.CurrentGameMode == EnumGameMode.Creative)
-            {
-                return "" + daysleft;
-            }*/
 
             if (block.LastCodePart() == "ripe")
             {
@@ -271,7 +258,7 @@ namespace FieldsOfGold.BlockEntities
             return diet.Contains("Berry");
         }
 
-        public float ConsumeOnePortion()
+        public new float ConsumeOnePortion()
         {
             AssetLocation loc = Block.CodeWithParts("empty");
             if (!loc.Valid)
@@ -298,8 +285,8 @@ namespace FieldsOfGold.BlockEntities
             return 0.1f;
         }
 
-        public Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
-        public string Type => "food";
+        public new Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public new string Type => "food";
         #endregion
 
 

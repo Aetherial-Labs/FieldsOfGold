@@ -1,120 +1,120 @@
 [
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 84,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 2.8,
     "file": "blocktypes/plant/crop/amaranth.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 84,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 2.8,
     "file": "blocktypes/plant/crop/bellpepper.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 70,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 2.33,
     "file": "blocktypes/plant/crop/cabbage.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 70,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 2.33,
     "file": "blocktypes/plant/crop/carrot.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 540,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 6,
     "file": "blocktypes/plant/crop/cassava.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 110,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3.66,
     "file": "blocktypes/plant/crop/flax.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 100,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3.33,
     "file": "blocktypes/plant/crop/onion.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 90,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3,
     "file": "blocktypes/plant/crop/parsnip.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 120,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 4,
     "file": "blocktypes/plant/crop/peanut.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 485,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 6,
     "file": "blocktypes/plant/crop/pineapple.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 50,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 1.66,
     "file": "blocktypes/plant/pumpkin/motherplant.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 120,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 4,
     "file": "blocktypes/plant/crop/rice.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 120,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3,
     "file": "blocktypes/plant/crop/rye.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 65,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 2.16,
     "file": "blocktypes/plant/crop/soybean.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 110,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3.66,
     "file": "blocktypes/plant/crop/spelt.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 90,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 3,
     "file": "blocktypes/plant/crop/sunflower.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/cropProps/totalGrowthDays",
-    "value": 55,
+    "path": "/cropProps/totalGrowthMonths",
+    "value": 1.83,
     "file": "blocktypes/plant/crop/turnip.json",
     "side": "server"
   }  
