@@ -3,6 +3,11 @@
 - Adjusted crop growth times to new paradigm
 	- Adjusted Cassava and Pineapple growth times to 6 and 9 months respectively
 - Patched Berry Bushes to work with new methods
+- Cattail Roots and Papyrus Roots can no longer be planted
+- Halved/Full Cattail/papyrus roots now have a decay time
+- Halved Cattail Roots plant "Sprouting Cattails" which cannot be harvested for roots
+- Cattails/Papyrus now transition properly in 1.17
+- Mushroom fruiting/growth times are now customizable by type.
 
 1.16-1.2.4
 - Russian Translation Added

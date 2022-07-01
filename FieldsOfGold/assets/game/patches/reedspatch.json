@@ -8,36 +8,27 @@
   },
   {
     "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-coopersreed-ice-harvested-free/inGameHours",
-    "value": 923,
+    "path": "/attributes/transientPropsByType/tallplant-coopersreed-*",
+    "value": {
+              "convertFrom": "*-harvested-*",
+              "convertTo":  "game:tallplant-coopersreed-land-normal-{cover}",
+              "inGameHours": 923,
+              "resetBelowTemparature": -4,
+              "stopBelowTemperature": 2
+             },
     "file": "game:blocktypes/plant/reedpapyrus.json",
     "side": "server"
   },
   {
     "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-coopersreed-water-*/inGameHours",
-    "value": 923,
-    "file": "game:blocktypes/plant/reedpapyrus.json",
-    "side": "server"
-  },
-  {
-    "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-papyrus-water-*/inGameHours",
-    "value": 923,
-    "file": "game:blocktypes/plant/reedpapyrus.json",
-    "side": "server"
-  },
-  {
-    "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-coopersreed-*/inGameHours",
-    "value": 923,
-    "file": "game:blocktypes/plant/reedpapyrus.json",
-    "side": "server"
-  },
-  {
-    "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-papyrus-*/inGameHours",
-    "value": 923,
+    "path": "/attributes/transientPropsByType/tallplant-papyrus-*",
+    "value": {
+              "convertFrom": "*-harvested-*",
+              "convertTo":  "game:tallplant-papyrus-land-normal-{cover}",
+              "inGameHours": 923,
+              "resetBelowTemparature": -4,
+              "stopBelowTemperature": 2
+             },
     "file": "game:blocktypes/plant/reedpapyrus.json",
     "side": "server"
   },
@@ -51,6 +42,32 @@
 			transitionedStack: { type: "item", code: "rot" },
 			transitionRatio: 0.55
 		}],
+    "file": "game:itemtypes/resource/catttailroot.json",
+    "side": "server"
+  },
+  {
+    "op": "remove",
+    "path": "/class",
+    "file": "game:itemtypes/resource/catttailroot.json",
+    "side": "server"
+  },
+  {
+    "op": "remove",
+    "path": "/class",
+    "file": "game:itemtypes/resource/papyrusroot.json",
+    "side": "server"
+  },
+  {
+    "op": "add",
+    "path": "/transitionableProps",
+    "value": [{
+			type: "Perish",
+			freshHours: { avg: 336 },
+			transitionHours: { avg: 72 },
+			transitionedStack: { type: "item", code: "rot" },
+			transitionRatio: 0.55
+		}]
+    ,
     "file": "game:itemtypes/resource/catttailroot.json",
     "side": "server"
   },

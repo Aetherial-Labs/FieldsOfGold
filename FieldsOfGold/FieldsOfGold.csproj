@@ -22,14 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="assets\game\patches\plant-berry-changes.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
     <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
+    <None Remove="assets\game\patches\mushrooms.json" />
     <None Remove="assets\game\patches\reedspatch.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
@@ -78,45 +75,44 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Lib\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Lib\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="cairo-sharp">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Lib\cairo-sharp.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Lib\cairo-sharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Lib\protobuf-net.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Lib\protobuf-net.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryAPI">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryLib">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\VintagestoryLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\VintagestoryLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSBuildLib">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\VSBuildLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\VSBuildLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Mods\VSCreativeMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Mods\VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1170pre1\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
-      <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
 
@@ -206,6 +202,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\haypatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\mushrooms.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\roofthatch.json">
