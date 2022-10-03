@@ -17,8 +17,10 @@ namespace FieldsOfGold
     {
 
         private readonly Harmony _harmony = new("harmoniousfog");
+
         internal static IServerNetworkChannel serverChannel;
         internal static IClientNetworkChannel clientChannel;
+
 
         public override bool ShouldLoad(EnumAppSide forSide)
         {
@@ -33,7 +35,6 @@ namespace FieldsOfGold
             api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
-            api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));
 
             api.RegisterItemClass("fogreeditem", typeof(FOGCattailRoot));
             api.RegisterItemClass("fogdrygrass", typeof(FOGDryGrass));
@@ -42,7 +43,7 @@ namespace FieldsOfGold
             api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
             PatchGame();
 
-            
+
             try
             {
                 var Config = api.LoadModConfig<FieldsOfGoldConfig>("fieldsofgold.json");
@@ -66,7 +67,15 @@ namespace FieldsOfGold
             {
                 if (FieldsOfGoldConfig.Current.hiveHoursToHarvest <= 0)
                     FieldsOfGoldConfig.Current.hiveHoursToHarvest = 1488;
-                api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
+                if (FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower <= 0)
+                    FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower = 60;
+                if (FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe <= 0)
+                    FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe = 28;
+                if (FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty <= 0)
+                    FieldsOfGoldConfig.Current.DaysBerryRipeToEmpty = 14;
+      
+            api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
+        
             }
         }
 
@@ -80,6 +89,7 @@ namespace FieldsOfGold
                 FieldsOfGoldConfig.Current = SerializerUtil.Deserialize<FieldsOfGoldConfig>(packet.configData);
             });
         }
+
         public override void StartServerSide(ICoreServerAPI api)
         {
             base.StartServerSide(api);
@@ -156,9 +166,13 @@ namespace FieldsOfGold
         static void Patch_BlockEntityPumpkinVine_Initialize_Prefix(BlockEntityPumpkinVine __instance,
             ref float ___pumpkinHoursToGrow, ref float ___vineHoursToGrow, ref float ___vineHoursToGrowStage2)
         {
-                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
-                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  300f;
-                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * 150f;
+                /*
+                 * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
+                  Then modify growth rate from base to account for in-game hours per day.
+                 */
+                ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) *  ((300f/24)* __instance.Api.World.Calendar.HoursPerDay);
+                ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
+                ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
         }
 
 

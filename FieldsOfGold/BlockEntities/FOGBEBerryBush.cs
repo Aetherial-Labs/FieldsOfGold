@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FieldsOfGold.config;
+using System;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Common;
@@ -161,11 +162,11 @@ namespace FieldsOfGold.BlockEntities
             //Determine modifier for adjusted month times
             float monthlengthmod = Api.World.Calendar.DaysPerMonth/30f;
             //Calculate duration to next stage and modify by monthlengthmod
-            if (Block.Variant["state"] == "flowering") return ((100 * (.8 + (.4 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
+            if (Block.Variant["state"] == "flowering") return ((FieldsOfGoldConfig.Current.DaysBerryFlowerToRipe * (.9 + (.2 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
 
-            if (IsRipe()) return ((14 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
+            if (IsRipe()) return ((FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower * (.9 + .2 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
 
-            return ((62 * (.8 + .4 * (rand.NextDouble()))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
+            return ((FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower * (.9 + (.2 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
         }
 
         public bool IsRipe()
