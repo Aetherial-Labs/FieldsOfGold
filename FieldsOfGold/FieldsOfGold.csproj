@@ -22,14 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="assets\game\patches\plant-berry-changes.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="assets\dragonflies\patches\dragonflieslivestock.json" />
     <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
+    <None Remove="assets\game\patches\mushrooms.json" />
     <None Remove="assets\game\patches\reedspatch.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
@@ -116,7 +113,6 @@
     <Reference Include="VSSurvivalMod">
       <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1170pre1\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
-      <SpecificVersion>false</SpecificVersion>
     </Reference>
   </ItemGroup>
 
@@ -206,6 +202,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\haypatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\mushrooms.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\roofthatch.json">

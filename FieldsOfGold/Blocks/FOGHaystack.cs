@@ -84,7 +84,7 @@ namespace FieldsOfGold.Blocks
             BlockEntity be = world.BlockAccessor.GetBlockEntity(pos);
             if (be is FOGBEHaystack pile)
             {
-                if (byPlayer == null || byPlayer.WorldData.CurrentGameMode != EnumGameMode.Creative)
+                if (byPlayer?.WorldData.CurrentGameMode != EnumGameMode.Creative)
                 {
                     pile.inventory[0].Itemstack = (ItemStack)slot.TakeOut(byPlayer.Entity.Controls.Sprint ? pile.BulkTakeQuantity : pile.DefaultTakeQuantity);
                     slot.MarkDirty();

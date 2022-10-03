@@ -4,7 +4,7 @@
   "name": "Fields of Gold",
   "author": "Vinter Nacht",
   "description": "Come harvest on the breath of Autumn's breeze, from abundant pasture grown.",
-  "version": "2.0.0",
+  "version": "2.0.1-dev.1",
   "dependency": {
     "game": ""
   }

@@ -81,12 +81,11 @@ namespace FieldsOfGold.BlockEntities
             
             bool sneaking = byPlayer.Entity.Controls.Sneak;
             ItemStack hotbarStack = byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack;
-
-                        bool equalStack = hotbarStack != null && hotbarStack.Equals(Api.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes);
-                        bool ropeStack = hotbarStack != null && hotbarStack.Collectible.FirstCodePart() == "rope";
-                        bool fiberStack = hotbarStack != null && (hotbarStack.Collectible.FirstCodePart() == "cattailtops"|| hotbarStack.Collectible.FirstCodePart() == "papyrustops");
+                        
+                        bool ropeStack = hotbarStack?.Collectible.FirstCodePart() == "rope";
+                        bool fiberStack = hotbarStack?.Collectible.FirstCodePart() == "cattailtops" || hotbarStack?.Collectible.FirstCodePart() == "papyrustops";
             
-            if (sneaking && !equalStack)
+            if (sneaking && !byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
             {
                 return false;
             }

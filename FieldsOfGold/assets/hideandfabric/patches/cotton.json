@@ -1,8 +1,8 @@
 [
   {
   "op":"replace",
-  "path": "/cropProps/totalGrowthDays",
-  "value": "129",
+  "path": "/cropProps/totalGrowthMonths",
+  "value": "3.33",
   "file": "hideandfabric:blocktypes/plant/cotton.json",
   "dependsOn": [{"modid": "hideandfabric"}]
   }
