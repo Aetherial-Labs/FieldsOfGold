@@ -20,9 +20,6 @@ namespace FieldsOfGold.BlockEntities
         double transitionHoursLeft = -1;
         double? totalDaysForNextStageOld = null; // old v1.13 data format, here for backwards compatibility
 
-        public bool Pruned;
-        public double LastPrunedTotalDays;
-
         RoomRegistry roomreg;
         public new int roomness;
 
@@ -267,15 +264,6 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity, String[] diet)
-        {
-            if (!IsRipe()) return false;
-
-            //string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
-            if (diet == null) return false;
-
-            return diet.Contains("Berry");
-        }
 
         public new float ConsumeOnePortion()
         {

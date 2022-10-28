@@ -43,9 +43,8 @@ namespace FieldsOfGold.Items
 				if (blockEntity is IBlockEntityItemPile pile && pile.OnPlayerInteract(byPlayer))
 				{
 					handHandling = EnumHandHandling.PreventDefaultAction;
-					IClientPlayer clientPlayer = ((byPlayer != null) ? (byEntity as EntityPlayer).Player : null) as IClientPlayer;
-					clientPlayer.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
-					return;
+                    if (((byPlayer != null) ? (byEntity as EntityPlayer).Player : null) is IClientPlayer clientPlayer) clientPlayer.TriggerFpAnimation(EnumHandInteract.HeldItemInteract);
+                    return;
 				}
 				else
 				{

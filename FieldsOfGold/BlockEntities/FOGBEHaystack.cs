@@ -92,7 +92,7 @@ namespace FieldsOfGold.BlockEntities
 
             if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock)
             {
-                ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
+                ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal-ud")));
                 
                 
                 if (byPlayer.InventoryManager.TryGiveItemstack(haystack))

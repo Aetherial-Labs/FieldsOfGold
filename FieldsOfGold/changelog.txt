@@ -1,4 +1,11 @@
-﻿1.17-2.0.1-dev.1
+﻿1.17.2.0.2-rc.2
+- Addressed crash occurring when clicking the block behind an existing haystack.
+
+1.17-2.0.2-rc.1
+- Corrected error with harvesting reeds
+- Fixed error with crafting haystacks
+
+1.17-2.0.1-dev.1
 - Updated to 1.17
 - Adjusted crop growth times to new paradigm
 	- Adjusted Cassava and Pineapple growth times to 6 and 9 months respectively

@@ -101,7 +101,7 @@ namespace FieldsOfGold
                         
                         configData = SerializerUtil.Serialize(FieldsOfGoldConfig.Current)
 
-                    }, byPlayer); ; ;
+                    }, byPlayer);
                 };
             };
             
@@ -125,7 +125,9 @@ namespace FieldsOfGold
             harmony.PatchAll();
         }
 
+#pragma warning disable IDE0051 // Remove unused private members
         private void UnPatchGame()
+#pragma warning restore IDE0051 // Remove unused private members
         {
             Mod.Logger.Event("Unapplying Harmony patches");
 
@@ -194,7 +196,9 @@ namespace FieldsOfGold
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BlockEntityFarmland), "GetBlockInfo")]
+#pragma warning disable IDE0051 // Remove unused private members
         static void Patch_BlockEntityFarmland_GetHoursForNextStage_Postfix(BlockEntityFarmland __instance, StringBuilder dsc)
+#pragma warning restore IDE0051 // Remove unused private members
         {
             double daysTillNextStage;
             daysTillNextStage = Math.Round((__instance.TotalHoursForNextStage-__instance.Api.World.Calendar.TotalHours) / __instance.Api.World.Calendar.HoursPerDay);

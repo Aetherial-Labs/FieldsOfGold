@@ -526,14 +526,6 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity, String[] diet)
-        {
-            if (isWildHive || !Harvestable) return false;
-
-            if (diet == null) return false;
-
-            return diet.Contains("Honey");
-        }
 
         public new float ConsumeOnePortion()
         {
