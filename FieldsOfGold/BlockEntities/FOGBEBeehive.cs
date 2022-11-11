@@ -13,7 +13,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    class FOGBEBeehive : BlockEntity, IAnimalFoodSource
+    class FOGBEBeehive : BlockEntityBeehive, IAnimalFoodSource
     {
 
         public enum EnumHivePopSize
@@ -33,7 +33,7 @@ namespace FieldsOfGold.BlockEntities
         float popHiveAfterHours;
         double cooldownUntilTotalHours;
         double harvestableAtTotalHours;
-        public bool Harvestable;
+        public new bool Harvestable;
 
         // Current scan values
         int scanQuantityNearbyFlowers;
@@ -43,7 +43,7 @@ namespace FieldsOfGold.BlockEntities
         // Temporary values
         EnumHivePopSize hivePopSize;
         bool wasPlaced = false;
-        public static SimpleParticleProperties Bees;
+        public new static SimpleParticleProperties Bees;
         string orientation;
 
         static FOGBEBeehive()
@@ -228,7 +228,7 @@ namespace FieldsOfGold.BlockEntities
             Block wildhive2 = Api.World.GetBlock(new AssetLocation("wildbeehive-large"));
 
 
-            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(minX, -5, minZ), Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, pos) =>
+            Api.World.BlockAccessor.WalkBlocks(Pos.AddCopy(minX, -5, minZ), Pos.AddCopy(minX + size - 1, 5, minZ + size - 1), (block, posx, posy, posz) =>
             {
                 if (block.Id == 0) return;
 
@@ -236,7 +236,9 @@ namespace FieldsOfGold.BlockEntities
 
                 if (block == emptySkepN || block == emptySkepE || block == emptySkepS || block == emptySkepW)
                 {
-                    scanEmptySkeps.Add(pos.Copy());
+
+                    scanEmptySkeps.Add(new BlockPos(posx, posy, posz).Copy());
+
                 }
                 if (block == fullSkepN || block == fullSkepE || block == fullSkepS || block == fullSkepW || block == wildhive1 || block == wildhive2)
                 {
@@ -524,24 +526,15 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity)
-        {
-            if (isWildHive || !Harvestable) return false;
 
-            string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
-            if (diet == null) return false;
-
-            return diet.Contains("Honey");
-        }
-
-        public float ConsumeOnePortion()
+        public new float ConsumeOnePortion()
         {
             Api.World.BlockAccessor.BreakBlock(Pos, null, 1f);
             return 1f;
         }
 
-        public Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
-        public string Type => "food";
+        public new Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public new string Type => "food";
         #endregion
 
 

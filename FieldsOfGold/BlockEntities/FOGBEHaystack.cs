@@ -81,19 +81,18 @@ namespace FieldsOfGold.BlockEntities
             
             bool sneaking = byPlayer.Entity.Controls.Sneak;
             ItemStack hotbarStack = byPlayer.InventoryManager.ActiveHotbarSlot.Itemstack;
-
-                        bool equalStack = hotbarStack != null && hotbarStack.Equals(Api.World, inventory[0].Itemstack, GlobalConstants.IgnoredStackAttributes);
-                        bool ropeStack = hotbarStack != null && hotbarStack.Collectible.FirstCodePart() == "rope";
-                        bool fiberStack = hotbarStack != null && (hotbarStack.Collectible.FirstCodePart() == "cattailtops"|| hotbarStack.Collectible.FirstCodePart() == "papyrustops");
+                        
+                        bool ropeStack = hotbarStack?.Collectible.FirstCodePart() == "rope";
+                        bool fiberStack = hotbarStack?.Collectible.FirstCodePart() == "cattailtops" || hotbarStack?.Collectible.FirstCodePart() == "papyrustops";
             
-            if (sneaking && !equalStack)
+            if (sneaking && !byPlayer.InventoryManager.ActiveHotbarSlot.Empty)
             {
                 return false;
             }
 
             if (byPlayer.Entity.Controls.Sprint && ropeStack && inventory[0].Itemstack.StackSize >= FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock)
             {
-                ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal")));
+                ItemStack haystack = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("game:hay-normal-ud")));
                 
                 
                 if (byPlayer.InventoryManager.TryGiveItemstack(haystack))
@@ -112,7 +111,7 @@ namespace FieldsOfGold.BlockEntities
                 return true;
             }
 
-            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= FieldsOfGoldConfig.Current.dryGrassPerMat)
+            if (byPlayer.Entity.Controls.Sprint && fiberStack && inventory[0].StackSize >= FieldsOfGoldConfig.Current.cattailPerMat)
             {
                 ItemStack strawmat = new(Api.World.BlockAccessor.GetBlock(new AssetLocation("fieldsofgold:strawmat-down")));
 
@@ -128,7 +127,7 @@ namespace FieldsOfGold.BlockEntities
                    byPlayer.Entity.World.SpawnItemEntity(strawmat, byPlayer.Entity.Pos.XYZ.AddCopy(0, 0.5, 0));
                 }
 
-                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(FieldsOfGoldConfig.Current.dryGrassPerMat);
+                byPlayer.InventoryManager.ActiveHotbarSlot.TakeOut(FieldsOfGoldConfig.Current.cattailPerMat);
                 if (inventory[0].StackSize <= 0)
                 {
                     Api.World.BlockAccessor.SetBlock(0, Pos);

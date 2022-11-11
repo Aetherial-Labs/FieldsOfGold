@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/attributes/mushroomGrowthByType",
+    "value": {
+      "*-commonmorel-*":  {
+        "growthTime": 40,
+        "fruitingTime": 20
+      },
+      "*-witchhat-*": {
+        "growthTime": 30,
+        "fruitingTime":20
+      }
+    },
+    "file": "game:blocktypes/plant/mushroom.json",
+    "side": "server"
+  }
+]

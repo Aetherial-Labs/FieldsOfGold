@@ -16,24 +16,7 @@ namespace FieldsOfGold.Blocks
         string climateColorMapInt;
         string seasonColorMapInt;
 
-        public override string ClimateColorMapForMap => climateColorMapInt;
-        public override string SeasonColorMapForMap => seasonColorMapInt;
-
         private int habitat = EnumReedsHabitat.Land;
-
-        public override void OnCollectTextures(ICoreAPI api, ITextureLocationDictionary textureDict)
-        {
-            base.OnCollectTextures(api, textureDict);
-
-            climateColorMapInt = ClimateColorMap;
-            seasonColorMapInt = SeasonColorMap;
-
-            if (api.Side == EnumAppSide.Client && SeasonColorMap == null)
-            {
-                climateColorMapInt = (api as ICoreClientAPI).TesselatorManager.GetCachedShape(Shape.Base)?.Elements[2].ClimateColorMap;
-                seasonColorMapInt = (api as ICoreClientAPI).TesselatorManager.GetCachedShape(Shape.Base)?.Elements[2].SeasonColorMap;
-            }
-        }
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -79,29 +62,12 @@ namespace FieldsOfGold.Blocks
             Block block = world.BlockAccessor.GetBlock(blockSel.Position);
             Block blockToPlace = world.GetBlock(CodeWithVariant("state", "growing"));
 
-            bool inWater = block.IsLiquid() && block.LiquidLevel == 7 && block.LiquidCode.Contains("water");
-
-            if (inWater)
-            {
-                blockToPlace = world.GetBlock(CodeWithVariant("state","growing"));
-                //api.Logger.Debug("Block to Place is now: " + blockToPlace.Code.ToString());
-                if (blockToPlace == null) blockToPlace = this;
-            }
-            else
-            {
-                if (habitat != 0)
-                {
-                    failureCode = "requirefullwater";
-                    return false;
-                }
-            }
-
-
             if (blockToPlace != null)
             {
                 if (CanPlantStay(world.BlockAccessor, blockSel.Position))
                 {
                     world.BlockAccessor.SetBlock(blockToPlace.BlockId, blockSel.Position);
+                    return true;
                 }
                 else
                 {
@@ -109,53 +75,28 @@ namespace FieldsOfGold.Blocks
                     return false;
                 }
 
-                return true;
             }
 
             return false;
         }
 
-        public override float OnGettingBroken(IPlayer player, BlockSelection blockSel, ItemSlot itemslot, float remainingResistance, float dt, int counter)
+
+
+        public override bool CanPlantStay(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            if (Variant["state"] == "harvested") dt /= 2;
-            else if (player.InventoryManager.ActiveTool != EnumTool.Knife)
+            if (this.Variant.ContainsKey("side"))
             {
-                dt /= 3;
+                BlockFacing blockFacing = BlockFacing.FromCode(this.Variant["side"]);
+                BlockPos pos2 = pos.AddCopy(blockFacing);
+                return blockAccessor.GetBlock(pos2).CanAttachBlockAt(blockAccessor, this, pos2, blockFacing.Opposite, null);
             }
-            else
+            Block block = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
+            if (block.Fertility <= 0)
             {
-                if (itemslot.Itemstack.Collectible.MiningSpeed.TryGetValue(EnumBlockMaterial.Plant, out float mul)) dt *= mul;
+                return false;
             }
-
-            float resistance = RequiredMiningTier == 0 ? remainingResistance - dt : remainingResistance;
-
-            if (counter % 5 == 0 || resistance <= 0)
-            {
-                double posx = blockSel.Position.X + blockSel.HitPosition.X;
-                double posy = blockSel.Position.Y + blockSel.HitPosition.Y;
-                double posz = blockSel.Position.Z + blockSel.HitPosition.Z;
-                player.Entity.World.PlaySoundAt(resistance > 0 ? Sounds.GetHitSound(player) : Sounds.GetBreakSound(player), posx, posy, posz, player, true, 16, 1);
-            }
-
-            return resistance;
-        }
-
-        public override ItemStack OnPickBlock(IWorldAccessor world, BlockPos pos)
-        {
-            AssetLocation loc = CodeWithVariants(new string[] { "habitat", "cover" }, new string[] { "land", "free" });
-            Block block = world.GetBlock(loc);
-            return new ItemStack(block);
-        }
-
-
-        public override BlockDropItemStack[] GetDropsForHandbook(ItemStack handbookStack, IPlayer forPlayer)
-        {
-            bool isReed = Variant["type"] == "coopersreed";
-            return new BlockDropItemStack[]
-            {
-                    new BlockDropItemStack(new ItemStack(api.World.GetItem(new AssetLocation(isReed ? "cattailtops" : "papyrustops")))),
-                    new BlockDropItemStack(new ItemStack(api.World.GetItem(new AssetLocation(isReed ? "cattailroot" : "papyrusroot"))))
-            };
+            block = blockAccessor.GetLiquidBlock(pos);
+            return block.LiquidLevel < 7 && !block.SideSolid.Any();
         }
 
         public override void OnBlockBroken(IWorldAccessor world, BlockPos pos, IPlayer byPlayer, float dropQuantityMultiplier = 1f)
@@ -202,66 +143,6 @@ namespace FieldsOfGold.Blocks
             }
         }
 
-
-        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
-        {
-            Block block = blockAccessor.GetBlock(pos);
-
-            if (!block.IsReplacableBy(this))
-            {
-                return false;
-            }
-
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-            if (belowBlock.Fertility > 0)
-            {
-                if (block.LiquidCode == "water")
-                {
-                    return TryPlaceBlockInWaterDuringGen(blockAccessor, pos.UpCopy());
-                }
-
-                Block placingBlock = blockAccessor.GetBlock(CodeWithVariant("habitat", "land"));
-                if (placingBlock == null) return false;
-                blockAccessor.SetBlock(placingBlock.BlockId, pos);
-                return true;
-            }
-
-            if (belowBlock.LiquidCode == "water")
-            {
-                return TryPlaceBlockInWaterDuringGen(blockAccessor, pos);
-            }
-
-            return false;
-        }
-
-        protected bool TryPlaceBlockInWaterDuringGen(IBlockAccessor blockAccessor, BlockPos pos)
-        {
-            //This ensures a fully grown version of the block is placed, versus a 'growing' block
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 2, pos.Z);
-            if (belowBlock.Fertility > 0)
-            {
-                blockAccessor.SetBlock(blockAccessor.GetBlock(CodeWithVariant("habitat", "water")).BlockId, pos.AddCopy(0, -1, 0));
-                return true;
-            }
-            return false;
-        }
-
-        protected override bool TryPlaceBlockInWater(IBlockAccessor blockAccessor, BlockPos pos)
-        {
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 2, pos.Z);
-            if (belowBlock.Fertility > 0)
-            {
-                blockAccessor.SetBlock(blockAccessor.GetBlock(CodeWithVariants(new string[] { "habitat", "state" }, new string[] { "water", "growing" })).BlockId, pos.AddCopy(0, -1, 0));
-                return true;
-            }
-            return false;
-        }
-
-        public override int GetRandomColor(ICoreClientAPI capi, BlockPos pos, BlockFacing facing, int index)
-        {
-            return capi.World.ApplyColorMapOnRgba(ClimateColorMapForMap, SeasonColorMapForMap, capi.BlockTextureAtlas.GetRandomColor(Textures.Last().Value.Baked.TextureSubId), pos.X, pos.Y, pos.Z);
-        }
-
         public override WorldInteraction[] GetPlacedBlockInteractionHelp(IWorldAccessor world, BlockSelection selection, IPlayer forPlayer)
         {
             if (this.Variant["state"] == "growing")
@@ -279,64 +160,6 @@ namespace FieldsOfGold.Blocks
                return interactions.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
             }
         }
-
-        public override bool ShouldMergeFace(int facingIndex, Block neighbourIce, int intraChunkIndex3d)
-        {
-            return BlockMaterial == neighbourIce.BlockMaterial;
-        }
-
-        #region ice variant
-
-        public override bool ShouldReceiveServerGameTicks(IWorldAccessor world, BlockPos pos, Random offThreadRandom, out object extra)
-        {
-            extra = null;
-            if (!GlobalConstants.MeltingFreezingEnabled) return false;
-            if (habitat == EnumReedsHabitat.Land) return false;
-
-            if (habitat == EnumReedsHabitat.Ice)  // ice -> water
-            {
-                ClimateCondition conds = world.BlockAccessor.GetClimateAt(pos, EnumGetClimateMode.NowValues);
-                if (conds == null) return false;
-
-                float chance = GameMath.Clamp((conds.Temperature - 2f) / 20f, 0, 1);
-                return offThreadRandom.NextDouble() < chance;
-            }
-
-            // water -> ice
-
-            if (Variant["type"] == "papyrus") return false;  //TODO: currently we do not have an ice version of Papyrus
-
-            if (offThreadRandom.NextDouble() < 0.6)
-            {
-                int rainY = world.BlockAccessor.GetRainMapHeightAt(pos);
-                if (rainY <= pos.Y)
-                {
-                    for (int i = 0; i < BlockFacing.HORIZONTALS.Length; i++)
-                    {
-                        BlockFacing facing = BlockFacing.HORIZONTALS[i];
-                        if (world.BlockAccessor.GetBlock(pos.AddCopy(facing)).Replaceable < 6000)
-                        {
-                            ClimateCondition conds = world.BlockAccessor.GetClimateAt(pos, EnumGetClimateMode.NowValues);
-                            if (conds != null && conds.Temperature < -4)
-                            {
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        public override void OnServerGameTick(IWorldAccessor world, BlockPos pos, object extra = null)
-        {
-            Block iceBlock = api.World.GetBlock(CodeWithVariant("habitat", habitat == EnumReedsHabitat.Water ? "ice" : "water"));
-            world.BlockAccessor.SetBlock(iceBlock.Id, pos);
-        }
-
-        #endregion
-
     }
 
     public class EnumReedsHabitat

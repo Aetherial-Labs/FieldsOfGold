@@ -17,6 +17,7 @@ namespace FieldsOfGold.Items
 			{
 				api.World.BlockAccessor.SetBlock(0, blockSel.Position);
 
+                //Set Number of Stacks of 8 Dry Grass to spawn.
 				int haybaleYield = (FieldsOfGoldConfig.Current.dryGrassPerHaystackBlock / 8);
 				for (int i = haybaleYield; i > 0; i--)
 				{

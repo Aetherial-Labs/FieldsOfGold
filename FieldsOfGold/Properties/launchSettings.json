@@ -2,7 +2,8 @@
   "profiles": {
     "FieldsOfGold": {
       "commandName": "Project",
-      "commandLineArgs": "--addModPath=\"C:\\Users\\Owner\\source\\repos\\FieldsOfGold\\FieldsOfGold\\bin\\Debug\" --addOrigin=\"C:\\Users\\Owner\\source\\repos\\FieldsOfGold\\FieldsOfGold\\assets\""
+      "commandLineArgs": "--addModPath=\"C:\\Users\\vinte\\source\\repos\\FieldsOfGold\\FieldsOfGold\\bin\\Debug\" --addOrigin=\"C:\\Users\\vinte\\source\\repos\\FieldsOfGold\\FieldsOfGold\\assets\"",
+      "workingDirectory": "C:\\Users\\vinte\\AppData\\Roaming\\Vintagestory\\1174"
     }
   }
 }

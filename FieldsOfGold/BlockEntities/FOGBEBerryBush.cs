@@ -12,7 +12,7 @@ using Vintagestory.GameContent;
 
 namespace FieldsOfGold.BlockEntities
 {
-    public class FOGBEBerryBush : BlockEntity, IAnimalFoodSource
+    public class FOGBEBerryBush : BlockEntityBerryBush, IAnimalFoodSource
     {
         static readonly Random rand = new();
 
@@ -21,7 +21,7 @@ namespace FieldsOfGold.BlockEntities
         double? totalDaysForNextStageOld = null; // old v1.13 data format, here for backwards compatibility
 
         RoomRegistry roomreg;
-        public int roomness;
+        public new int roomness;
 
         public FOGBEBerryBush() : base()
         {
@@ -157,7 +157,7 @@ namespace FieldsOfGold.BlockEntities
             if (changed) MarkDirty(false);
         }
 
-        public double GetHoursForNextStage()
+        public new double GetHoursForNextStage()
         {
             //Determine modifier for adjusted month times
             float monthlengthmod = Api.World.Calendar.DaysPerMonth/30f;
@@ -169,14 +169,21 @@ namespace FieldsOfGold.BlockEntities
             return ((FieldsOfGoldConfig.Current.DaysBerryEmptyToFlower * (.9 + (.2 * (rand.NextDouble())))) * Api.World.Calendar.HoursPerDay)*monthlengthmod;
         }
 
-        public bool IsRipe()
+
+        internal void Prune()
         {
-            Block block = Api.World.BlockAccessor.GetBlock(Pos);
-            return block.LastCodePart() == "ripe";
+            Pruned = true;
+            LastPrunedTotalDays = Api.World.Calendar.TotalDays;
+            MarkDirty(true);
         }
 
         bool DoGrow()
         {
+            if (Api.World.Calendar.TotalDays - LastPrunedTotalDays > Api.World.Calendar.DaysPerYear)
+            {
+                Pruned = false;
+            }
+
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             string nowCodePart = block.LastCodePart();
             string nextCodePart = (nowCodePart == "empty") ? "flowering" : ((nowCodePart == "flowering") ? "ripe" : "empty");
@@ -198,9 +205,6 @@ namespace FieldsOfGold.BlockEntities
             return true;
         }
 
-
-
-
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
             base.FromTreeAttributes(tree, worldForResolving);
@@ -215,6 +219,8 @@ namespace FieldsOfGold.BlockEntities
             lastCheckAtTotalDays = tree.GetDouble("lastCheckAtTotalDays");
 
             roomness = tree.GetInt("roomness");
+            Pruned = tree.GetBool("pruned");
+            LastPrunedTotalDays = tree.GetDecimal("lastPrunedTotalDays");
         }
 
         public override void ToTreeAttributes(ITreeAttribute tree)
@@ -225,17 +231,13 @@ namespace FieldsOfGold.BlockEntities
             tree.SetDouble("lastCheckAtTotalDays", lastCheckAtTotalDays);
 
             tree.SetInt("roomness", roomness);
+            tree.SetDouble("lastPrunedTotalDays", LastPrunedTotalDays);
         }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder sb)
         {
             Block block = Api.World.BlockAccessor.GetBlock(Pos);
             double daysleft = transitionHoursLeft / Api.World.Calendar.HoursPerDay;
-
-            /*if (forPlayer.WorldData.CurrentGameMode == EnumGameMode.Creative)
-            {
-                return "" + daysleft;
-            }*/
 
             if (block.LastCodePart() == "ripe")
             {
@@ -262,17 +264,8 @@ namespace FieldsOfGold.BlockEntities
 
 
         #region IAnimalFoodSource impl
-        public bool IsSuitableFor(Entity entity)
-        {
-            if (!IsRipe()) return false;
 
-            string[] diet = entity.Properties.Attributes?["blockDiet"]?.AsArray<string>();
-            if (diet == null) return false;
-
-            return diet.Contains("Berry");
-        }
-
-        public float ConsumeOnePortion()
+        public new float ConsumeOnePortion()
         {
             AssetLocation loc = Block.CodeWithParts("empty");
             if (!loc.Valid)
@@ -299,8 +292,8 @@ namespace FieldsOfGold.BlockEntities
             return 0.1f;
         }
 
-        public Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
-        public string Type => "food";
+        public new Vec3d Position => base.Pos.ToVec3d().Add(0.5, 0.5, 0.5);
+        public new string Type => "food";
         #endregion
 
 

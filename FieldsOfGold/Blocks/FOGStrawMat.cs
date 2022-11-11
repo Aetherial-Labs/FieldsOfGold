@@ -50,7 +50,7 @@ namespace FieldsOfGold.Blocks
 		{
 			BlockFacing opposite = onBlockFace.Opposite;
 			BlockPos pos = blockpos.AddCopy(opposite);
-			if (world.BlockAccessor.GetBlock(world.BlockAccessor.GetBlockId(pos)).CanAttachBlockAt(world.BlockAccessor, this, pos, onBlockFace, null))
+			if (world.BlockAccessor.GetBlock(pos).CanAttachBlockAt(world.BlockAccessor, this, pos, onBlockFace, null))
 			{
 				int blockId = world.BlockAccessor.GetBlock(base.CodeWithParts(new string[]
 				{

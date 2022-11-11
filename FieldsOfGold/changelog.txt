@@ -1,7 +1,53 @@
-﻿1.16-1.2.3
-- Adjustment made to ensure pumpkins grow properly in any variable month/hoursperday setting.
+﻿1.17-2.0.5
+- Updated for compatibility with the current Wildcraft Release
+- Updated again to deepen compatibility with all mods using the BlockEntityBerryBush class, and the BlockEntityFarmland class.
+- Adjusted crop growth times to use a multiplicative increase instead of a divisive one. (daysPerMonth/9 vs 30/daysPerMonth) 
+  The result being that 9 is now considered the default growth period, while 30 days results in multiplying supplied values.
+  In the current incarnation, this is only required for Berry Bushes as crops are growth time modified by vanilla. Pumpkin vines
+  and Pumpkin Fruit still use this modifier due to their implementation.
 
-1.16-1.2.2-Stable
+1.17-2.0.4
+- Corrected issue with drygrass itemtype that had a fromgoldencombs: reference.
+
+1.17.2.0.3
+- Corrected berry bush integration
+
+1.17.2.0.2-rc.3
+- Correcting json for reed changes
+- Whole cattail root and whole papyrus root now plant sprouted rather than growing cattail/papyrus.
+
+1.17.2.0.2-rc.2
+- Addressed crash occurring when clicking the block behind an existing haystack.
+
+1.17-2.0.2-rc.1
+- Corrected error with harvesting reeds
+- Fixed error with crafting haystacks
+
+1.17-2.0.1-dev.1
+- Updated to 1.17
+- Adjusted crop growth times to new paradigm
+	- Adjusted Cassava and Pineapple growth times to 6 and 9 months respectively
+- Patched Berry Bushes to work with new methods
+- Cattail Roots and Papyrus Roots can no longer be planted
+- Halved/Full Cattail/papyrus roots now have a decay time
+- Halved Cattail Roots plant "Sprouting Cattails" which cannot be harvested for roots
+- Cattails/Papyrus now transition properly in 1.17
+- Mushroom fruiting/growth times are now customizable by type.
+
+1.16-1.2.4
+- Russian Translation Added
+- Corrected issue where haystack read drygrassPerMat instead of cattailPerMat from config
+
+1.16-1.2.3
+- Adjustment made to ensure pumpkins grow properly in any variable month/hoursperday setting.
+- New configuration options for haybale and straw mat (TY KeninVonag)
+- Farmland will no longer show 4xxxxxxxxxxxxxx days when no crop is present. (TY KeninVonag)
+- Farmland will now not show the crop growth times when crop is at max growth stage
+- Haystack now changes hitbox size as it gains/loses grass (TY KeninVonag)
+- Berrybush Growth cycle reduced from 176 days to 100.
+- Berrybush Growth Cycle per step is now configurable
+
+1.16-4-1.2.2-Stable
 - Added compatibiltiy with vanvar pans
 - Corrected compatibility issues with seed to grain/grain to seed recipes
 - Fixed yampocalypse (At full growth would drop 63 yams... but no seeds. Now drops 5-7 yams and 1-2 seeds)

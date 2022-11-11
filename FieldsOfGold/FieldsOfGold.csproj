@@ -5,6 +5,10 @@
 	<LangVersion>9</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
 	  <Content Include="assets/**">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -22,6 +26,7 @@
     <None Remove="assets\fieldsofgold\blocktypes\reeds.json" />
     <None Remove="assets\fieldsofgold\patches\moreclassespatch.json" />
     <None Remove="assets\fieldsofgold\recipes\grid\graintoseed.json" />
+    <None Remove="assets\game\patches\mushrooms.json" />
     <None Remove="assets\game\patches\reedspatch.json" />
     <None Remove="assets\game\patches\roofthatch.json" />
     <None Remove="assets\hideandfabric\patches\cotton.json" />
@@ -58,7 +63,6 @@
     <None Remove="assets\potatoes\crop_growth.json" />
     <None Remove="assets\potatoes\crop_production.json" />
     <None Remove="assets\potatoes\patches\crop_growth.json" />
-    <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
     <None Remove="assets\wildcraft\patches\plant-leafygroundvegetable.json" />
   </ItemGroup>
 
@@ -69,40 +73,48 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="protobuf-net.Core" Version="3.1.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\Lib\0Harmony.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Lib\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AnimatedGif">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Lib\AnimatedGif.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="cairo-sharp">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Lib\cairo-sharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Lib\protobuf-net.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryAPI">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\VintagestoryAPI.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VintagestoryLib">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\VintagestoryLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\VintagestoryLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSBuildLib">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\VSBuildLib.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\VSBuildLib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSCreativeMod">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\Mods\VSCreativeMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Mods\VSCreativeMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSEssentials">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\Mods\VSEssentials.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Mods\VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="VSSurvivalMod">
-      <HintPath>..\..\..\..\AppData\Roaming\VintageStory\VS1165\Mods\VSSurvivalMod.dll</HintPath>
+      <HintPath>..\..\..\..\AppData\Roaming\Vintagestory\1174\Mods\VSSurvivalMod.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
@@ -124,6 +136,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\fieldsofgold\lang\en.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\fieldsofgold\lang\ru.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\fieldsofgold\recipes\grid\graintoseed.json">
@@ -192,7 +207,10 @@
     <Content Update="assets\game\patches\haypatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="assets\game\patches\plant-berry-changes.json">
+    <Content Update="assets\game\patches\reedspatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="assets\game\patches\mushrooms.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\game\patches\roofthatch.json">
@@ -202,9 +220,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="assets\potatoes\patches\crop_production.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="assets\wildcraft\patches\plant-berry-changes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

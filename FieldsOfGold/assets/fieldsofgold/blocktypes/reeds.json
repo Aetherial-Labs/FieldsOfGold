@@ -6,16 +6,16 @@
 			climateColorMapForMap: "climatePlantTint", 
 			seasonColorMapForMap: "seasonalFoliage",
 			transientPropsByType: {
-			"*-coopersreed-water-growing-*": {
-      "convertFrom": "*-coopersreed-water-growing-{cover}",
-      "convertTo": "game:tallplant-coopersreed-water-harvested-{cover}",
+			"*-coopersreed-*-growing-*": {
+      "convertFrom": "*-growing-{cover}",
+      "convertTo": "game:tallplant-coopersreed-{habitat}-harvested-{cover}",
       "inGameHours": "2771",
       "resetBelowTemperature": -8,
       "stopBelowTemperature": 2
     },
-			"*-papyrus-water-growing-*": {
-      "convertFrom": "*-papyrus-water-growing-{cover}",
-      "convertTo": "game:tallplant-papyrus-water-harvested-{cover}",
+			"*-papyrus-*-growing-*": {
+      "convertFrom": "*-papyrus-*-growing-{cover}",
+      "convertTo": "game:tallplant-papyrus-{habitat}-harvested-{cover}",
       "inGameHours": "2771",
       "resetBelowTemperature": -8,
       "stopBelowTemperature": 2
