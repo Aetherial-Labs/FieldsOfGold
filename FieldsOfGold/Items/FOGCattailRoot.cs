@@ -28,7 +28,8 @@ namespace FieldsOfGold.Items
             {
                 block = byEntity.World.GetBlock(new AssetLocation(flag ? "fieldsofgold:tallplant-coopersreed-water-growing-free" : "fieldsofgold:tallplant-coopersreed-land-growing-free"));
             }
-            if (block == null)
+
+            if (!flag)
             {
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
                 return;

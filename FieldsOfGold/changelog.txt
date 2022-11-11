@@ -1,4 +1,22 @@
-﻿1.17.2.0.2-rc.2
+﻿1.17-2.0.5
+- Updated for compatibility with the current Wildcraft Release
+- Updated again to deepen compatibility with all mods using the BlockEntityBerryBush class, and the BlockEntityFarmland class.
+- Adjusted crop growth times to use a multiplicative increase instead of a divisive one. (daysPerMonth/9 vs 30/daysPerMonth) 
+  The result being that 9 is now considered the default growth period, while 30 days results in multiplying supplied values.
+  In the current incarnation, this is only required for Berry Bushes as crops are growth time modified by vanilla. Pumpkin vines
+  and Pumpkin Fruit still use this modifier due to their implementation.
+
+1.17-2.0.4
+- Corrected issue with drygrass itemtype that had a fromgoldencombs: reference.
+
+1.17.2.0.3
+- Corrected berry bush integration
+
+1.17.2.0.2-rc.3
+- Correcting json for reed changes
+- Whole cattail root and whole papyrus root now plant sprouted rather than growing cattail/papyrus.
+
+1.17.2.0.2-rc.2
 - Addressed crash occurring when clicking the block behind an existing haystack.
 
 1.17-2.0.2-rc.1

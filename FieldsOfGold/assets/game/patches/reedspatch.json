@@ -8,27 +8,20 @@
   },
   {
     "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-coopersreed-*",
-    "value": {
-              "convertFrom": "*-harvested-*",
-              "convertTo":  "game:tallplant-coopersreed-land-normal-{cover}",
-              "inGameHours": 923,
-              "resetBelowTemparature": -4,
-              "stopBelowTemperature": 2
-             },
-    "file": "game:blocktypes/plant/reedpapyrus.json",
-    "side": "server"
+    "path": "/class",
+    "value": "fogreeditem",
+    "file": "game:itemtypes/resource/catttailroot.json"
   },
   {
     "op": "replace",
-    "path": "/attributes/transientPropsByType/tallplant-papyrus-*",
-    "value": {
-              "convertFrom": "*-harvested-*",
-              "convertTo":  "game:tallplant-papyrus-land-normal-{cover}",
-              "inGameHours": 923,
-              "resetBelowTemparature": -4,
-              "stopBelowTemperature": 2
-             },
+    "path": "/class",
+    "value": "fogreeditem",
+    "file": "game:itemtypes/resource/papyrusroot.json"
+  },
+  {
+    "op": "replace",
+    "path": "/attributes/transientPropsByType/tallplant-coopersreed-*/inGameHours",
+    "value": 923,
     "file": "game:blocktypes/plant/reedpapyrus.json",
     "side": "server"
   },

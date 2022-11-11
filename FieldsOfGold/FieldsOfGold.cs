@@ -1,5 +1,6 @@
 ﻿using FieldsOfGold.BlockEntities;
 using FieldsOfGold.Blocks;
+using FieldsOfGold.CollectibleBehaviors;
 using FieldsOfGold.config;
 using FieldsOfGold.Items;
 using HarmonyLib;
@@ -21,7 +22,7 @@ namespace FieldsOfGold
 
         internal static IServerNetworkChannel serverChannel;
         internal static IClientNetworkChannel clientChannel;
-
+        public static double daysPerMonthMod;
 
         public override bool ShouldLoad(EnumAppSide forSide)
         {
@@ -31,9 +32,9 @@ namespace FieldsOfGold
         public override void Start(ICoreAPI api)
         {
             base.Start(api);
-            
+           
             //Block Entities
-            api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
+            //api.RegisterBlockEntityClass("fogbeberrybush", typeof(FOGBEBerryBush));
             api.RegisterBlockEntityClass("fogbeehive", typeof(FOGBEBeehive));
             api.RegisterBlockEntityClass("fogbehaystack", typeof(FOGBEHaystack));
             api.RegisterBlockEntityClass("fogbetransient", typeof(FOGBETransient));
@@ -47,6 +48,10 @@ namespace FieldsOfGold
             api.RegisterBlockClass("foghaybale", typeof(FOGHaybale));
             api.RegisterBlockClass("fogstrawmat", typeof(FOGStrawMat));
             api.RegisterBlockClass("fogreeds", typeof(FOGReeds));
+
+            //CollectibleBehaviors
+            api.RegisterCollectibleBehaviorClass("haystackable", typeof(BehaviorHayStackable));
+
             PatchGame();
 
 
@@ -75,6 +80,7 @@ namespace FieldsOfGold
             api.StoreModConfig(FieldsOfGoldConfig.Current, "fieldsofgold.json");
         
             }
+            daysPerMonthMod = (float)api.World.Config.GetAsInt("daysPerMonth") / 9f;
         }
 
         public override void StartClientSide(ICoreClientAPI api)
@@ -117,7 +123,7 @@ namespace FieldsOfGold
             Mod.Logger.Event("Applying Harmony patches");
             var harmony = new Harmony("harmoniousfog");
             var original = typeof(BlockEntityFarmland).GetMethod("GetHoursForNextStage");
-            var patches = Harmony.GetPatchInfo(original);
+            var patches = (Harmony.GetPatchInfo(original));
             if (patches != null && patches.Owners.Contains("harmoniousfog"))
             {
                 return;
@@ -141,25 +147,6 @@ namespace FieldsOfGold
     //internal sealed class BlockEntityFarmlandPatches
     class BlockEntityFarmlandPatches
     {
-        //    [HarmonyPrefix]
-        //    static bool Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(
-        //        BlockEntityFarmland __instance,
-        //        ref double __result,
-        //        Random ___rand)
-        //    {
-        //        var block = __instance.CallMethod<Block>("GetCrop");
-        //        if (block == null || block.CropProps == null)
-        //        {
-        //            __result = 99999999;
-        //            return false;
-        //        }
-        //        __result = __instance.Api.World.Calendar.HoursPerDay * block.CropProps.TotalGrowthDays
-        //                        * (__instance.Api.World.Calendar.DaysPerMonth / 30f) / block.CropProps.GrowthStages
-        //                        * 1 / __instance.GetGrowthRate(block!.CropProps.RequiredNutrient)
-        //                        * (float)(0.9 + 0.2 * ___rand.NextDouble());
-
-        //        return false;
-        //    }
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BlockEntityPumpkinVine), "Initialize")]
@@ -170,34 +157,17 @@ namespace FieldsOfGold
              * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
               Then modify growth rate from base to account for in-game hours per day.
              */
-            ___pumpkinHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-            ___vineHoursToGrow = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((300f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-            ___vineHoursToGrowStage2 = (float)(__instance.Api.World.Calendar.DaysPerMonth / 30) * ((150f / 24) * __instance.Api.World.Calendar.HoursPerDay);
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(BlockEntityMycelium), "Initialize")]
-        static void Patch_BlockEntityMycelium_Initialize_Prefix(BlockEntityMycelium __instance,
-           ref double ___growingDays, ref double ___fruitingDays, ref AssetLocation ___mushroomBlockCode)
-        {
-            /*
-             * Get appropriate modifier for crops based on DaysPerMonth using a 30 day month as a base.
-              Then modify growth rate from base to account for in-game hours per day.
-             */
-
-            var newGrowthDays = __instance.Api.World.GetBlock(___mushroomBlockCode).Attributes["mushroomGrowth"]["growthTime"].AsDouble();              
-            var newFruitingDays = __instance.Api.World.GetBlock(___mushroomBlockCode).Attributes["mushroomGrowth"]["fruitingTime"].AsDouble();
-            ___growingDays = newGrowthDays.IsDefaultValue() ? 20.0 : newGrowthDays;
-            ___fruitingDays = newFruitingDays.IsDefaultValue() ? 20.0 : newFruitingDays;
-            System.Diagnostics.Debug.WriteLine("Current Growth Time For " + ___mushroomBlockCode + " is " + ___growingDays);
-            System.Diagnostics.Debug.WriteLine("Current Fruiting Time For " + ___mushroomBlockCode + " is " + ___fruitingDays);
+            float dayHours = __instance.Api.World.Calendar.HoursPerDay;
+            ___pumpkinHoursToGrow = (float)(FieldsOfGold.daysPerMonthMod) * ((90f / 24) * dayHours);
+            ___vineHoursToGrow = (float)(FieldsOfGold.daysPerMonthMod) * ((90f / 24) * dayHours);
+            ___vineHoursToGrowStage2 = (float)(FieldsOfGold.daysPerMonthMod) * ((45f / 24) * dayHours);
         }
 
 
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         [HarmonyPatch(typeof(BlockEntityFarmland), "GetBlockInfo")]
 #pragma warning disable IDE0051 // Remove unused private members
-        static void Patch_BlockEntityFarmland_GetHoursForNextStage_Postfix(BlockEntityFarmland __instance, StringBuilder dsc)
+        static void Patch_BlockEntityFarmland_GetHoursForNextStage_Prefix(BlockEntityFarmland __instance, StringBuilder dsc)
 #pragma warning restore IDE0051 // Remove unused private members
         {
             double daysTillNextStage;
@@ -219,8 +189,35 @@ namespace FieldsOfGold
             }
         }
 
-    }
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(BlockEntityBerryBush), "GetHoursForNextStage")]
+        static bool Patch_BlockEntityBerryBush_GetHoursForNextStage_Prefix(BlockEntityBerryBush __instance, ref double __result)
+        {
+            double hoursPerDay = __instance.Api.World.Calendar.HoursPerDay;
+            double emptyDays = __instance.Block.Attributes["growthProps"]["emptyDays"].AsDouble();
+            double floweringDays = __instance.Block.Attributes["growthProps"]["floweringDays"].AsDouble();
+            double ripeDays = __instance.Block.Attributes["growthProps"]["ripeDays"].AsDouble();
+            string state = __instance.Api.World.BlockAccessor.GetBlock(__instance.Pos).LastCodePart();
 
+
+            if (state == "ripe")
+            {
+                __result = ((ripeDays == 0.0 ? 4.2:ripeDays) * hoursPerDay) * FieldsOfGold.daysPerMonthMod; 
+                return false;
+            }
+            else if (state == "flowering") { 
+                __result = ((floweringDays == 0.0 ? 12.6:floweringDays) * hoursPerDay) * FieldsOfGold.daysPerMonthMod;
+                return false;
+            } 
+            else if (state == "empty") {
+                __result = ((emptyDays == 0?30:emptyDays) * hoursPerDay) * FieldsOfGold.daysPerMonthMod;
+                return false;
+            };
+
+            return false;
+        }
+
+    }
     public static class HarmonyReflectionExtensions
     {
         /// <summary>
@@ -241,5 +238,7 @@ namespace FieldsOfGold
             return EqualityComparer<T>.Default.Equals(@this, default);
         }
     }
+
 }
+        
 

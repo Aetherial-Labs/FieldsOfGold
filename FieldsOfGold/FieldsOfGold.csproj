@@ -63,7 +63,6 @@
     <None Remove="assets\potatoes\crop_growth.json" />
     <None Remove="assets\potatoes\crop_production.json" />
     <None Remove="assets\potatoes\patches\crop_growth.json" />
-    <None Remove="assets\wildcraft\patches\plant-berry-changes.json" />
     <None Remove="assets\wildcraft\patches\plant-leafygroundvegetable.json" />
   </ItemGroup>
 
@@ -208,6 +207,9 @@
     <Content Update="assets\game\patches\haypatch.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="assets\game\patches\reedspatch.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="assets\game\patches\mushrooms.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -219,9 +221,6 @@
     </Content>
     <Content Update="assets\potatoes\patches\crop_production.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Update="assets\wildcraft\patches\plant-berry-changes.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
